@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="https://bachasoftware.com/wp-content/uploads/elementor/thumbs/nodejslogo-pzv7y8cvs5nlt9i0oxpi7xgx89017n87dbebosebg0.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>LMS</title>
+  <link rel="stylesheet" href="/index.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+  <section class="container">
+    <header class="header">
+      <section class="wrapHeader">
+        <div class="entity">
+          <ul class="menuTabBar" id="menuTabBar">
+            <li id="imageTab" class="liTab"><a href=""><img style="height: 30px" src="https://learn.rikkeiacademy.com/static/media/RIKKEI_ACADEMY_LOGO.e997e6f7.png" alt=""></a></li>
+            <li class="liTab"><a class="clickLiTab" href="http://localhost:3000/router/"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="home" width="1em" height="1em" fill="currentColor" aria-hidden="true" style="margin-bottom: 4px; padding-right: 5px;">
+                  <path d="M946.5 505L560.1 118.8l-25.9-25.9a31.5 31.5 0 00-44.4 0L77.5 505a63.9 63.9 0 00-18.8 46c.4 35.2 29.7 63.3 64.9 63.3h42.5V940h691.8V614.3h43.4c17.1 0 33.2-6.7 45.3-18.8a63.6 63.6 0 0018.7-45.3c0-17-6.7-33.1-18.8-45.2zM568 868H456V664h112v204zm217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z"></path>
+                </svg>Trang chủ</a></li>
+            <li class="liTab"><a class="clickLiTab" href="http://localhost:3000/router/route-study"><svg viewBox="0 0 1024 1024" focusable="false" class="" data-icon="inbox" width="1em" height="1em" fill="currentColor" aria-hidden="true" style="margin-bottom: 4px; padding-right: 5px;">
+                  <path d="M885.2 446.3l-.2-.8-112.2-285.1c-5-16.1-19.9-27.2-36.8-27.2H281.2c-17 0-32.1 11.3-36.9 27.6L139.4 443l-.3.7-.2.8c-1.3 4.9-1.7 9.9-1 14.8-.1 1.6-.2 3.2-.2 4.8V830a60.9 60.9 0 0060.8 60.8h627.2c33.5 0 60.8-27.3 60.9-60.8V464.1c0-1.3 0-2.6-.1-3.7.4-4.9 0-9.6-1.3-14.1zm-295.8-43l-.3 15.7c-.8 44.9-31.8 75.1-77.1 75.1-22.1 0-41.1-7.1-54.8-20.6S436 441.2 435.6 419l-.3-15.7H229.5L309 210h399.2l81.7 193.3H589.4zm-375 76.8h157.3c24.3 57.1 76 90.8 140.4 90.8 33.7 0 65-9.4 90.3-27.2 22.2-15.6 39.5-37.4 50.7-63.6h156.5V814H214.4V480.1z"></path>
+                </svg>Lộ trình</a></li>
+            <li class="liTab"><a class="clickLiTab" href="http://localhost:3000/router/course"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="read" width="1em" height="1em" fill="currentColor" aria-hidden="true" style="margin-bottom: 4px; padding-right: 5px;">
+                  <path d="M928 161H699.2c-49.1 0-97.1 14.1-138.4 40.7L512 233l-48.8-31.3A255.2 255.2 0 00324.8 161H96c-17.7 0-32 14.3-32 32v568c0 17.7 14.3 32 32 32h228.8c49.1 0 97.1 14.1 138.4 40.7l44.4 28.6c1.3.8 2.8 1.3 4.3 1.3s3-.4 4.3-1.3l44.4-28.6C602 807.1 650.1 793 699.2 793H928c17.7 0 32-14.3 32-32V193c0-17.7-14.3-32-32-32zM324.8 721H136V233h188.8c35.4 0 69.8 10.1 99.5 29.2l48.8 31.3 6.9 4.5v462c-47.6-25.6-100.8-39-155.2-39zm563.2 0H699.2c-54.4 0-107.6 13.4-155.2 39V298l6.9-4.5 48.8-31.3c29.7-19.1 64.1-29.2 99.5-29.2H888v488zM396.9 361H211.1c-3.9 0-7.1 3.4-7.1 7.5v45c0 4.1 3.2 7.5 7.1 7.5h185.7c3.9 0 7.1-3.4 7.1-7.5v-45c.1-4.1-3.1-7.5-7-7.5zm223.1 7.5v45c0 4.1 3.2 7.5 7.1 7.5h185.7c3.9 0 7.1-3.4 7.1-7.5v-45c0-4.1-3.2-7.5-7.1-7.5H627.1c-3.9 0-7.1 3.4-7.1 7.5zM396.9 501H211.1c-3.9 0-7.1 3.4-7.1 7.5v45c0 4.1 3.2 7.5 7.1 7.5h185.7c3.9 0 7.1-3.4 7.1-7.5v-45c.1-4.1-3.1-7.5-7-7.5zm416 0H627.1c-3.9 0-7.1 3.4-7.1 7.5v45c0 4.1 3.2 7.5 7.1 7.5h185.7c3.9 0 7.1-3.4 7.1-7.5v-45c.1-4.1-3.1-7.5-7-7.5z"></path>
+                </svg>Khóa học</a></li>
+            <li class="liTab"><a class="clickLiTab" href="http://localhost:3000/router/control-panel"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="cluster" width="1em" height="1em" fill="currentColor" aria-hidden="true" style="margin-bottom: 4px; padding-right: 5px;">
+                  <path d="M888 680h-54V540H546v-92h238c8.8 0 16-7.2 16-16V168c0-8.8-7.2-16-16-16H240c-8.8 0-16 7.2-16 16v264c0 8.8 7.2 16 16 16h238v92H190v140h-54c-4.4 0-8 3.6-8 8v176c0 4.4 3.6 8 8 8h176c4.4 0 8-3.6 8-8V688c0-4.4-3.6-8-8-8h-54v-72h220v72h-54c-4.4 0-8 3.6-8 8v176c0 4.4 3.6 8 8 8h176c4.4 0 8-3.6 8-8V688c0-4.4-3.6-8-8-8h-54v-72h220v72h-54c-4.4 0-8 3.6-8 8v176c0 4.4 3.6 8 8 8h176c4.4 0 8-3.6 8-8V688c0-4.4-3.6-8-8-8zM256 805.3c0 1.5-1.2 2.7-2.7 2.7h-58.7c-1.5 0-2.7-1.2-2.7-2.7v-58.7c0-1.5 1.2-2.7 2.7-2.7h58.7c1.5 0 2.7 1.2 2.7 2.7v58.7zm288 0c0 1.5-1.2 2.7-2.7 2.7h-58.7c-1.5 0-2.7-1.2-2.7-2.7v-58.7c0-1.5 1.2-2.7 2.7-2.7h58.7c1.5 0 2.7 1.2 2.7 2.7v58.7zM288 384V216h448v168H288zm544 421.3c0 1.5-1.2 2.7-2.7 2.7h-58.7c-1.5 0-2.7-1.2-2.7-2.7v-58.7c0-1.5 1.2-2.7 2.7-2.7h58.7c1.5 0 2.7 1.2 2.7 2.7v58.7zM360 300a40 40 0 1080 0 40 40 0 10-80 0z"></path>
+                </svg>Bảng điều khiển</a></li>
+            <li id="accountTab" class="liTab">
+              <div class="ant-space-item" style="">
+                <span class="ant-avatar ant-avatar-circle" style="width: 25px; height: 25px; line-height: 25px; font-size: 18px;">
+                  <span class="ant-avatar-string" style="line-height: 25px; transform: scale(1) translateX(-50%);">
+                  </span>
+                </span>
+                <span>
+                  Nguyễn Tuấn Hoàng
+                </span>
+              </div>
+              <ul id="subMenuLogin" class="sub-menu-login">
+                <li class="liMenuLogin"><a href="#"><span role="img" aria-label="user" class="anticon anticon-user ant-dropdown-menu-item-icon"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="user" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                        <path d="M858.5 763.6a374 374 0 00-80.6-119.5 375.63 375.63 0 00-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 00-80.6 119.5A371.7 371.7 0 00136 901.8a8 8 0 008 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 008-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z"></path>
+                      </svg></span>Tài khoản</a> </li>
+                <li class="liMenuLogin"><a href="#"><span role="img" aria-label="history" class="anticon anticon-history ant-dropdown-menu-item-icon"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="history" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                        <path d="M536.1 273H488c-4.4 0-8 3.6-8 8v275.3c0 2.6 1.2 5 3.3 6.5l165.3 120.7c3.6 2.6 8.6 1.9 11.2-1.7l28.6-39c2.7-3.7 1.9-8.7-1.7-11.2L544.1 528.5V281c0-4.4-3.6-8-8-8zm219.8 75.2l156.8 38.3c5 1.2 9.9-2.6 9.9-7.7l.8-161.5c0-6.7-7.7-10.5-12.9-6.3L752.9 334.1a8 8 0 003 14.1zm167.7 301.1l-56.7-19.5a8 8 0 00-10.1 4.8c-1.9 5.1-3.9 10.1-6 15.1-17.8 42.1-43.3 80-75.9 112.5a353 353 0 01-112.5 75.9 352.18 352.18 0 01-137.7 27.8c-47.8 0-94.1-9.3-137.7-27.8a353 353 0 01-112.5-75.9c-32.5-32.5-58-70.4-75.9-112.5A353.44 353.44 0 01171 512c0-47.8 9.3-94.2 27.8-137.8 17.8-42.1 43.3-80 75.9-112.5a353 353 0 01112.5-75.9C430.6 167.3 477 158 524.8 158s94.1 9.3 137.7 27.8A353 353 0 01775 261.7c10.2 10.3 19.8 21 28.6 32.3l59.8-46.8C784.7 146.6 662.2 81.9 524.6 82 285 82.1 92.6 276.7 95 516.4 97.4 751.9 288.9 942 524.8 942c185.5 0 343.5-117.6 403.7-282.3 1.5-4.2-.7-8.9-4.9-10.4z"></path>
+                      </svg></span>Lịch sử bài thi</a> </li>
+                <li class="liMenuLogin"><a href="#"><span role="img" aria-label="clock-circle" class="anticon anticon-clock-circle ant-dropdown-menu-item-icon"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="clock-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                        <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path>
+                        <path d="M686.7 638.6L544.1 535.5V288c0-4.4-3.6-8-8-8H488c-4.4 0-8 3.6-8 8v275.4c0 2.6 1.2 5 3.3 6.5l165.4 120.6c3.6 2.6 8.6 1.8 11.2-1.7l28.6-39c2.6-3.7 1.8-8.7-1.8-11.2z"></path>
+                      </svg></span>Lịch sử điểm</a> </li>
+                <li class="liMenuLogin"><a href="#"><span role="img" aria-label="read" class="anticon anticon-read ant-dropdown-menu-item-icon"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="read" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                        <path d="M928 161H699.2c-49.1 0-97.1 14.1-138.4 40.7L512 233l-48.8-31.3A255.2 255.2 0 00324.8 161H96c-17.7 0-32 14.3-32 32v568c0 17.7 14.3 32 32 32h228.8c49.1 0 97.1 14.1 138.4 40.7l44.4 28.6c1.3.8 2.8 1.3 4.3 1.3s3-.4 4.3-1.3l44.4-28.6C602 807.1 650.1 793 699.2 793H928c17.7 0 32-14.3 32-32V193c0-17.7-14.3-32-32-32zM324.8 721H136V233h188.8c35.4 0 69.8 10.1 99.5 29.2l48.8 31.3 6.9 4.5v462c-47.6-25.6-100.8-39-155.2-39zm563.2 0H699.2c-54.4 0-107.6 13.4-155.2 39V298l6.9-4.5 48.8-31.3c29.7-19.1 64.1-29.2 99.5-29.2H888v488zM396.9 361H211.1c-3.9 0-7.1 3.4-7.1 7.5v45c0 4.1 3.2 7.5 7.1 7.5h185.7c3.9 0 7.1-3.4 7.1-7.5v-45c.1-4.1-3.1-7.5-7-7.5zm223.1 7.5v45c0 4.1 3.2 7.5 7.1 7.5h185.7c3.9 0 7.1-3.4 7.1-7.5v-45c0-4.1-3.2-7.5-7.1-7.5H627.1c-3.9 0-7.1 3.4-7.1 7.5zM396.9 501H211.1c-3.9 0-7.1 3.4-7.1 7.5v45c0 4.1 3.2 7.5 7.1 7.5h185.7c3.9 0 7.1-3.4 7.1-7.5v-45c.1-4.1-3.1-7.5-7-7.5zm416 0H627.1c-3.9 0-7.1 3.4-7.1 7.5v45c0 4.1 3.2 7.5 7.1 7.5h185.7c3.9 0 7.1-3.4 7.1-7.5v-45c.1-4.1-3.1-7.5-7-7.5z"></path>
+                      </svg></span>Khóa học gần đây</a> </li>
+                <li class="liMenuLogin"><a href="#"><span role="img" aria-label="unordered-list" class="anticon anticon-unordered-list ant-dropdown-menu-item-icon"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="unordered-list" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                        <path d="M912 192H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM104 228a56 56 0 10112 0 56 56 0 10-112 0zm0 284a56 56 0 10112 0 56 56 0 10-112 0zm0 284a56 56 0 10112 0 56 56 0 10-112 0z"></path>
+                      </svg></span>Danh sách bài tập</a> </li>
+                <li class="liMenuLogin"><a href="#"><span role="img" aria-label="logout" class="anticon anticon-logout ant-dropdown-menu-item-icon"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="logout" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                        <path d="M868 732h-70.3c-4.8 0-9.3 2.1-12.3 5.8-7 8.5-14.5 16.7-22.4 24.5a353.84 353.84 0 01-112.7 75.9A352.8 352.8 0 01512.4 866c-47.9 0-94.3-9.4-137.9-27.8a353.84 353.84 0 01-112.7-75.9 353.28 353.28 0 01-76-112.5C167.3 606.2 158 559.9 158 512s9.4-94.2 27.8-137.8c17.8-42.1 43.4-80 76-112.5s70.5-58.1 112.7-75.9c43.6-18.4 90-27.8 137.9-27.8 47.9 0 94.3 9.3 137.9 27.8 42.2 17.8 80.1 43.4 112.7 75.9 7.9 7.9 15.3 16.1 22.4 24.5 3 3.7 7.6 5.8 12.3 5.8H868c6.3 0 10.2-7 6.7-12.3C798 160.5 663.8 81.6 511.3 82 271.7 82.6 79.6 277.1 82 516.4 84.4 751.9 276.2 942 512.4 942c152.1 0 285.7-78.8 362.3-197.7 3.4-5.3-.4-12.3-6.7-12.3zm88.9-226.3L815 393.7c-5.3-4.2-13-.4-13 6.3v76H488c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h314v76c0 6.7 7.8 10.5 13 6.3l141.9-112a8 8 0 000-12.6z"></path>
+                      </svg></span>Đăng xuất</a> </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </header>
+    <main class="mainHomePage" style="padding-top: 50px;">
+      <div class="headerHomePage">
+        <div class="titleSearchHome">Tìm khóa học yêu thích và <span class="advancedTextHome">nâng cao trình độ</span> của bạn</div>
+        <div class="SearchBox">
+          <input type="text" class="SearchBox-input" placeholder="Bạn muốn tìm khóa học nào ?">
+          <button class="SearchBox-button">
+            <i class="SearchBox-icon  material-icons">search</i>
+          </button>
+        </div>
+      </div>
+      <div class="roadMapHomePage">
+        <div class="colOffset">
+          <div class="roadmapFirst">
+            <h3 class="titleRouteFist">Lộ trình phổ biến</h3>
+            <div class="subTitleTextMuted"> Hơn 10.000 khóa học trực tuyến</div>
+            <div class="listRoutes" style="margin-left: -23px;">
+              <div class="nestedLoading">
+                <div class="spinHomeFirst">
+                  <div class="antRow">
+                    <div style="width: 50%; max-width: 50%; padding-bottom: 20px">
+                      <div class="ant-col" style="padding-left: 8px;
+                      padding-right: 8px;
+                      flex: 1 1 auto; margin-left: 15px; margin-right: 15px;">
+                        <div class="ant-list-item" style="background-color: rgb(237, 237, 237); padding: 10px;">
+                          <a href="/course-list">
+                            <div class="itemMeta">
+                              <div class="itemMetaAvatar">
+                                <span class="avataSquare">
+                                  <img src="https://images.pexels.com/photos/11035547/pexels-photo-11035547.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+                                </span>
+                              </div>
+                              <div class="itemMetaContent">
+                                <h4 class="itemMetaTitle">
+                                  <div class="titleCustom">
+                                    <span class="typography">
+                                      <strong>Web Fullstack Java 2.0</strong>
+                                    </span>
+                                  </div>
+                                </h4>
+                                <div class="itemMetaDescription">
+                                  <div style="height: 60px; overflow-y: hidden">
+                                    <span class="typography">
+                                      Chương trình đào tạo Lập trình Web-Full-Stack dành cho những ai muốn tạo dựng sự nghiệp trong lĩnh vực...
+                                    </span>
+                                  </div>
+                                  <div class="totalTimeStudy">
+                                    <div class="spaceItem">
+                                      <span class="subtextHomepage">
+                                        <span role="img" aria-label="read" class="textCourseRead" style="margin-right: 5px">
+                                          <i class="fa-brands fa-readme"></i>
+                                        </span>
+                                        5
+                                        Course
+                                      </span>
+                                    </div>
+                                    <div class="spaceItem">
+                                      <span class="subtextHomepage">
+                                        <span role="img" aria-label="clock-cricle" class="clockCricle" style="margin-right: 5px">
+                                          <i class="fa-regular fa-clock"></i>
+                                          192 giờ
+                                        </span>
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="btnHomepageCustom">
+              <a href="/roadmap-list">
+                <button type="button" class="ant-btn ant-btn-default ant-btn-dangerous">
+                  <span class="btnRoadmaps">Xem tất cả</span>
+                </button>
+              </a>
+            </div>
+          </div>
+          <div class="courseHomePage">
+            <h3 class="titleRouteFist">Những khoá học mới nhất</h3>
+            <div class="subTitleTextMuted"> Hơn 10.000 khóa học trực tuyến</div>
+            <div class="listRoutes" style="margin-bottom: 10px; ">
+              <div class="nestedLoading">
+                <div class="spinHomeFirst">
+                  <div class="antRow" style="margin-left: -15px; margin-right: -15px;">
+                    <div style="width: 25%; max-width: 25%;">
+                      <a href="/course-detail/19">
+                        <div class="ant-col" style=" flex: 1 1 auto; margin-left: 15px; margin-right: 15px;">
+                          <div class="ant-list-item course-item " style="margin-top: 15px; flex: 1 1 0%; padding: 10px;">
+                            <div class="" style="gap: 8px; padding-bottom:5px; display: flex">
+                              <div class="progress">
+                                <div class="color"></div>
+                              </div>
+                              <div class="beginner"><span class="fs-level-mb" style="font-weight: 800">Level</span></div>
+                            </div>
+                            <div class="ant-list-item-meta">
+                              <div class="ant-list-item-meta-avatar">
+                                <div class="antimage"><img class="image" src="https://images.pexels.com/photos/11035547/pexels-photo-11035547.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                                </div>
+                              </div>
+                              <div class="ant-list-item-meta-content" style="padding-top: 15px;">
+                                <strong class="courseTitle " style="font-size: 18px;">Training Program Preparation (JS)</strong>
+                                <div class="ant-list-item-meta-description">
+                                  <p class="courseDescription">Training Program Preparation (JS)</p>
+                                  <div class="ant-divider ant-divider-horizontal card-divider " role="separator" style="margin-top: auto;"></div>
+                                  <div class="ant-space ant-space-horizontal ant-space-align-center justify-content-end d-flex" style="gap: 24px; text-align: right; margin: 10px;">
+                                    <div class="ant-space-item"><span class="subtextHomepage"><span role="img" aria-label="clock-circle" class="clockCricle" style="margin-right: 5px;"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="clock-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path>
+                                            <path d="M686.7 638.6L544.1 535.5V288c0-4.4-3.6-8-8-8H488c-4.4 0-8 3.6-8 8v275.4c0 2.6 1.2 5 3.3 6.5l165.4 120.6c3.6 2.6 8.6 1.8 11.2-1.7l28.6-39c2.6-3.7 1.8-8.7-1.8-11.2z"></path>
+                                          </svg></span> 192 giờ </span></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="btnHomepageCustom">
+              <a href="/roadmap-list">
+                <button type="button" class="ant-btn ant-btn-default ant-btn-dangerous">
+                  <span class="btnRoadmaps">Xem tất cả</span>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div>
+        </div>
+      </div>
+    </main>
+    <div style="text-align: center;
+    align-items: center;
+    margin-left: 20px;">Coppy right@2023 MR Hoang</div>
+  </section>
+</body>
+<script src="/index.js"></script>
+
+</html>
