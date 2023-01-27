@@ -15,7 +15,7 @@
 
 <body>
   <section class="container">
-    <header class="header">
+    <header class="header" id="header">
       <section class="wrapHeader">
         <div class="entity">
           <ul class="menuTabBar" id="menuTabBar">
@@ -32,6 +32,10 @@
             <li class="liTab"><a class="clickLiTab" href="http://localhost:3000/router/control-panel"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="cluster" width="1em" height="1em" fill="currentColor" aria-hidden="true" style="margin-bottom: 4px; padding-right: 5px;">
                   <path d="M888 680h-54V540H546v-92h238c8.8 0 16-7.2 16-16V168c0-8.8-7.2-16-16-16H240c-8.8 0-16 7.2-16 16v264c0 8.8 7.2 16 16 16h238v92H190v140h-54c-4.4 0-8 3.6-8 8v176c0 4.4 3.6 8 8 8h176c4.4 0 8-3.6 8-8V688c0-4.4-3.6-8-8-8h-54v-72h220v72h-54c-4.4 0-8 3.6-8 8v176c0 4.4 3.6 8 8 8h176c4.4 0 8-3.6 8-8V688c0-4.4-3.6-8-8-8h-54v-72h220v72h-54c-4.4 0-8 3.6-8 8v176c0 4.4 3.6 8 8 8h176c4.4 0 8-3.6 8-8V688c0-4.4-3.6-8-8-8zM256 805.3c0 1.5-1.2 2.7-2.7 2.7h-58.7c-1.5 0-2.7-1.2-2.7-2.7v-58.7c0-1.5 1.2-2.7 2.7-2.7h58.7c1.5 0 2.7 1.2 2.7 2.7v58.7zm288 0c0 1.5-1.2 2.7-2.7 2.7h-58.7c-1.5 0-2.7-1.2-2.7-2.7v-58.7c0-1.5 1.2-2.7 2.7-2.7h58.7c1.5 0 2.7 1.2 2.7 2.7v58.7zM288 384V216h448v168H288zm544 421.3c0 1.5-1.2 2.7-2.7 2.7h-58.7c-1.5 0-2.7-1.2-2.7-2.7v-58.7c0-1.5 1.2-2.7 2.7-2.7h58.7c1.5 0 2.7 1.2 2.7 2.7v58.7zM360 300a40 40 0 1080 0 40 40 0 10-80 0z"></path>
                 </svg>Bảng điều khiển</a></li>
+            <%= console.log(putInfoAccount) %>
+            <% if(putInfoAccount === 'Đăng nhập'){ %>
+            <li class="liTab"><button id="buttonLogin" class="buttonLogin"><%= putInfoAccount  %></button></li>
+            <% } else { for(let i = 0; i < data.length; i++){ %>
             <li id="accountTab" class="liTab">
               <div class="ant-space-item" style="">
                 <span class="ant-avatar ant-avatar-circle" style="width: 25px; height: 25px; line-height: 25px; font-size: 18px;">
@@ -39,7 +43,8 @@
                   </span>
                 </span>
                 <span>
-                  Nguyễn Tuấn Hoàng
+                  <% let formatTypeFullName = data[i].full_name %> 
+                  <%= formatTypeFullName %> 
                 </span>
               </div>
               <ul id="subMenuLogin" class="sub-menu-login">
@@ -59,11 +64,13 @@
                 <li class="liMenuLogin"><a href="#"><span role="img" aria-label="unordered-list" class="anticon anticon-unordered-list ant-dropdown-menu-item-icon"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="unordered-list" width="1em" height="1em" fill="currentColor" aria-hidden="true">
                         <path d="M912 192H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM104 228a56 56 0 10112 0 56 56 0 10-112 0zm0 284a56 56 0 10112 0 56 56 0 10-112 0zm0 284a56 56 0 10112 0 56 56 0 10-112 0z"></path>
                       </svg></span>Danh sách bài tập</a> </li>
-                <li class="liMenuLogin"><a href="#"><span role="img" aria-label="logout" class="anticon anticon-logout ant-dropdown-menu-item-icon"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="logout" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                <li class="liMenuLogin"><a href="http://localhost:3000/router/logout"><span role="img" aria-label="logout" class="anticon anticon-logout ant-dropdown-menu-item-icon"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="logout" width="1em" height="1em" fill="currentColor" aria-hidden="true">
                         <path d="M868 732h-70.3c-4.8 0-9.3 2.1-12.3 5.8-7 8.5-14.5 16.7-22.4 24.5a353.84 353.84 0 01-112.7 75.9A352.8 352.8 0 01512.4 866c-47.9 0-94.3-9.4-137.9-27.8a353.84 353.84 0 01-112.7-75.9 353.28 353.28 0 01-76-112.5C167.3 606.2 158 559.9 158 512s9.4-94.2 27.8-137.8c17.8-42.1 43.4-80 76-112.5s70.5-58.1 112.7-75.9c43.6-18.4 90-27.8 137.9-27.8 47.9 0 94.3 9.3 137.9 27.8 42.2 17.8 80.1 43.4 112.7 75.9 7.9 7.9 15.3 16.1 22.4 24.5 3 3.7 7.6 5.8 12.3 5.8H868c6.3 0 10.2-7 6.7-12.3C798 160.5 663.8 81.6 511.3 82 271.7 82.6 79.6 277.1 82 516.4 84.4 751.9 276.2 942 512.4 942c152.1 0 285.7-78.8 362.3-197.7 3.4-5.3-.4-12.3-6.7-12.3zm88.9-226.3L815 393.7c-5.3-4.2-13-.4-13 6.3v76H488c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h314v76c0 6.7 7.8 10.5 13 6.3l141.9-112a8 8 0 000-12.6z"></path>
                       </svg></span>Đăng xuất</a> </li>
               </ul>
             </li>
+            <% } %>
+            <% } %>
           </ul>
         </div>
       </section>

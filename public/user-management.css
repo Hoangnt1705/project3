@@ -1,0 +1,73 @@
+.photo__image,
+.photo__loader {
+  margin: auto;
+  display: block;
+}
+
+.photo__loader {
+  width: 10%;
+}
+
+.photo__image {
+  width: 80%;
+}
+
+.photo__click-count {
+  color: #007584;
+  margin: 10px 5px 10px 5px;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  display: block;
+}
+
+.standard .photo__title {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.photo-menu__link {
+  margin: 20px;
+  font-size: 1.1em;
+}
+
+.card .card-header--emphasize {
+  color: #007584;
+  font-size: 2em;
+  font-weight: bold;
+  transition: 2s l;
+}
+
+.form--admin {
+  width: inherit;
+  background-color: #f3f0f0;
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.form-group--admin,
+.form-actions--admin {
+  margin-bottom: 0;
+}
+
+.form-group--admin label {
+  padding-left: 10px;
+  padding-bottom: 0.3px;
+  display: block;
+  width: 150px;
+  border-bottom: 0;
+}
+
+.form-group--admin .form-control {
+  height: inherit;
+  padding-bottom: 14px;
+}
+
+.btn-block--admin {
+  width: 50%;
+}
+
+.admin-button {
+  z-index: 999;
+}

@@ -439,13 +439,218 @@ element.style {}
     padding: 0px 40px;
     color: #333;
     width: 65%;
-
-
 }
+
 
 .titleDetailCourseData {
     font-weight: 800;
     font-size: 19px;
 }
-.textDetailCourseData{
+
+.titleDetailCourseDataMul {
+    padding-top: 20px
+}
+
+.ant-collapse {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, .85);
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    font-feature-settings: "tnum";
+    background-color: #fafafa;
+    border: 1px solid #d9d9d9;
+    border-bottom: 0;
+    border-radius: 2px;
+}
+
+.ant-collapse-item>.ant-collapse-header {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    padding: 12px 16px;
+    color: rgba(0, 0, 0, .85);
+    line-height: 1.5715;
+    cursor: pointer;
+    transition: all .3s, visibility 0s;
+}
+
+.ant-collapse-item>.ant-collapse-header .ant-collapse-arrow {
+    display: inline-block;
+    margin-right: 12px;
+    font-size: 12px;
+    vertical-align: -1px;
+}
+
+.ant-collapse-item-custom {
+    background-color: #f7f8fb;
+    border-radius: 10px;
+    border: 1px solid #ededed;
+    margin-bottom: 15px;
+
+}
+
+.textSessionLearn {
+    font-weight: 800;
+    color: #333;
+    margin-top: 5px;
+
+}
+
+.ant-collapse-header {
+    display: flex;
+    justify-content: flex-end;
+    color: #333;
+
+}
+
+.ant-row-end {
+    display: flex;
+    border-bottom: 1px solid #ededed;
+    font-size: 14px;
+    color: #333;
+    padding: 12px 7px;
+}
+
+
+.ant-divider-inner-text {
+    display: inline-block;
+    padding: 0 1em;
+    color: #333;
+    font-weight: 800;
+
+}
+
+.ant-collapse-icon-position-left {
+    margin-top: 20px;
+}
+
+.clickviewExercise {}
+
+.textDetailCourseData {
+    font-size: 14px;
+}
+
+.clickviewExercise {
+    cursor: pointer;
+}
+
+
+.ant-collapse-content>.ant-collapse-content-box {
+    padding: 16px;
+}
+
+.material-item {
+    cursor: pointer;
+    color: #bb2327;
+    padding: 17px 34px;
+    margin: -17px;
+    border: none;
+}
+
+
+.anticon {
+    display: inline-block;
+    color: inherit;
+    font-style: normal;
+    line-height: 0;
+    text-align: center;
+    text-transform: none;
+    vertical-align: -0.125em;
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.ant-collapse-content {
+    color: rgba(0, 0, 0, .85);
+    background-color: #fff;
+    border-top: 1px solid #d9d9d9;
+}
+
+#Lecturers {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+#courseDetail .title-menu {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#courseDetail .profile-lecturers {
+    margin-bottom: 30px;
+    grid-gap: 15px;
+    gap: 15px;
+}
+
+.ant-row-middle {
+    align-items: center;
+}
+
+.ant-row,
+.ant-row:after,
+.ant-row:before {
+    display: flex;
+}
+
+.ant-row {
+    flex-flow: row wrap;
+}
+
+.ant-avatar {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, .85);
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    font-feature-settings: "tnum";
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    color: #fff;
+    white-space: nowrap;
+    text-align: center;
+    vertical-align: middle;
+    background: #ccc;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 50%;
+}
+
+.text-muted {
+    color: #6c757d !important;
+}
+
+.mb-1,
+.my-1,
+.mb-2,
+.d-flex {
+    margin-top: 0.55rem !important;
+    font-size: 15px;
+
+}
+
+.m-0 {
+    margin: 0 !important;
+}
+.mb-4{
+    font-size: 19px;
+    font-weight: 800;
+}
+.mb-1{
+    font-size: 19px;
+    font-weight: 600;
+}
+.mb-2{
+    font-size: 17px;
 }

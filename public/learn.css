@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --ant-primary-color: rgb(187, 35, 39);
+    --ant-primary-color-disabled: #edc9c5;
+    --ant-primary-color-hover: #c74646;
+    --ant-primary-color-active: #6e0a14;
+    --ant-primary-color-outline: rgba(187, 35, 39, 0.2);
+    --ant-primary-color-deprecated-bg: #edc9c5;
+    --ant-primary-color-deprecated-border: #d46f6c;
+    --ant-primary-1: #faedeb;
+    --ant-primary-2: #edc9c5;
+    --ant-primary-3: #e09b96;
+    --ant-primary-4: #d46f6c;
+    --ant-primary-5: #c74646;
+    --ant-primary-6: #bb2327;
+    --ant-primary-7: #94151d;
+    --ant-primary-8: #6e0a14;
+    --ant-primary-9: #47030c;
+    --ant-primary-10: #210106;
+    --ant-primary-color-deprecated-l-35: rgb(238, 163, 165);
+    --ant-primary-color-deprecated-l-20: rgb(226, 98, 102);
+    --ant-primary-color-deprecated-t-20: rgb(201, 79, 82);
+    --ant-primary-color-deprecated-t-50: rgb(221, 145, 147);
+    --ant-primary-color-deprecated-f-12: rgba(187, 35, 39, 0.12);
+    --ant-primary-color-active-deprecated-f-30: rgba(250, 237, 235, 0.3);
+    --ant-primary-color-active-deprecated-d-02: rgb(248, 230, 227);
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Mulish', sans-serif;
+    scroll-behavior: smooth;
+}
+
+
+
+.wrapHeader,
+.header,
+.entity,
+.container {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapHeader {
+    /* margin-top: -50px; */
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    z-index: 3;
+}
+
+.menuTabBar {
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+    padding: 0 40px;
+    padding-top: 15px;
+    margin-top: 0px;
+    height: 30px;
+
+}
+
+.liTab {
+    padding-left: 40px;
+    font-size: 17.5px;
+
+}
+
+.dashboard-container-content {
+    padding-top: 20px
+}
+
+#menuTabBar ul.sub-menu-login {
+    visibility: hidden;
+    width: 200px;
+    height: 220px;
+    background-color: rgb(239, 239, 239);
+    text-align: left;
+    border-radius: 6px;
+    padding: 5px 15px 5px 15px;
+    position: absolute;
+    z-index: 1;
+    top: 95%;
+    margin-left: -5px;
+    margin-top: -5px;
+    font-size: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    transition: 0.5s linear;
+
+}
+
+#menuTabBar ul.sub-menu-login::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 88%;
+    margin-left: -31px;
+    border-width: 6.5px;
+    border-style: solid;
+    border-color: transparent transparent rgb(221, 221, 221) transparent;
+
+}
+
+#menuTabBar li:hover>ul.sub-menu-login {
+    visibility: visible;
+    background: rgb(255, 255, 255);
+    color: black;
+    transition: 0.2s linear;
+
+}
+
+.ant-avatar {
+
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    font-feature-settings: "tnum";
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    color: #fff;
+    white-space: nowrap;
+    text-align: center;
+    vertical-align: middle;
+    background: #ccc;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 50%;
+    margin-top: -3px;
+}
+
+.ant-dropdown-menu-item-icon {
+    min-width: 12px;
+    margin-right: 8px;
+    font-size: 12px;
+}
+
+.anticon svg {
+    display: inline-block;
+}
+
+.liMenuLogin {
+    outline: none;
+    list-style: none;
+    cursor: pointer;
+    padding: 7px 0px;
+    border-bottom: 1pt solid rgb(207, 207, 207);
+}
+
+.liMenuLogin:hover {
+    background-color: rgb(244, 244, 244);
+    transition: 0.3s linear;
+    border-radius: 30px;
+    border: 1pt solid rgb(207, 207, 207);
+
+}
+
+#imageTab {
+    width: 11%;
+}
+
+#accountTab {
+    margin-left: 200px;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 400;
+
+}
+
+.clickLiTab:hover {
+    color: rgb(148, 17, 17);
+    padding: 10px;
+    border-bottom: 2px solid rgb(148, 17, 17);
+    transition: 0.2s linear;
+}
+
+.subtextHomepage {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #6a7a99;
+}
+
+svg {
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.learn-header {
+    height: 80px;
+    width: 100vw;
+    background-color: #263238;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+}
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+}
+.learn-header button {
+    height: 40px;
+    border-radius: 20px;
+    padding: 0 20px;
+    margin-right: 30px;
+    background: #fff;
+}
+[type=reset], [type=submit], button, html [type=button] {
+    -webkit-appearance: button;
+}
+.learn-course-title{
+    color: #fff
+}

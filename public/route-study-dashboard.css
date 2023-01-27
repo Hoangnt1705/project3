@@ -1,0 +1,30 @@
+.header {}
+
+
+.main {
+    padding: 10px;
+}
+
+.menuRouteStudy {
+    display: flex;
+    list-style: none;
+    padding: 20px;
+    background: #d2d2d2;
+}
+
+.liMenuRouteStudy {
+    margin-right: 25px;
+    cursor: pointer;
+    transition: 0.3s linear;
+}
+
+.liMenuRouteStudy:hover {
+    padding: 5px;
+    background: #fff;
+    border-radius: 5px;
+}
+#update{
+    background: #fff;
+    padding: 5px;
+    border-radius: 7px;
+}

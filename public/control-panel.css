@@ -528,3 +528,15 @@ th {
     border: 1pt solid #c2c2c2;
     border-radius: 5px;
 }
+
+.buttonLogin{
+    cursor: pointer;
+    font-size: 17.5px;
+    font-weight: 300;
+    color: #fff;
+    background: #dc3545;
+    padding: 0.5rem 2rem;
+    margin-left: 15rem;
+    border-radius: 7px;
+    margin-top: -5px;
+}
