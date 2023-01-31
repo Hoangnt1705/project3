@@ -39,7 +39,7 @@ a {
     text-align: center;
     align-items: center;
     background: rgb(165, 63, 63);
-    height: 550px;
+    height: 630px;
     width: 40%;
     float: right;
     border-radius: 10px;
@@ -89,7 +89,15 @@ input {
     height: 2rem;
     border: none;
     outline: none;
-    border-radius: 5px ;
+    border-radius: 5px;
+}
+
+select {
+    width: 40%;
+    height: 2rem;
+    border: none;
+    outline: none;
+    border-radius: 5px;
 }
 
 @keyframes slow {

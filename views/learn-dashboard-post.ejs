@@ -9,7 +9,7 @@
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no" name="viewport">
   <!-- Canonical SEO  -->
   <link rel="canonical" href="https://www.creative-tim.com/product/light-bootstrap-dashboard">
-  <link rel="stylesheet" href="/route-study-update-dashboard.css">
+  <link rel="stylesheet" href="/learn-dashboard-post.css">
   <!--  Social tags      -->
   <meta name="keywords" content="creative tim, html dashboard, html css dashboard, web dashboard, freebie, free bootstrap dashboard, bootstrap, css3 dashboard, bootstrap admin, light bootstrap dashboard, frontend, responsive bootstrap dashboard, bootstrap 4 admin, bootstrap 4 template, bootstrap 4 dashboard, bootstrap 4, free bootstrap 4">
   <meta name="description" content="A bootstrap 4 admin dashboard template designed to be simple and beautiful.">
@@ -97,13 +97,13 @@
               <p>User management</p>
             </a>
           </li>
-          <li class="nav-item active">
+          <li class="">
             <a class="nav-link" href="http://localhost:3000/router/admin-dashboard/route-study">
               <i class="nc-icon nc-notes"></i>
               <p>Route Study</p>
             </a>
           </li>
-          <li>
+          <li class="nav-item">
             <a class="nav-link" href="http://localhost:3000/router/admin-dashboard/course/post">
               <i class="nc-icon nc-paper-2"></i>
               <p>Course</p>
@@ -116,7 +116,7 @@
             </a>
           </li>
           <li>
-            <a class="nav-link" href="http://localhost:3000/router/admin-dashboard/learn/update">
+            <a class="nav-link active" href="http://localhost:3000/router/admin-dashboard/learn/update">
               <i class="nc-icon nc-pin-3"></i>
               <p>Learn</p>
             </a>
@@ -205,131 +205,64 @@
       </nav>
       <!-- End Navbar -->
       <section>
+        <div id="toast"></div>
         <header class="header">
           <div>
             <ul class="menuRouteStudy">
-              <li id="update" class="liMenuRouteStudy "> <a href="http://localhost:3000/router/admin-dashboard/route-study/update">Update Route Study</a> </li>
-              <li class="liMenuRouteStudy"> <a href="http://localhost:3000/router/admin-dashboard/route-study/post">Up Route Study</a> </li>
+              <li class="liMenuRouteStudy "><a href="http://localhost:3000/router/admin-dashboard/learn/update">Update Learn</a> </li>
+              <li id="update" class="liMenuRouteStudy"> <a href="http://localhost:3000/router/admin-dashboard/route-study/post">Up Learn</a> </li>
             </ul>
           </div>
         </header>
         <main class="main">
           <form action="" id="formUpdate">
-            <table>
-              <thead>
-                <tr>
-                  <th>Id</th>
-                  <th>Route Name</th>
-                  <th>Date up</th>
-                  <th>Description</th>
-                  <th>Image route</th>
-                  <th>Total time</th>
-                  <th>admin post</th>
-                  <th>update</th>
-                </tr>
-              </thead>
-              <tbody>
-                <% data.forEach(element => { %>
-                <tr>
-                  <td class="idUpdate"><%= element.id_route %></td>
-                  <td><%= element.route_name %></td>
-                  <td><%= element.date_up %></td>
-                  <td><%= element.description_route %></td>
-                  <td><a href="<%= element.image_route %> "><%= element.image_route.substring(0, 30) + '...' %></a></td>
-                  <td><%= element.total_time_route %></td>
-                  <td><%= element.user_id %></td>
-                  <td><button class="updateRoute">Update</button> <button class="deleteRoute">Delete</button></td>
-                </tr>
-                <% }) %>
-              </tbody>
-            </table>
+            <div id="container" class="container">
+              <div class="formUpdate">
+                <div id="id" style="display:none"></div>
+                <div>
+                  <label for="titleLearn">Title:</label>
+                  <input type="text" id="titleLearn" name="titleLearn">
+                </div>
+                <div>
+                  <label for="ratingContent">Rating Content:</label>
+                  <input type="text" id="ratingContent" name="ratingContent">
+                </div>
+                <div>
+                  <label for="ratingNumber">Rating Number:</label>
+                  <select name="ratingNumber" id="ratingNumber">
+                    <optgroup label="Select">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                    </optgroup>
+                  </select>
+                </div>
+                <div>
+                  <label for="addInCourse">Add In Course:</label>
+                  <select name="addInCourse" id="addInCourse">
+                    <optgroup label="Select">
+                      <% for(let i = 0; i < dataAddInCourse.length ; i++) { %>
+                      <option>
+                        <%= `${dataAddInCourse[i].course_name}: ${[i + 1]}` %>
+                      </option>
+                      <% } %>
+                    </optgroup>
+                  </select>
+                </div>
+                <div>
+                  <button id="btnUpdate" name="btnUpdate">Save</button>
+                </div>
+              </div>
+            </div>
           </form>
         </main>
       </section>
     </div>
-    <!--   -->
-    <!-- <div class="fixed-plugin">
-    <div class="dropdown show-dropdown">
-        <a href="#" data-toggle="dropdown">
-            <i class="fa fa-cog fa-2x"> </i>
-        </a>
-
-        <ul class="dropdown-menu">
-			<li class="header-title"> Sidebar Style</li>
-            <li class="adjustments-line">
-                <a href="javascript:void(0)" class="switch-trigger">
-                    <p>Background Image</p>
-                    <label class="switch">
-                        <input type="checkbox" data-toggle="switch" checked="" data-on-color="primary" data-off-color="primary"><span class="toggle"></span>
-                    </label>
-                    <div class="clearfix"></div>
-                </a>
-            </li>
-            <li class="adjustments-line">
-                <a href="javascript:void(0)" class="switch-trigger background-color">
-                    <p>Filters</p>
-                    <div class="pull-right">
-                        <span class="badge filter badge-black" data-color="black"></span>
-                        <span class="badge filter badge-azure" data-color="azure"></span>
-                        <span class="badge filter badge-green" data-color="green"></span>
-                        <span class="badge filter badge-orange" data-color="orange"></span>
-                        <span class="badge filter badge-red" data-color="red"></span>
-                        <span class="badge filter badge-purple active" data-color="purple"></span>
-                    </div>
-                    <div class="clearfix"></div>
-                </a>
-            </li>
-            <li class="header-title">Sidebar Images</li>
-
-            <li class="active">
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="../assets/img/sidebar-1.jpg" alt="" />
-                </a>
-            </li>
-            <li>
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="../assets/img/sidebar-3.jpg" alt="" />
-                </a>
-            </li>
-            <li>
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="..//assets/img/sidebar-4.jpg" alt="" />
-                </a>
-            </li>
-            <li>
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="../assets/img/sidebar-5.jpg" alt="" />
-                </a>
-            </li>
-
-            <li class="button-container">
-                <div class="">
-                    <a href="http://www.creative-tim.com/product/light-bootstrap-dashboard" target="_blank" class="btn btn-info btn-block btn-fill">Download, it's free!</a>
-                </div>
-            </li>
-
-            <li class="header-title pro-title text-center">Want more components?</li>
-
-            <li class="button-container">
-                <div class="">
-                    <a href="http://www.creative-tim.com/product/light-bootstrap-dashboard-pro" target="_blank" class="btn btn-warning btn-block btn-fill">Get The PRO Version!</a>
-                </div>
-            </li>
-
-            <li class="header-title" id="sharrreTitle">Thank you for sharing!</li>
-
-            <li class="button-container">
-				<button id="twitter" class="btn btn-social btn-outline btn-twitter btn-round sharrre"><i class="fa fa-twitter"></i> · 256</button>
-                <button id="facebook" class="btn btn-social btn-outline btn-facebook btn-round sharrre"><i class="fa fa-facebook-square"></i> · 426</button>
-            </li>
-        </ul>
-    </div>
-</div>
- -->
 </body>
-
 <!--   Core JS Files   -->
-<script src="/route-study-update-dashboard.js"></script>
+<script src="/learn-dashboard-post.js"></script>
+<script src="/toast.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
 <script src="" type="text/javascript"></script>
 <script src="https://demos.creative-tim.com/light-bootstrap-dashboard/assets/js/core/popper.min.js" type="text/javascript"></script>
 <script src="https://demos.creative-tim.com/light-bootstrap-dashboard/assets/js/core/bootstrap.min.js" type="text/javascript"></script>

@@ -112,19 +112,19 @@
           <li>
             <a class="nav-link" href="./icons.html">
               <i class="nc-icon nc-atom"></i>
-              <p>Icons</p>
+              <p>Course Detail</p>
             </a>
           </li>
           <li>
-            <a class="nav-link" href="./maps.html">
+            <a class="nav-link" href="http://localhost:3000/router/admin-dashboard/learn/update">
               <i class="nc-icon nc-pin-3"></i>
-              <p>Maps</p>
+              <p>Learn</p>
             </a>
           </li>
           <li>
-            <a class="nav-link" href="./notifications.html">
+            <a class="nav-link" href="http://localhost:3000/router/admin-dashboard/doc/">
               <i class="nc-icon nc-bell-55"></i>
-              <p>Notifications</p>
+              <p>Doc</p>
             </a>
           </li>
           <li class="nav-item active active-pro">
@@ -205,66 +205,60 @@
       </nav>
       <!-- End Navbar -->
       <div class="content">
-        <div class="container-fluid">
-          <div class="row">
-
-            <body class="standard">
-              <section class="grid">
-                <form id='photo-admin-form' class="form form--admin">
-                  <input id="photo_id" type="hidden">
-                  <fieldset class="form-group form-group--admin">
-                    <label for="photo_name">Name:</label>
-                    <input id="photo_name" type="text" placeholder="type name..." class="form-control">
-                  </fieldset>
-
-                  <fieldset class="form-group form-group--admin">
-                    <label for="photo_src">Image URL:</label>
-                    <input id="photo_src" type="text" placeholder="type image URL..." class="form-control">
-                  </fieldset>
-
-                  <fieldset class="form-group form-group--admin">
-                    <label for="photo_alt">Image ALT:</label>
-                    <input id="photo_alt" type="text" placeholder="type image alt..." class="form-control">
-                  </fieldset>
-
-                  <fieldset class="form-group form-group--admin">
-                    <label for="photo_click_count">Click Count:</label>
-                    <input id="photo_click_count" type="text" placeholder="type click count..." class="form-control">
-                  </fieldset>
-
-                  <div class="btn-group">
-                    <button type="button" data-js="submit" class="btn btn-primary btn-block btn-block--admin">Submit</button>
-                    <button type="button" data-js="cancel" class="btn btn-error btn-block btn-block--admin">Cancel</button>
-                  </div>
-                </form>
-
-                <div id="photo-menu" class="menu cell -2of12">
-                </div>
-
-                <div class="main cell -8of12">
-                  <div class="card">
-                    <header class="card-header card-header--emphasize">CLICK THE CAT!</header>
-                    <div class="card-content">
-                      <div class="inner photo">
-                        <button id='photo-admin-button' class="btn btn-default btn-ghost admin-button">Admin</button>
-                        <h2 data-js="title" class="photo__title"></h2>
-                        <span data-js="click-count" class="photo__click-count"></span>
-                        <img data-js="loader" class="photo__loader" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif">
-                        <img data-js="image" class="photo__image">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </section>
-            </body>
-
-
-
-
-
-          </div>
-        </div>
+        <main>
+          <div id="toast"></div>
+          <header class="header">
+            <div>
+              <ul class="menuRouteStudy">
+                <li id="update" class="liMenuRouteStudy "><a href="http://localhost:3000/router/admin-dashboard/user-management">Update User</a> </li>
+                <li class="liMenuRouteStudy"> <a href="http://localhost:3000/router/admin-dashboard/route-study/post">Manager</a> </li>
+                <li class="liMenuRouteStudy"> <a href="http://localhost:3000/router/dashboard-register">Create User</a> </li>
+              </ul>
+            </div>
+          </header>
+          <main class="main">
+            <form action="" id="formUpdate">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>User Name</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Avatar</th>
+                    <th>DOB</th>
+                    <th>Number Phone</th>
+                    <th>Gender</th>
+                    <th>Role</th>
+                    <th>Route Study Of Account</th>
+                    <th>Completed Docs</th>
+                    <th>Update</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% dataUser.forEach(element=> { %>
+                  <tr>
+                    <td class="idUpdate"><%= element.id %> </td>
+                    <td><%= element.username %></td>
+                    <td><%= element.full_name %></td>
+                    <td><%= element.email %></td>
+                    <td><%= element.password %></td>
+                    <td><a href="<%= element.avataUrl %> ">Click ! Views</a></td>
+                    <td><%= element.dob %></td>
+                    <td><%= element.phone_number %></td>
+                    <td><%= element.gender %></td>
+                    <td><%= element.role %></td>
+                    <td><%= element.set_route %></td>
+                    <td><%= element.completed_docs %></td>
+                    <td><button class="updateUser">Update</button><button class="deleteRoute">Delete</button></td>
+                  </tr>
+                  <% }) %>
+                </tbody>
+              </table>
+            </form>
+          </main>
+        </main>
       </div>
       <footer class="footer">
         <div class="container">
@@ -303,85 +297,7 @@
       </footer>
     </div>
   </div>
-  <!--   -->
-  <!-- <div class="fixed-plugin">
-    <div class="dropdown show-dropdown">
-        <a href="#" data-toggle="dropdown">
-            <i class="fa fa-cog fa-2x"> </i>
-        </a>
 
-        <ul class="dropdown-menu">
-			<li class="header-title"> Sidebar Style</li>
-            <li class="adjustments-line">
-                <a href="javascript:void(0)" class="switch-trigger">
-                    <p>Background Image</p>
-                    <label class="switch">
-                        <input type="checkbox" data-toggle="switch" checked="" data-on-color="primary" data-off-color="primary"><span class="toggle"></span>
-                    </label>
-                    <div class="clearfix"></div>
-                </a>
-            </li>
-            <li class="adjustments-line">
-                <a href="javascript:void(0)" class="switch-trigger background-color">
-                    <p>Filters</p>
-                    <div class="pull-right">
-                        <span class="badge filter badge-black" data-color="black"></span>
-                        <span class="badge filter badge-azure" data-color="azure"></span>
-                        <span class="badge filter badge-green" data-color="green"></span>
-                        <span class="badge filter badge-orange" data-color="orange"></span>
-                        <span class="badge filter badge-red" data-color="red"></span>
-                        <span class="badge filter badge-purple active" data-color="purple"></span>
-                    </div>
-                    <div class="clearfix"></div>
-                </a>
-            </li>
-            <li class="header-title">Sidebar Images</li>
-
-            <li class="active">
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="../assets/img/sidebar-1.jpg" alt="" />
-                </a>
-            </li>
-            <li>
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="../assets/img/sidebar-3.jpg" alt="" />
-                </a>
-            </li>
-            <li>
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="..//assets/img/sidebar-4.jpg" alt="" />
-                </a>
-            </li>
-            <li>
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="../assets/img/sidebar-5.jpg" alt="" />
-                </a>
-            </li>
-
-            <li class="button-container">
-                <div class="">
-                    <a href="http://www.creative-tim.com/product/light-bootstrap-dashboard" target="_blank" class="btn btn-info btn-block btn-fill">Download, it's free!</a>
-                </div>
-            </li>
-
-            <li class="header-title pro-title text-center">Want more components?</li>
-
-            <li class="button-container">
-                <div class="">
-                    <a href="http://www.creative-tim.com/product/light-bootstrap-dashboard-pro" target="_blank" class="btn btn-warning btn-block btn-fill">Get The PRO Version!</a>
-                </div>
-            </li>
-
-            <li class="header-title" id="sharrreTitle">Thank you for sharing!</li>
-
-            <li class="button-container">
-				<button id="twitter" class="btn btn-social btn-outline btn-twitter btn-round sharrre"><i class="fa fa-twitter"></i> · 256</button>
-                <button id="facebook" class="btn btn-social btn-outline btn-facebook btn-round sharrre"><i class="fa fa-facebook-square"></i> · 426</button>
-            </li>
-        </ul>
-    </div>
-</div>
- -->
 </body>
 
 <!--   Core JS Files   -->
@@ -391,13 +307,13 @@
 <script src="https://demos.creative-tim.com/light-bootstrap-dashboard/assets/js/core/bootstrap.min.js" type="text/javascript"></script>
 <!--  Plugin for Switches, full documentation here: https://www.jque.re/plugins/version3/bootstrap.switch/ -->
 <script src="https://demos.creative-tim.com/light-bootstrap-dashboard/assets/js/plugins/bootstrap-switch.js"></script>
-<!--  Google Maps Plugin    -->
+<!--  Google Learn Plugin    -->
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2Yno10-YTnLjjn_Vtk0V8cdcY5lC4plU"></script>
 <!--  Chartist Plugin  -->
 <script src="https://demos.creative-tim.com/light-bootstrap-dashboard/assets/js/plugins/chartist.min.js"></script>
 <!--  Share Plugin -->
 <script src="https://demos.creative-tim.com/light-bootstrap-dashboard/assets/js/plugins/jquery.sharrre.js"></script>
-<!--  Notifications Plugin    -->
+<!--  Doc Plugin    -->
 <script src="https://demos.creative-tim.com/light-bootstrap-dashboard/assets/js/plugins/bootstrap-notify.js"></script>
 <!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
 <script src="https://demos.creative-tim.com/light-bootstrap-dashboard/assets/js/light-bootstrap-dashboard.js?v=2.0.1" type="text/javascript"></script>

@@ -10,7 +10,7 @@
   <title>LMS</title>
   <link rel="stylesheet" href="/course-detail.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Course Detail" rel="stylesheet">
 </head>
 
 <body>
@@ -19,27 +19,39 @@
       <section class="wrapHeader">
         <div class="entity">
           <ul class="menuTabBar" id="menuTabBar">
-            <li id="imageTab" class="liTab"><a href=""><img style="height: 30px" src="https://learn.rikkeiacademy.com/static/media/RIKKEI_ACADEMY_LOGO.e997e6f7.png" alt=""></a></li>
+            <li id="imageTab" class="liTab"><a href="http://localhost:3000/router/"><img style="height: 30px" src="https://learn.rikkeiacademy.com/static/media/RIKKEI_ACADEMY_LOGO.e997e6f7.png" alt=""></a></li>
             <li class="liTab"><a class="clickLiTab" href="http://localhost:3000/router/"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="home" width="1em" height="1em" fill="currentColor" aria-hidden="true" style="margin-bottom: 4px; padding-right: 5px;">
                   <path d="M946.5 505L560.1 118.8l-25.9-25.9a31.5 31.5 0 00-44.4 0L77.5 505a63.9 63.9 0 00-18.8 46c.4 35.2 29.7 63.3 64.9 63.3h42.5V940h691.8V614.3h43.4c17.1 0 33.2-6.7 45.3-18.8a63.6 63.6 0 0018.7-45.3c0-17-6.7-33.1-18.8-45.2zM568 868H456V664h112v204zm217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z"></path>
                 </svg>Trang chủ</a></li>
             <li class="liTab"><a class="clickLiTab" href="http://localhost:3000/router/route-study"><svg viewBox="0 0 1024 1024" focusable="false" class="" data-icon="inbox" width="1em" height="1em" fill="currentColor" aria-hidden="true" style="margin-bottom: 4px; padding-right: 5px;">
                   <path d="M885.2 446.3l-.2-.8-112.2-285.1c-5-16.1-19.9-27.2-36.8-27.2H281.2c-17 0-32.1 11.3-36.9 27.6L139.4 443l-.3.7-.2.8c-1.3 4.9-1.7 9.9-1 14.8-.1 1.6-.2 3.2-.2 4.8V830a60.9 60.9 0 0060.8 60.8h627.2c33.5 0 60.8-27.3 60.9-60.8V464.1c0-1.3 0-2.6-.1-3.7.4-4.9 0-9.6-1.3-14.1zm-295.8-43l-.3 15.7c-.8 44.9-31.8 75.1-77.1 75.1-22.1 0-41.1-7.1-54.8-20.6S436 441.2 435.6 419l-.3-15.7H229.5L309 210h399.2l81.7 193.3H589.4zm-375 76.8h157.3c24.3 57.1 76 90.8 140.4 90.8 33.7 0 65-9.4 90.3-27.2 22.2-15.6 39.5-37.4 50.7-63.6h156.5V814H214.4V480.1z"></path>
                 </svg>Lộ trình</a></li>
-            <li class="liTab"><a class="clickLiTab" href="http://localhost:3000/router/course"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="read" width="1em" height="1em" fill="currentColor" aria-hidden="true" style="margin-bottom: 4px; padding-right: 5px;">
+            <li class="liTab"><a class="clickLiTab active" href="http://localhost:3000/router/course"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="read" width="1em" height="1em" fill="currentColor" aria-hidden="true" style="margin-bottom: 4px; padding-right: 5px;">
                   <path d="M928 161H699.2c-49.1 0-97.1 14.1-138.4 40.7L512 233l-48.8-31.3A255.2 255.2 0 00324.8 161H96c-17.7 0-32 14.3-32 32v568c0 17.7 14.3 32 32 32h228.8c49.1 0 97.1 14.1 138.4 40.7l44.4 28.6c1.3.8 2.8 1.3 4.3 1.3s3-.4 4.3-1.3l44.4-28.6C602 807.1 650.1 793 699.2 793H928c17.7 0 32-14.3 32-32V193c0-17.7-14.3-32-32-32zM324.8 721H136V233h188.8c35.4 0 69.8 10.1 99.5 29.2l48.8 31.3 6.9 4.5v462c-47.6-25.6-100.8-39-155.2-39zm563.2 0H699.2c-54.4 0-107.6 13.4-155.2 39V298l6.9-4.5 48.8-31.3c29.7-19.1 64.1-29.2 99.5-29.2H888v488zM396.9 361H211.1c-3.9 0-7.1 3.4-7.1 7.5v45c0 4.1 3.2 7.5 7.1 7.5h185.7c3.9 0 7.1-3.4 7.1-7.5v-45c.1-4.1-3.1-7.5-7-7.5zm223.1 7.5v45c0 4.1 3.2 7.5 7.1 7.5h185.7c3.9 0 7.1-3.4 7.1-7.5v-45c0-4.1-3.2-7.5-7.1-7.5H627.1c-3.9 0-7.1 3.4-7.1 7.5zM396.9 501H211.1c-3.9 0-7.1 3.4-7.1 7.5v45c0 4.1 3.2 7.5 7.1 7.5h185.7c3.9 0 7.1-3.4 7.1-7.5v-45c.1-4.1-3.1-7.5-7-7.5zm416 0H627.1c-3.9 0-7.1 3.4-7.1 7.5v45c0 4.1 3.2 7.5 7.1 7.5h185.7c3.9 0 7.1-3.4 7.1-7.5v-45c.1-4.1-3.1-7.5-7-7.5z"></path>
                 </svg>Khóa học</a></li>
+            <% if(putInfoAccount === 'Đăng nhập'){ %>
+            <% } else { %>
             <li class="liTab"><a class="clickLiTab" href="http://localhost:3000/router/control-panel"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="cluster" width="1em" height="1em" fill="currentColor" aria-hidden="true" style="margin-bottom: 4px; padding-right: 5px;">
                   <path d="M888 680h-54V540H546v-92h238c8.8 0 16-7.2 16-16V168c0-8.8-7.2-16-16-16H240c-8.8 0-16 7.2-16 16v264c0 8.8 7.2 16 16 16h238v92H190v140h-54c-4.4 0-8 3.6-8 8v176c0 4.4 3.6 8 8 8h176c4.4 0 8-3.6 8-8V688c0-4.4-3.6-8-8-8h-54v-72h220v72h-54c-4.4 0-8 3.6-8 8v176c0 4.4 3.6 8 8 8h176c4.4 0 8-3.6 8-8V688c0-4.4-3.6-8-8-8h-54v-72h220v72h-54c-4.4 0-8 3.6-8 8v176c0 4.4 3.6 8 8 8h176c4.4 0 8-3.6 8-8V688c0-4.4-3.6-8-8-8zM256 805.3c0 1.5-1.2 2.7-2.7 2.7h-58.7c-1.5 0-2.7-1.2-2.7-2.7v-58.7c0-1.5 1.2-2.7 2.7-2.7h58.7c1.5 0 2.7 1.2 2.7 2.7v58.7zm288 0c0 1.5-1.2 2.7-2.7 2.7h-58.7c-1.5 0-2.7-1.2-2.7-2.7v-58.7c0-1.5 1.2-2.7 2.7-2.7h58.7c1.5 0 2.7 1.2 2.7 2.7v58.7zM288 384V216h448v168H288zm544 421.3c0 1.5-1.2 2.7-2.7 2.7h-58.7c-1.5 0-2.7-1.2-2.7-2.7v-58.7c0-1.5 1.2-2.7 2.7-2.7h58.7c1.5 0 2.7 1.2 2.7 2.7v58.7zM360 300a40 40 0 1080 0 40 40 0 10-80 0z"></path>
                 </svg>Bảng điều khiển</a></li>
+            <% } %>
+            <%= console.log(putInfoAccount) %>
+            <% if(putInfoAccount === 'Đăng nhập'){ %>
+            <li class="liTab"><button id="buttonLogin" class="buttonLogin"><%= putInfoAccount  %></button></li>
+            <% } else { for(let i = 0; i < dataUser.length; i++){ %>
             <li id="accountTab" class="liTab">
               <div class="ant-space-item" style="">
+                <% if(dataUser[i].avataUrl){ %>
+                <img class="ant-avatar" style="width: 25px; height: 25px; line-height: 25px; font-size: 18px;" src="<%= dataUser[i].avataUrl %> " alt="" style="width: 20px">
+                <% } else{ %>
                 <span class="ant-avatar ant-avatar-circle" style="width: 25px; height: 25px; line-height: 25px; font-size: 18px;">
                   <span class="ant-avatar-string" style="line-height: 25px; transform: scale(1) translateX(-50%);">
                   </span>
                 </span>
+                <% } %>
                 <span>
-                  Nguyễn Tuấn Hoàng
+                  <% let formatTypeFullName = dataUser[i].full_name %>
+                  <%= formatTypeFullName %>
                 </span>
               </div>
               <ul id="subMenuLogin" class="sub-menu-login">
@@ -64,14 +76,21 @@
                       </svg></span>Đăng xuất</a> </li>
               </ul>
             </li>
+            <% } %>
+            <% } %>
           </ul>
         </div>
       </section>
     </header>
+    <% dataCourse.forEach(element => { %>
     <main class="mainHomePage" style="padding-top: 50px;">
       <div class="banner">
         <div class="img-container"><img preview="false" alt="detail_image" src="https://techvccloud.mediacdn.vn/2018/11/23/js-15429579443112042672363-crop-1542957949936317424252.png"></div>
-        <div style="padding: 10px 20px;"><button type="button" class="ant-btn ant-btn-primary ant-btn-lg ant-btn-block" style="margin-bottom: 10px;"><span>Tham gia ngay</span></button>
+        <div style="padding: 10px 20px;">
+          <button type="button" id="inJoinLearn" class="ant-btn ant-btn-primary ant-btn-lg ant-btn-block" style="margin-bottom: 10px;">
+            <span>Tham gia ngay</span>
+          </button>
+          <div id="redirectLearn" style="display:none"><%= element.id_course %> </div>
           <div>
             <div class="ant-row border-banner mt-10">
               <div class="ant-col ant-col-12">
@@ -80,7 +99,7 @@
                     </svg></span> Bài Học</div>
               </div>
               <div class="ant-col ant-col-12 p-0">
-                <div class="text-right">19</div>
+                <div class="text-right"><%= dataLearn.length %> </div>
               </div>
             </div>
             <div class="ant-row border-banner">
@@ -101,7 +120,7 @@
                     </svg></span> Thời lượng</div>
               </div>
               <div class="ant-col ant-col-12 p-0">
-                <div class="text-right">192 giờ </div>
+                <div class="text-right"><%= element.time_learn_course %></div>
               </div>
             </div>
             <div class="ant-row border-banner">
@@ -111,7 +130,7 @@
                     </svg></span> Cấp độ</div>
               </div>
               <div class="ant-col ant-col-12 p-0">
-                <div class="text-right">Trung bình</div>
+                <div class="text-right"><%= element.level %></div>
               </div>
             </div>
             <div class="ant-row">
@@ -132,30 +151,35 @@
           <ul class="ulHeaderDetailCourse">
             <li class="liHeaderDetailCourse" style="list-style: none;">Home</li>
             <li class="liHeaderDetailCourse">Danh sách khóa học</li>
-            <li class="liHeaderDetailCourse">Advanced Programming With Javascript</li>
+            <li class="liHeaderDetailCourse"><%= element.course_name %> </li>
           </ul>
           <div style="padding-bottom: 100px;"></div>
-          <div style="padding-left: 43px;">
-            <div class="titleNameCourse">Advanced Programming With JavaScript</div>
+          <div style="padding-left: 43px;position: absolute;width: 50%;margin-top: -20px">
+            <div class="titleNameCourse"><%= element.course_name %></div>
             <div class="titleSmallCourse">
-              <h5 style="font-weight: 500">Advanced Programming With Javascript</h5>
+              <h5 style="font-weight: 500"><%= element.course_name %></h5>
             </div>
             <div>
               <div class="" style="display: flex; font-size: 14px">
+                <input type="text" class="level" style="display:none" value="<%= element.level %>">
                 <div class="progress">
                   <div class="color"></div>
                 </div>
-                <div class="beginner"><span class="fs-level-mb" style="font-weight: 500">Trung bình</span></div>
+                <div class="beginner"><span class="fs-level-mb" style="font-weight: 500"><%= element.level %></span></div>
                 <div class="peopleSubCourse"><span><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="user" width="1em" height="1em" fill="currentColor" aria-hidden="true">
                       <path d="M858.5 763.6a374 374 0 00-80.6-119.5 375.63 375.63 0 00-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 00-80.6 119.5A371.7 371.7 0 00136 901.8a8 8 0 008 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 008-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z"></path>
                     </svg> 58 người đẫ đăng ký</span></div>
               </div>
             </div>
             <div style="margin-top:15px; font-size: 14px">
+              <% if(dataUser[0  ].avataUrl){ %>
+              <img class="ant-avatar ant-avatar-circle ant-avatar-image" style="width: 50px; height: 50px; line-height: 50px; font-size: 18px;" src="<%= dataUser[0].avataUrl %> ">
+              <% } else{ %>
               <span class="ant-avatar ant-avatar-circle ant-avatar-image" style="width: 50px; height: 50px; line-height: 50px; font-size: 18px;">
-                <img src="https://lms-rikkei-prod.s3.amazonaws.com/materials/1661156015_WLd4oGZE7FgFrL51.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQEO33HSBZRSFOXNE%2F20230113%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230113T012517Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=60&amp;X-Amz-Signature=a21bb1f950466e277a370ac527ecf19bb91c0df07d518ac5eb5a84e2d7200bc6">
+                <img src="#">
               </span>
-              <span class="f-white" style="margin-left: 10px;">Trịnh Quốc Hai</span>
+              <% } %>
+              <span class="f-white" style="margin-left: 10px;"><%= dataUser[0].full_name %> </span>
             </div>
           </div>
         </div>
@@ -176,21 +200,51 @@
           </div>
           <div>
             <p class="textDetailCourseData">
-              Module Advanced Programming giúp học viên nắm vững các khái niệm và kỹ thuật cốt l
-              õi trong lập trình, nâng cao tư duy và kỹ năng lập trình. Kết thúc module này, học
-              viên thành thạo việc phát triển các ứng dụng dựa trên ngôn ngữ JavaScript, TypeScr
-              ipt mô hình lập trình Hướng đối tượng và Cấu trúc dữ liệu và giải thuật.
+              <%= dataCourseDetail[0].description_detail %>
             </p>
           </div>
           <div class="titleDetailCourseDataMul">
             <span class="titleDetailCourseData">Bạn sẽ học</span>
+            <div class="" style="flex-flow: row wrap; width: 100%; display: flex; padding-top: 25px;">
+              <% if(dataCourseDetail[0].we_learn){ %>
+              <% let chunkArrWeLearn = dataCourseDetail[0].we_learn.split(';') %>
+              <% chunkArrWeLearn.forEach(elementWeLearn => { %>
+              <div style="display: flex; align-items: center; width: 50%; padding-bottom: 20px;">
+                <span style="padding-right:10px" role="img" aria-label="check-circle" class="anticon anticon-check-circle"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="check-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                    <path d="M699 353h-46.9c-10.2 0-19.9 4.9-25.9 13.3L469 584.3l-71.2-98.8c-6-8.3-15.6-13.3-25.9-13.3H325c-6.5 0-10.3 7.4-6.5 12.7l124.6 172.8a31.8 31.8 0 0051.7 0l210.6-292c3.9-5.3.1-12.7-6.4-12.7z"></path>
+                    <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path>
+                  </svg>
+                </span>
+                <span class="learn-text"><%= elementWeLearn  %> </span>
+              </div>
+              <% }) %>
+              <% }else{ %>
+              <div style="display: flex; align-items: center; width: 50%; padding-bottom: 20px;">
+                <span style="padding-right:10px" role="img" aria-label="check-circle" class="anticon anticon-check-circle"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="check-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                    <path d="M699 353h-46.9c-10.2 0-19.9 4.9-25.9 13.3L469 584.3l-71.2-98.8c-6-8.3-15.6-13.3-25.9-13.3H325c-6.5 0-10.3 7.4-6.5 12.7l124.6 172.8a31.8 31.8 0 0051.7 0l210.6-292c3.9-5.3.1-12.7-6.4-12.7z"></path>
+                    <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path>
+                  </svg>
+                </span>
+                <span class="learn-text">Chưa có gì cả </span>
+              </div>
+              <% } %>
+
+            </div>
           </div>
           <div class="titleDetailCourseDataMul">
             <span class="titleDetailCourseData">Yêu cầu</span>
+            <br>
+            <span>
+              <ul>
+                <li>Sử dụng được các kỹ năng máy tính cơ bản</li>
+              </ul>
+            </span>
           </div>
           <div class="titleDetailCourseDataMul">
             <span class="titleDetailCourseData">Nội dung</span>
             <div class="ant-collapse ant-collapse-icon-position-left" style="text-align: left; border: none;">
+
+              <% for(let i = 0; i < dataLearn.length; i++){ %>
               <div class="ant-collapse-item-custom">
                 <div class="ant-collapse-header" role="button" tabindex="0" aria-expanded="false">
                   <div class=" ant-row-end" style="width: 100%;">
@@ -200,74 +254,61 @@
                         </svg>
                       </span>
                     </div>
-                    <div class="textSessionLearn" style="flex: 1 1 auto;">Session 1: String, Number</div>
+                    <div class="textSessionLearn" style="flex: 1 1 auto;"><%= dataLearn[i].title %> </div>
                     <div class="ant-col course-detail-timeline ant-col-xs-10 ant-col-sm-10 ant-col-lg-6" style="margin-top: 5px;">
                       <div class="ant-divider ant-divider-horizontal ant-divider-with-text ant-divider-with-text-right" role="separator">
-                        <span class="ant-divider-inner-text">4 Bài học</span>
+                        <% let arrCountLearn = [] %>
+                        <% for(let j = 0; j < dataDoc.length; j++ ){ %>
+                        <% if(dataLearn[i].id_learn === dataDoc[j].learn_id){ %>
+                        <% arrCountLearn.push(j) %>
+                        <% } %>
+                        <% } %>
+                        <span class="ant-divider-inner-text"><%= `${arrCountLearn.length} bài đọc` %> </span>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div id="listExerciseRun" class="listExerciseRun ant-collapse-content ant-collapse-content-active" style="display: none">
-                  <div class="ant-collapse-content-box">
-                    <div>
-                      <div class="ant-row ant-row-no-wrap material-item">
-                        <div class="ant-col d-flex justify-content-center align-items-center" style="flex: 0 0 30px; min-width: 0px;"><span role="img" aria-label="read" class="anticon anticon-read"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="read" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                              <path d="M928 161H699.2c-49.1 0-97.1 14.1-138.4 40.7L512 233l-48.8-31.3A255.2 255.2 0 00324.8 161H96c-17.7 0-32 14.3-32 32v568c0 17.7 14.3 32 32 32h228.8c49.1 0 97.1 14.1 138.4 40.7l44.4 28.6c1.3.8 2.8 1.3 4.3 1.3s3-.4 4.3-1.3l44.4-28.6C602 807.1 650.1 793 699.2 793H928c17.7 0 32-14.3 32-32V193c0-17.7-14.3-32-32-32zM404 553.5c0 4.1-3.2 7.5-7.1 7.5H211.1c-3.9 0-7.1-3.4-7.1-7.5v-45c0-4.1 3.2-7.5 7.1-7.5h185.7c3.9 0 7.1 3.4 7.1 7.5v45zm0-140c0 4.1-3.2 7.5-7.1 7.5H211.1c-3.9 0-7.1-3.4-7.1-7.5v-45c0-4.1 3.2-7.5 7.1-7.5h185.7c3.9 0 7.1 3.4 7.1 7.5v45zm416 140c0 4.1-3.2 7.5-7.1 7.5H627.1c-3.9 0-7.1-3.4-7.1-7.5v-45c0-4.1 3.2-7.5 7.1-7.5h185.7c3.9 0 7.1 3.4 7.1 7.5v45zm0-140c0 4.1-3.2 7.5-7.1 7.5H627.1c-3.9 0-7.1-3.4-7.1-7.5v-45c0-4.1 3.2-7.5 7.1-7.5h185.7c3.9 0 7.1 3.4 7.1 7.5v45z"></path>
-                            </svg></span></div>
-                        <div class="ant-col d-flex  align-items-center" style="flex: 1 1 auto; min-width: 0px; overflow-wrap: break-word; max-height: 50px; overflow-y: hidden;">Session 1 - String, Number (Bài đọc trên lớp)</div>
+                <div class="displayListDoc" style="display: none">
+                  <% for(let j = 0; j < dataDoc.length; j++ ){ %>
+                  <% if(dataLearn[i].id_learn === dataDoc[j].learn_id){ %>
+                  <div class="listExerciseRun" class="listExerciseRun ant-collapse-content ant-collapse-content-active">
+                    <div class="ant-collapse-content-box">
+                      <div>
+                        <div class="ant-row ant-row-no-wrap material-item">
+                          <div class="ant-col d-flex justify-content-center align-items-center" style="flex: 0 0 30px; min-width: 0px;"><span role="img" aria-label="read" class="anticon anticon-read"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="read" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                <path d="M928 161H699.2c-49.1 0-97.1 14.1-138.4 40.7L512 233l-48.8-31.3A255.2 255.2 0 00324.8 161H96c-17.7 0-32 14.3-32 32v568c0 17.7 14.3 32 32 32h228.8c49.1 0 97.1 14.1 138.4 40.7l44.4 28.6c1.3.8 2.8 1.3 4.3 1.3s3-.4 4.3-1.3l44.4-28.6C602 807.1 650.1 793 699.2 793H928c17.7 0 32-14.3 32-32V193c0-17.7-14.3-32-32-32zM404 553.5c0 4.1-3.2 7.5-7.1 7.5H211.1c-3.9 0-7.1-3.4-7.1-7.5v-45c0-4.1 3.2-7.5 7.1-7.5h185.7c3.9 0 7.1 3.4 7.1 7.5v45zm0-140c0 4.1-3.2 7.5-7.1 7.5H211.1c-3.9 0-7.1-3.4-7.1-7.5v-45c0-4.1 3.2-7.5 7.1-7.5h185.7c3.9 0 7.1 3.4 7.1 7.5v45zm416 140c0 4.1-3.2 7.5-7.1 7.5H627.1c-3.9 0-7.1-3.4-7.1-7.5v-45c0-4.1 3.2-7.5 7.1-7.5h185.7c3.9 0 7.1 3.4 7.1 7.5v45zm0-140c0 4.1-3.2 7.5-7.1 7.5H627.1c-3.9 0-7.1-3.4-7.1-7.5v-45c0-4.1 3.2-7.5 7.1-7.5h185.7c3.9 0 7.1 3.4 7.1 7.5v45z"></path>
+                              </svg></span></div>
+                          <div class="ant-col d-flex  align-items-center" style="flex: 1 1 auto; min-width: 0px; overflow-wrap: break-word; max-height: 50px; overflow-y: hidden; padding-bottom: 10px;"><%= dataDoc[j].doc_name  %></div>
+                        </div>
                       </div>
                     </div>
                   </div>
+
+                  <% } %>
+                  <% } %>
                 </div>
               </div>
-              <div class="ant-collapse-item-custom">
-                <div class="ant-collapse-header" role="button" tabindex="0" aria-expanded="false">
-                  <div class=" ant-row-end" style="width: 100%;">
-                    <div class="clickviewExercise" style="padding:7px; transform: rotate(0deg)">
-                      <span role="img" aria-label="right" class="anticon anticon-right ant-collapse-arrow"><svg viewBox="64 64 896 896" focusable="false" data-icon="right" width="1em" height="1em" fill="currentColor" aria-hidden="true" style="">
-                          <path d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z"></path>
-                        </svg>
-                      </span>
-                    </div>
-                    <div class="textSessionLearn" style="flex: 1 1 auto;">Session 2: Array</div>
-                    <div class="ant-col course-detail-timeline ant-col-xs-10 ant-col-sm-10 ant-col-lg-6" style="margin-top: 5px;">
-                      <div class="ant-divider ant-divider-horizontal ant-divider-with-text ant-divider-with-text-right" role="separator">
-                        <span class="ant-divider-inner-text">4 Bài học</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div id="listExerciseRun" class="listExerciseRun ant-collapse-content ant-collapse-content-active" style="display: none">
-                  <div class="ant-collapse-content-box">
-                    <div>
-                      <div class="ant-row ant-row-no-wrap material-item">
-                        <div class="ant-col d-flex justify-content-center align-items-center" style="flex: 0 0 30px; min-width: 0px;"><span role="img" aria-label="read" class="anticon anticon-read"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="read" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                              <path d="M928 161H699.2c-49.1 0-97.1 14.1-138.4 40.7L512 233l-48.8-31.3A255.2 255.2 0 00324.8 161H96c-17.7 0-32 14.3-32 32v568c0 17.7 14.3 32 32 32h228.8c49.1 0 97.1 14.1 138.4 40.7l44.4 28.6c1.3.8 2.8 1.3 4.3 1.3s3-.4 4.3-1.3l44.4-28.6C602 807.1 650.1 793 699.2 793H928c17.7 0 32-14.3 32-32V193c0-17.7-14.3-32-32-32zM404 553.5c0 4.1-3.2 7.5-7.1 7.5H211.1c-3.9 0-7.1-3.4-7.1-7.5v-45c0-4.1 3.2-7.5 7.1-7.5h185.7c3.9 0 7.1 3.4 7.1 7.5v45zm0-140c0 4.1-3.2 7.5-7.1 7.5H211.1c-3.9 0-7.1-3.4-7.1-7.5v-45c0-4.1 3.2-7.5 7.1-7.5h185.7c3.9 0 7.1 3.4 7.1 7.5v45zm416 140c0 4.1-3.2 7.5-7.1 7.5H627.1c-3.9 0-7.1-3.4-7.1-7.5v-45c0-4.1 3.2-7.5 7.1-7.5h185.7c3.9 0 7.1 3.4 7.1 7.5v45zm0-140c0 4.1-3.2 7.5-7.1 7.5H627.1c-3.9 0-7.1-3.4-7.1-7.5v-45c0-4.1 3.2-7.5 7.1-7.5h185.7c3.9 0 7.1 3.4 7.1 7.5v45z"></path>
-                            </svg></span></div>
-                        <div class="ant-col d-flex  align-items-center" style="flex: 1 1 auto; min-width: 0px; overflow-wrap: break-word; max-height: 50px; overflow-y: hidden;">Session 1 - String, Number (Bài đọc trên lớp)</div>
-                      </div>
-                    </div>
+              <% } %>
+
+            </div>
+            <div sx="" class="ant-col ant-col-offset-4 ant-col-md-12 ant-col-lg-12" style="margin-top: 20px;">
+              <div id="Lecturers">
+                <div class="title-menu mb-4 ">Giảng Viên</div>
+                <div class="ant-row ant-row-middle profile-lecturers" style="border: none"><span class="ant-avatar ant-avatar-circle ant-avatar-image" style="width: 90px; height: 90px; line-height: 90px; font-size: 18px;"><img width="100" src="https://rikkei.vn/common/images/logo_login.png"></span>
+                  <div class="profile" style="padding-left: 10px;"><span class="h5 mb-1"><%= dataCourseDetail[0].teacher %></span>
+                    <div class="mb-2">Master Nodejs</div>
                   </div>
                 </div>
               </div>
             </div>
-            <div sx="[object Object]" class="ant-col ant-col-offset-4 ant-col-md-12 ant-col-lg-12" style="margin-top: 20px;">
+            <div sx="" class="ant-col ant-col-offset-4 ant-col-md-12 ant-col-lg-12" style="margin-top: 20px;">
               <div id="Lecturers">
-                <div class="title-menu mb-4 ">Giảng Viên</div>
-                <div class="ant-row ant-row-middle profile-lecturers" style="border: none"><span class="ant-avatar ant-avatar-circle ant-avatar-image" style="width: 90px; height: 90px; line-height: 90px; font-size: 18px;"><img src="https://lms-rikkei-prod.s3.amazonaws.com/materials/1661156015_WLd4oGZE7FgFrL51.jpg?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQEO33HSBZRSFOXNE%2F20230113%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230113T045515Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=60&amp;X-Amz-Signature=14214f366f0b49d95044824634e4579e4376fc61aef7c454c0994ba7fafd236b"></span>
-                  <div class="profile" style="padding-left: 10px;"><span class="h5 mb-1">Trịnh Quốc Hai</span>
-                    <div class="mb-2">Java Professor</div>
-                    <div class="d-flex ">
-                        <span class="text-muted" style="display: flex; align-items: center; gap: 5px;"><span role="img" aria-label="read" class="anticon anticon-read"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="read" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                            <path d="M928 161H699.2c-49.1 0-97.1 14.1-138.4 40.7L512 233l-48.8-31.3A255.2 255.2 0 00324.8 161H96c-17.7 0-32 14.3-32 32v568c0 17.7 14.3 32 32 32h228.8c49.1 0 97.1 14.1 138.4 40.7l44.4 28.6c1.3.8 2.8 1.3 4.3 1.3s3-.4 4.3-1.3l44.4-28.6C602 807.1 650.1 793 699.2 793H928c17.7 0 32-14.3 32-32V193c0-17.7-14.3-32-32-32zM324.8 721H136V233h188.8c35.4 0 69.8 10.1 99.5 29.2l48.8 31.3 6.9 4.5v462c-47.6-25.6-100.8-39-155.2-39zm563.2 0H699.2c-54.4 0-107.6 13.4-155.2 39V298l6.9-4.5 48.8-31.3c29.7-19.1 64.1-29.2 99.5-29.2H888v488zM396.9 361H211.1c-3.9 0-7.1 3.4-7.1 7.5v45c0 4.1 3.2 7.5 7.1 7.5h185.7c3.9 0 7.1-3.4 7.1-7.5v-45c.1-4.1-3.1-7.5-7-7.5zm223.1 7.5v45c0 4.1 3.2 7.5 7.1 7.5h185.7c3.9 0 7.1-3.4 7.1-7.5v-45c0-4.1-3.2-7.5-7.1-7.5H627.1c-3.9 0-7.1 3.4-7.1 7.5zM396.9 501H211.1c-3.9 0-7.1 3.4-7.1 7.5v45c0 4.1 3.2 7.5 7.1 7.5h185.7c3.9 0 7.1-3.4 7.1-7.5v-45c.1-4.1-3.1-7.5-7-7.5zm416 0H627.1c-3.9 0-7.1 3.4-7.1 7.5v45c0 4.1 3.2 7.5 7.1 7.5h185.7c3.9 0 7.1-3.4 7.1-7.5v-45c.1-4.1-3.1-7.5-7-7.5z"></path>
-                          </svg>
-                        </span>
-                        <p class="m-0">10 Khóa học</p>
-                      </span></div>
+                <div class="title-menu mb-4 ">Trợ Giảng</div>
+                <div class="ant-row ant-row-middle profile-lecturers" style="border: none"><span class="ant-avatar ant-avatar-circle ant-avatar-image" style="width: 90px; height: 90px; line-height: 90px; font-size: 18px;"><img width="100" src="https://rikkei.vn/common/images/logo_login.png"></span>
+                  <div class="profile" style="padding-left: 10px;"><span class="h5 mb-1"><%= dataCourseDetail[0].ta %></span>
+                    <div class="mb-2">Master Nodejs</div>
                   </div>
                 </div>
-                <div style="padding-top: 20px">Trợ giảng Trịnh Quốc Hai</div>
               </div>
             </div>
           </div>
@@ -276,10 +317,12 @@
         </div>
       </div>
     </main>
+    <% }) %>
     <div style="text-align: center;
     align-items: center;
     margin-left: 20px;">Coppy right@2023 MR Hoang</div>
   </section>
 </body>
 <script src="/course-detail.js"></script>
+
 </html>

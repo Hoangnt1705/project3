@@ -1,14 +1,16 @@
-const API = 'http://localhost:3000/router/api/admin-dashboard/route-study/update/';
-const APIImageChange = 'http://localhost:3000/router/api/admin-dashboard/route-study/post/image-change';
+const API = 'http://localhost:3000/router/api/admin-dashboard/course/update/';
+const APIImageChange = 'http://localhost:3000/router/api/admin-dashboard/course/post/image-change'
 let formUpdate = document.getElementById('formUpdate');
-let routeNameUpdate = document.getElementById('formUpdate').routeNameUpdate;
+let addInRouteChange = document.getElementById('formUpdate').addInRouteChange;
+let courseNameUpdate = document.getElementById('formUpdate').courseNameUpdate;
 let descriptionUpdate = document.getElementById('formUpdate').descriptionUpdate;
 let totalTimeUpdate = document.getElementById('formUpdate').totalTimeUpdate;
+let levelCourseUpdate = document.getElementById('formUpdate').levelCourseUpdate;
 let stepImage = document.getElementById('formUpdate').stepImage;
 let container = document.getElementById('container');
 let id = document.getElementById('id');
 let formDataUpdate = new FormData();
-let formImageUpdate = new FormData();
+let formImageCourseUpdate = new FormData();
 stepImage.addEventListener('click', e => {
     e.preventDefault();
     let DIVStepImage = document.createElement('div');
@@ -28,7 +30,7 @@ let htmlUpdate = (container, yes, no, DIVStepImage) => {
         e.preventDefault();
         let htmlImage = document.createElement('div');
         htmlImage.innerHTML = `<div>
-            <label for="imageUpdate">Image Route:</label>
+            <label for="imageUpdate">Image Course:</label>
             <input type="file" id="imageUpdate" name="imageUpdate" accept="image/png, image/jpeg, image/jpg" required>
             </div>
             <div>
@@ -58,13 +60,19 @@ let updateNotImageFunc = (buttonUpdate) => {
         validateEmptys();
     });
     let validateEmptys = () => {
-        if (_.isEmpty(routeNameUpdate.value)) return showError("Không được để trống tên lộ trình");
-        else if (_.isEmpty(descriptionUpdate.value)) return showError("Không được để trống phần mô tả");
+        if (_.isEmpty(addInRouteChange.value)) return showError("Không được để trống tên lộ trình");
+        else if (_.isEmpty(courseNameUpdate.value)) return showError("Không được để trống phần tên khóa học");
+        else if (_.isEmpty(descriptionUpdate.value)) return showError("Không được để trống phần tiêu đề");
+        else if (_.isEmpty(levelCourseUpdate.value)) return showError("Không được để trống phân cấp độ khóa học");
         else if (_.isEmpty(totalTimeUpdate.value)) return showError("Không được để trống tổng thời gian học");
         // else if (_.isEmpty(imageUpdate.value)) return showError("Không được để trống Image");
-        if (routeNameUpdate.value && descriptionUpdate.value && totalTimeUpdate.value) {
-            formDataUpdate.append("routeNameUpdate", routeNameUpdate.value);
+        if (addInRouteChange.value && courseNameUpdate.value && descriptionUpdate.value && levelCourseUpdate.value
+            && totalTimeUpdate.value) {
+            let addInrouteStudyChunkArray = addInRouteChange.value.split(':')
+            formDataUpdate.append("addInRouteChange", addInrouteStudyChunkArray[1]);
+            formDataUpdate.append("courseNameUpdate", courseNameUpdate.value);
             formDataUpdate.append("descriptionUpdate", descriptionUpdate.value);
+            formDataUpdate.append("levelCourseUpdate", levelCourseUpdate.value);
             formDataUpdate.append("totalTimeUpdate", totalTimeUpdate.value);
             console.log(formDataUpdate.get("totalTimeUpdate"));
             updateRouteStudyFunc(API);
@@ -91,24 +99,43 @@ let updateHasImageFunc = (container, stepUpdateImage, imageUpdate) => {
         });
     };
     let validateEmptys = () => {
-        if (_.isEmpty(routeNameUpdate.value)) return showError("Không được để trống tên lộ trình");
-        else if (_.isEmpty(descriptionUpdate.value)) return showError("Không được để trống phần mô tả");
+        if (_.isEmpty(addInRouteChange.value)) return showError("Không được để trống tên lộ trình");
+        else if (_.isEmpty(courseNameUpdate.value)) return showError("Không được để trống phần tên khóa học");
+        else if (_.isEmpty(descriptionUpdate.value)) return showError("Không được để trống phần tiêu đề");
+        else if (_.isEmpty(levelCourseUpdate.value)) return showError("Không được để trống phân cấp độ khóa học");
         else if (_.isEmpty(totalTimeUpdate.value)) return showError("Không được để trống tổng thời gian học");
         else if (_.isEmpty(imageUpdate.value)) return showError("Không được để trống Image");
-        if (routeNameUpdate.value && descriptionUpdate.value && totalTimeUpdate.value) {
-            formDataUpdate.append("routeNameUpdate", routeNameUpdate.value);
+        if (addInRouteChange.value && courseNameUpdate.value && descriptionUpdate.value && levelCourseUpdate.value
+            && totalTimeUpdate.value) {
+            let addInrouteStudyChunkArray = addInRouteChange.value.split(':')
+            formDataUpdate.append("addInRouteChange", addInrouteStudyChunkArray[1]);
+            formDataUpdate.append("courseNameUpdate", courseNameUpdate.value);
             formDataUpdate.append("descriptionUpdate", descriptionUpdate.value);
+            formDataUpdate.append("levelCourseUpdate", levelCourseUpdate.value);
             formDataUpdate.append("totalTimeUpdate", totalTimeUpdate.value);
             console.log(formDataUpdate.get("totalTimeUpdate"));
             PostRouteImageChangeFunc(APIImageChange);
             return showSuccess("Tải ảnh lên thành công");
         };
     };
-
+    let validateImage = () => {
+        imageUpdate.addEventListener('change', e => {
+            e.preventDefault();
+            let file = e.target.files[0];
+            if (file.size > 20000000) return showError("Limit 20mb")
+            else if (!file) return showError("Not a valid file")
+            else if (file.type === 'image/jpg' || file.type === 'image/jpeg' || file.type === 'image/png') {
+                formImageCourseUpdate.append("imageCourseUpdate", file);
+                console.log(formImageCourseUpdate.get("imageCourseUpdate"));
+                return showSuccess("Chọn ảnh thành công");
+            }
+            else return showError("Valid format Image");
+        });
+    };
     let PostRouteImageChangeFunc = (file) => {
         fetch(file, {
             method: "POST",
-            body: formImageUpdate
+            body: formImageCourseUpdate
         })
             .then(response => response.json())
             .then(data => {
@@ -131,29 +158,15 @@ let updateHasImageFunc = (container, stepUpdateImage, imageUpdate) => {
                 let btnUpdate = document.getElementById('formUpdate').btnUpdate;
                 let imagePut = document.getElementById('imagePut');
                 formDataUpdate.append('imageUpdate', imagePut.innerText);
-                btnUpdateRoute(btnUpdate);
+                btnUpdateCourse(btnUpdate);
                 console.log(imagePut.innerText);
-                console.log(routeNameUpdate.value);
+                console.log(courseNameUpdate.value);
                 console.log(descriptionUpdate.value);
-                console.log(totalTimeUpdate.value);
+                console.log(levelCourseUpdate.value);
             })
             .catch(err => console.log(err));
     };
-    let validateImage = () => {
-        imageUpdate.addEventListener('change', e => {
-            e.preventDefault();
-            let file = e.target.files[0];
-            if (file.size > 20000000) return showError("Limit 20mb")
-            else if (!file) return showError("Not a valid file")
-            else if (file.type === 'image/jpg' || file.type === 'image/jpeg' || file.type === 'image/png') {
-                formImageUpdate.append("imageUpdate", file);
-                console.log(formImageUpdate.get("imageUpdate"));
-                return showSuccess("Chọn ảnh thành công")
-            }
-            else return showError("Valid format Image");
-        });
-    };
-    let PutRouteFunc = (file) => {
+    let PutCourseFunc = (file) => {
         let APIPut = file + id.innerText;
         fetch(APIPut, {
             method: "PUT",
@@ -166,14 +179,14 @@ let updateHasImageFunc = (container, stepUpdateImage, imageUpdate) => {
             })
             .catch(err => console.log(err));
     };
-    let btnUpdateRoute = (btnUpdate) => {
+    let btnUpdateCourse = (btnUpdate) => {
         btnUpdate.addEventListener('click', e => {
             e.preventDefault();
-            PutRouteFunc(API);
+            PutCourseFunc(API);
             showSuccess("Đăng lộ trình thành công");
+            return window.location.reload();
         })
     };
     nextBtnUpdateImage();
     validateImage();
 }
-

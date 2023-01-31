@@ -28,7 +28,7 @@ let fetchPostRegister = (file) => {
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            window.location.href = 'http://localhost:3000/router/login';
+            window.location.href = 'http://localhost:3000/router/admin-dashboard/user-management';
         })
         .catch(err => console.log(err));
 } 

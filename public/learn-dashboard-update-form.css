@@ -136,25 +136,6 @@
     border-radius: 7px;
 }
 
-table {
-    width: 150%;
-    height: 100px;
-}
-
-thead,
-th,
-tr,
-td {
-    border: 1pt solid #333;
-    text-align: center !important;
-    align-items: center !important;
-}
-
-#btnUp {
-    margin-top: 20px;
-    padding: 5px 30px
-}
-
 @keyframes slineInleft {
     from {
         opacity: 0;

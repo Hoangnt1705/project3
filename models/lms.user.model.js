@@ -4,7 +4,6 @@ const jwt = require('jsonwebtoken');
 const secret = 'secret';
 
 module.exports.modelUserRegister = (email, username, password, confirmPassword, role, req, res, next) => {
-    console.log(db);
     return db.execute('select * from users')
         .then((response) => {
             const [rows] = response;
@@ -23,6 +22,7 @@ module.exports.modelUserRegister = (email, username, password, confirmPassword, 
                         // If the password is hashed successfully, store the email, hashed 
                         // password, and role in the database 
                         if (role === 'admin') {
+                            console.log("role", role, userCount, username, email, hashedPassword);
                             return storeAdmin(userCount, username, email, hashedPassword, role, req, res);
                         }
                         return storeUser(userCount, username, email, hashedPassword, role, req, res);
@@ -47,7 +47,6 @@ module.exports.modelUserLogin = (user, password, req, res, next) => {
             }
             else {
                 // If the password do not match, render the login form with an error message
-
                 res.render('login.ejs', { error: 'Invalid email or password' })
             };
         })
@@ -147,9 +146,27 @@ let getInfoUser = (req, res) => {
     let idUserMatchAccount = req.user.id;
     return db.execute('SELECT * FROM users WHERE id = ?', [idUserMatchAccount])
         .then(response => {
-            let [data] = response;
-            console.log(data);
-            let putInfoAccount = `Verify successfully`
-            return res.render('index.ejs', { putInfoAccount: putInfoAccount, data })
+            let [dataUser] = response;
+            let putInfoAccount = `Verify successfully`;
+            return db.execute('select * from route_study limit 6')
+                .then(response => {
+                    let [dataRouteStudyHome] = response;
+                    return db.execute('select * from course limit 8')
+                        .then(response => {
+                            let [dataCourseHome] = response;
+                            return db.execute('select route_id, count(id_course) as id_course from course group by route_id')
+                                .then(response => {
+                                    let [dataMatchCourseRoute] = response;
+                                    console.log(dataMatchCourseRoute);
+                                    let renderForm = { putInfoAccount: putInfoAccount, dataUser, dataRouteStudyHome, dataCourseHome, dataMatchCourseRoute }
+                                    return res.render('index.ejs', renderForm)
+                                })
+                        })
+                        .catch(err => res.status(404).json({ error: err, message: err.message }));
+
+                })
+                .catch(err => res.status(404).json({ error: err, message: err.message }));
+
         })
+        .catch(err => res.status(404).json({ error: err, message: err.message }));
 }

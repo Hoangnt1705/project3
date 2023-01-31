@@ -98,6 +98,7 @@ body {
 
 }
 
+
 .ant-avatar {
 
     font-variant: tabular-nums;
@@ -111,7 +112,7 @@ body {
     white-space: nowrap;
     text-align: center;
     vertical-align: middle;
-    background: #ccc;
+    background: rgb(238, 238, 238);
     width: 32px;
     height: 32px;
     line-height: 32px;
@@ -124,9 +125,11 @@ body {
     margin-right: 8px;
     font-size: 12px;
 }
+
 .anticon svg {
     display: inline-block;
 }
+
 .liMenuLogin {
     outline: none;
     list-style: none;
@@ -165,15 +168,18 @@ a {
     transition: 0.2s linear;
 }
 
-.mainHomePage {}
-
-.headerHomePage {
-    background-image: url('https://learn.rikkeiacademy.com/static/media/bg-home-page.6901947f.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 460px;
-    margin-top: 0px;
+.active {
+    color: rgb(148, 17, 17);
+    padding: 10px;
+    border-bottom: 2px solid rgb(148, 17, 17);
+    transition: 0.2s linear;
 }
+
+.itemRoute:hover {
+    margin-top: -10px;
+    transition: 0.2s linear;
+}
+
 
 .titleSearchHome {
     width: 30%;
@@ -183,6 +189,7 @@ a {
     font-weight: 900;
     text-align: center;
     margin: auto;
+    color: #fff;
 }
 
 .advancedTextHome {
@@ -205,6 +212,17 @@ a {
 
 wrapSearch::before {
     padding-right: 30px;
+}
+
+
+.headerHomePage {
+    background-image: url('https://djangocentral.com/static/images/djangocentral_hero.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    height: 400px;
+    margin-top: 0px;
 }
 
 .searchHomeInput {
@@ -494,6 +512,10 @@ svg {
     padding-top: 15px;
 }
 
+.ant-btn-dangerous:hover {
+    background: #fbf6f4;
+}
+
 .ant-btn>span {
     display: inline-block;
 }
@@ -505,13 +527,30 @@ svg {
 
 .image {
     width: 100%;
+    max-height: 200px;
+    height: 200px;
     border-radius: 7px;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 20%);
+    background-repeat: none;
+    background-size: cover;
+    background-position: center;
 }
 
 .antimage {
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
+}
+
+.itemCourse img {
+    width: 100%;
+    transition: 0.5s all ease-in-out;
+    z-index: 100;
+}
+
+.itemCourse:hover img {
+    transform: scale(1.3);
+    z-index: 100;
+
 }
 
 .courseDescription {
@@ -585,7 +624,7 @@ button {
 .SearchBox-input {
     width: 0;
     font-size: 1.2em;
-    color: #fff;
+    color: rgb(148, 17, 17);
     transition: .45s;
 }
 
@@ -632,7 +671,7 @@ button {
     margin-top: -4px;
 }
 
-.buttonLogin{
+.buttonLogin {
     cursor: pointer;
     font-size: 17.5px;
     font-weight: 300;
@@ -643,9 +682,11 @@ button {
     border-radius: 7px;
     margin-top: -5px;
 }
-.buttonLogin:hover{
+
+.buttonLogin:hover {
     background: #a70b1be0;
 }
+
 @media screen and (min-width: 400px) {
     .SearchBox:hover .SearchBox-input {
         width: 500px;

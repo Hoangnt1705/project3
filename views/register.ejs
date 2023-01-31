@@ -15,10 +15,7 @@
       <div class="wrapUpdate">
         <!-- <div id="id" style="visibility: hidden"> </div> -->
         <div>
-            <h1>Register</h1>
-        </div>
-        <div>
-          <input hidden style="position: absolute" type="text" id="role" name="role" value="admin">
+          <h1>Create User:</h1>
         </div>
         <div class="titleClass">
           <h3>Email</h3>
@@ -34,6 +31,15 @@
           <div class="imageUrlClass">
             <h3>Comfirm Password</h3>
             <input type="password" id="confirmPassword" name="confirmPassword" placeholder="confirm password">
+          </div>
+          <div class="titleClass">
+            <h3>Role User</h3>
+            <select name="role" id="role">
+              <optgroup label="Select">
+                <option>admin</option>
+                <option>user</option>
+              </optgroup>
+            </select>
           </div>
           <div>
             <button class="btnDelete" id="register">Register</button>

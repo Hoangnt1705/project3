@@ -155,6 +155,13 @@ a {
     transition: 0.2s linear;
 }
 
+.active {
+    color: rgb(148, 17, 17);
+    padding: 10px;
+    border-bottom: 2px solid rgb(148, 17, 17);
+    transition: 0.2s linear;
+}
+
 .headerHomePage {
     background-repeat: no-repeat;
     background-size: cover;
@@ -301,6 +308,8 @@ button[type='submit']:hover {
     width: 100%;
     border-radius: 7px;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 20%);
+    max-height: 210px;
+    height: 210px;
 }
 
 .antimage {
