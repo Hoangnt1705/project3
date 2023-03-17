@@ -5,8 +5,8 @@ for (let i = 0; i < updateRoute.length; i++) {
     updateRoute[i].addEventListener('click', e => {
         e.preventDefault();
         let id = idUpdate[i].innerText;
-        let idAll = API + id
+        let idAll = API + id;
         window.location.href = idAll;
     });
-};
+}
 

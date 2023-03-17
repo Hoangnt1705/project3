@@ -1,4 +1,4 @@
-const APITokenAdmin = 'http://localhost:3000/router/admin-dashboard/'
+const APITokenAdmin = 'http://localhost:3000/router/admin-dashboard/';
 let getTokenAdmin = (file) => {
     fetch(file, {
         headers: {

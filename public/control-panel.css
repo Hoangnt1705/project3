@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap');
 
+:root {
+    --ant-primary-color-active-deprecated-d-02: rgb(248, 230, 227);
+}
+
 html,
 body {
     padding: 0;
@@ -555,4 +559,23 @@ th {
     border-radius: 5px;
     font-size: 20px;
     background: #fcf3f3;
+}
+
+.activeList {
+    background: var(--ant-primary-color-active-deprecated-d-02);
+    border-radius: 10px;
+}
+
+#test2 {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+canvas {
+    position: absolute;
 }

@@ -1,0 +1,462 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap');
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Mulish', sans-serif;
+    scroll-behavior: smooth;
+}
+
+
+.wrapHeader,
+.header,
+.entity,
+.container {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapHeader {
+    /* margin-top: -50px; */
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    z-index: 1;
+}
+
+.menuTabBar {
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+    padding: 0 40px;
+    padding-top: 15px;
+    margin-top: 0px;
+    height: 30px;
+
+}
+
+.liTab {
+    padding-left: 40px;
+    font-size: 17.5px;
+
+}
+
+.dashboard-container-content {
+    padding-top: 20px
+}
+
+#menuTabBar ul.sub-menu-login {
+    visibility: hidden;
+    width: 200px;
+    height: 220px;
+    background-color: rgb(239, 239, 239);
+    text-align: left;
+    border-radius: 6px;
+    padding: 5px 15px 5px 15px;
+    position: absolute;
+    z-index: 1;
+    top: 95%;
+    margin-left: -5px;
+    margin-top: -5px;
+    font-size: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    transition: 0.5s linear;
+
+}
+
+#menuTabBar ul.sub-menu-login::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 88%;
+    margin-left: -31px;
+    border-width: 6.5px;
+    border-style: solid;
+    border-color: transparent transparent rgb(221, 221, 221) transparent;
+
+}
+
+#menuTabBar li:hover>ul.sub-menu-login {
+    visibility: visible;
+    background: rgb(255, 255, 255);
+    color: black;
+    transition: 0.2s linear;
+
+}
+
+.ant-avatar {
+
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    font-feature-settings: "tnum";
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    color: #fff;
+    white-space: nowrap;
+    text-align: center;
+    vertical-align: middle;
+    background: #ccc;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 50%;
+    margin-top: -3px;
+}
+
+.ant-dropdown-menu-item-icon {
+    min-width: 12px;
+    margin-right: 8px;
+    font-size: 12px;
+}
+
+.anticon svg {
+    display: inline-block;
+}
+
+.liMenuLogin {
+    outline: none;
+    list-style: none;
+    cursor: pointer;
+    padding: 7px 0px;
+    border-bottom: 1pt solid rgb(207, 207, 207);
+}
+
+.liMenuLogin:hover {
+    background-color: rgb(244, 244, 244);
+    transition: 0.3s linear;
+    border-radius: 30px;
+    border: 1pt solid rgb(207, 207, 207);
+
+}
+
+#imageTab {
+    width: 11%;
+}
+
+#accountTab {
+    margin-left: 200px;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 400;
+
+}
+
+.clickLiTab:hover {
+    color: rgb(148, 17, 17);
+    padding: 10px;
+    border-bottom: 2px solid rgb(148, 17, 17);
+    transition: 0.2s linear;
+}
+
+.active {
+    color: rgb(148, 17, 17);
+    padding: 10px;
+    border-bottom: 2px solid rgb(148, 17, 17);
+    transition: 0.2s linear;
+}
+
+.headerHomePage {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 460px;
+    margin-top: 0px;
+}
+
+.mainHomePage {
+    padding-top: 70px;
+}
+
+
+.titleSearchHome {
+    width: 30%;
+    font-size: 45px;
+    line-height: 50px;
+    padding-top: 120px;
+    font-weight: 700;
+    text-align: center;
+    margin: auto;
+}
+
+.advancedTextHome {
+    color: rgb(170, 26, 26);
+
+}
+
+
+
+.subtextHomepage {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #6a7a99;
+}
+
+svg {
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.homeCustom {
+    padding: 5px 135px;
+    background: #f4f7fb;
+    margin-top: -12px;
+    color: #333;
+}
+
+.homeTitle {
+    font-size: 20px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.listCourse {
+    list-style: disc;
+    cursor: pointer;
+
+}
+
+.listCourse:hover {
+    color: rgb(148, 17, 17);
+}
+
+
+.listRouteStudy {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nestedLoading {
+    outline: none;
+}
+
+.spinHomeFirst {
+    position: relative;
+    transition: opacity .3s;
+}
+
+.antRow {
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 80px;
+}
+
+.ant-col {
+    position: relative;
+    max-width: 100%;
+    min-height: 1px;
+}
+
+.textRouteStudy {
+    font-size: 35px;
+    font-weight: 800;
+}
+
+button[type='submit'] {
+    background-color: rgb(148, 17, 17);
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+button[type='submit']:hover {
+    background-color: rgb(183, 22, 22);
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.search-txt-input {
+    border: 1pt solid #c2c2c2;
+    outline: red;
+    width: 400px;
+    height: 40px;
+    border-radius: 3px;
+}
+
+.search-txt-input:focus {
+    border: 1.2pt solid rgb(148, 17, 17);
+    width: 400px;
+    height: 40px;
+    border-radius: 3px;
+    transition: 0.3s linear;
+}
+
+.search-button {
+    width: 60px;
+    height: 45px;
+    border-radius: 3px;
+}
+
+.fs-level-mb {
+    font-weight: 800;
+}
+
+.courseHomePage {
+    margin-top: 80px;
+
+}
+
+.image {
+    width: 100%;
+    border-radius: 7px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 20%);
+    max-height: 210px;
+    height: 210px;
+}
+
+.antimage {
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.listRoutes {
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, .85);
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    font-feature-settings: "tnum";
+    position: relative;
+}
+
+.courseDescription {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    border-bottom: 1.5pt solid rgb(148, 17, 17);
+    color: #646e83;
+    overflow: hidden;
+    height: 30px;
+}
+
+.courseTitle {
+    margin-top: 100px;
+}
+
+input,
+button {
+    border: none;
+    background: none;
+    outline: 0;
+}
+
+button {
+    cursor: pointer
+}
+
+.SearchBox-input::placeholder {
+    /* No es un seudoelemento estandar */
+    color: white;
+    opacity: .6;
+}
+
+/* Chrome, Opera ySafari */
+.SearchBox-input::-webkit-input-placeholder {
+    color: white;
+}
+
+/* Firefox 19+ */
+.SearchBox-input::-moz-placeholder {
+    color: white;
+}
+
+/* IE 10+ y Edge */
+.SearchBox-input:-ms-input-placeholder {
+    color: white;
+}
+
+/* Firefox 18- */
+#formGroupExampleInput:-moz-placeholder {
+    color: white;
+}
+
+
+
+.SearchBox {
+    --height: 4em;
+    display: flex;
+    border-radius: var(--height);
+    background-color: #c1e4e8;
+    height: var(--height);
+    width: 40%;
+    text-align: center;
+    align-items: center;
+    margin: 10px auto 0px;
+}
+
+.SearchBox:hover .SearchBox-input {
+    padding-left: 2em;
+    padding-right: 1em;
+    width: 240px;
+}
+
+.SearchBox-input {
+    width: 0;
+    font-size: 1.2em;
+    color: #fff;
+    transition: .45s;
+}
+
+.SearchBox-button {
+    display: flex;
+    border-radius: 50%;
+    width: var(--height);
+    height: var(--height);
+    background-color: var(--accent-color);
+    transition: .3s;
+}
+
+.SearchBox-button:active {
+    transform: scale(.85);
+}
+
+.SearchBox-icon {
+    margin: auto;
+    color: #fff;
+}
+
+.progress {
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 10%), 0 6px 20px 0 rgb(0 0 0 / 10%);
+    position: relative;
+    height: 10px;
+    width: 1110%;
+    border: 3px solid #f4a261;
+    border-radius: 15px;
+    width: 30%;
+}
+
+.progress .color {
+    position: absolute;
+    background-color: #ffffff;
+    width: 0px;
+    height: 10px;
+    border-radius: 15px;
+    width: 75%;
+    background: #ff0;
+
+}
+
+.beginner {
+    margin-top: -4px;
+}
+
+.ant-space-horizontal {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (min-width: 400px) {
+    .SearchBox:hover .SearchBox-input {
+        width: 500px;
+    }
+}

@@ -10,30 +10,30 @@ const localStorage = require('localstorage-memory');
 // The use of a secret key ensures that the token can only be verified by the intended recipient (server) and ensures that the data in the JWT has not been tampered with.
 module.exports.middlewareTokenUser = (req, res, next) => {
     // get token in the req.cookie
-    console.log("tokenUserMiddle>>", req.headers.cookie);
+    console.log('tokenUserMiddle>>', req.headers.cookie);
     let tokens = req.headers.cookie.split(';');
     for (let i = 0; i < tokens.length; i++) {
         let token = tokens[i].trim();
         let [name, value] = token.split('=');
         // sử dụng array destructurings để phân ra name và value dựa trên split '=', khi sử dụng name 
         // dưới switch case thì sẽ dựa vào name để lấy value đó
-        if (!name) return res.status(500).json("Access denied, no token provided")
+        if (!name) return res.status(500).json('Access denied, no token provided');
         try {
 
             switch (name) {
                 case 'tokenUser':
                     let decode = jwt.verify(value, secret);
                     req.user = decode;
-                    console.log("decode>>", decode);
+                    console.log('decode>>', decode);
                     next();
                     break;
                 default:
                     break;
             }
         } catch (error) {
-            return res.status(404).json({ message: error });
-        };
-    };
+            return res.status(404).json({ status: 'Aaa', message: error });
+        }
+    }
 };
 
 module.exports.verifyLogin = (req, res, next) => {
@@ -46,8 +46,8 @@ module.exports.verifyLogin = (req, res, next) => {
         openDoorName.push(name);
         if (openDoorName.indexOf('tokenUser') !== -1) {
             openDoorValue.push(value);
-        };
-    };
+        }
+    }
     jwt.verify(openDoorValue[0], secret, (err, claims) => {
         if (err) {
             res.redirect('/router/login');
@@ -58,16 +58,14 @@ module.exports.verifyLogin = (req, res, next) => {
                     let [verifyLast] = response;
                     if (verifyLast) {
                         next();
-                    };
+                    }
                 })
                 .catch(err => {
                     res.status(404).json({ message: err });
                 });
-        };
+        }
     });
-}
-
-
+};
 module.exports.verifyLoginHome = (req, res, next) => {
     let openDoorName = [];
     let openDoorValue = [];
@@ -79,14 +77,14 @@ module.exports.verifyLoginHome = (req, res, next) => {
         openDoorName.push(name);
         if (openDoorName.indexOf('tokenUser') !== -1) {
             openDoorValue.push(value);
-        };
-    };
+        }
+    }
     // gọi tên biến mẹ mà đang ở trong method async chính trong biến đó thì sẽ báo lỗi before initialization
     // vd: let decode = jwt.verify(value, secret, (err, claims)=> { return decode });
     jwt.verify(openDoorValue[0], secret, (err, claims) => {
         if (err) {
-            console.log("checkMiss>>", openDoorName.indexOf('tokenUser'));
-            putInfoAccount = `Đăng nhập`;
+            console.log('checkMiss>>', openDoorName.indexOf('tokenUser'));
+            putInfoAccount = 'Đăng nhập';
             return db.execute('select * from route_study limit 6')
                 .then(response => {
                     let [dataRouteStudyHome] = response;
@@ -97,9 +95,9 @@ module.exports.verifyLoginHome = (req, res, next) => {
                                 .then(response => {
                                     let [dataMatchCourseRoute] = response;
                                     console.log(dataMatchCourseRoute);
-                                    let renderForm = { putInfoAccount: putInfoAccount, dataRouteStudyHome, dataCourseHome, dataMatchCourseRoute }
-                                    return res.render('index.ejs', renderForm)
-                                })
+                                    let renderForm = { putInfoAccount: putInfoAccount, dataRouteStudyHome, dataCourseHome, dataMatchCourseRoute };
+                                    return res.render('index.ejs', renderForm);
+                                });
                         })
                         .catch(err => res.status(404).json({ error: err, message: err.message }));
 
@@ -112,37 +110,37 @@ module.exports.verifyLoginHome = (req, res, next) => {
                     let [verifyLast] = response;
                     if (verifyLast) {
                         next();
-                    };
+                    }
                 })
                 .catch(err => {
                     res.status(404).json({ message: err });
-                });
-        };
+            });
+        }
     });
-}
+};
 // admin.......................................................................
 module.exports.middlewareTokenAdmin = (req, res, next) => {
     let tokens = req.headers.cookie.split(';');
     for (let i = 0; i < tokens.length; i++) {
         let token = tokens[i].trim();
         let [name, value] = token.split('=');
-        if (!name) return res.status(500).json("Access denied, no token provided");
+        if (!name) return res.status(500).json('Access denied, no token provided');
         try {
             switch (name) {
                 case 'tokenAdmin':
                     let decode = jwt.verify(value, secret);
-                    req.user = decode
-                    console.log("decoded Admin", decode);
+                    req.user = decode;
+                    console.log('decoded Admin', decode);
                     next();
                     break;
                 default:
                     break;
-            };
+            }
         }
         catch (err) {
             return res.status(404).json({ message: error });
-        };
-    };
+        }
+    }
 };
 module.exports.verifyLoginAdmin = (req, res, next) => {
     let openDoorName = [];
@@ -154,11 +152,11 @@ module.exports.verifyLoginAdmin = (req, res, next) => {
         openDoorName.push(name);
         if (openDoorName.indexOf('tokenAdmin') !== -1) {
             openDoorValue.push(value);
-        };
-    };
+        }
+    }
     jwt.verify(openDoorValue[0], secret, (err, claims) => {
         if (err) {
-            console.log("checkAdmin 88", openDoorName.indexOf('tokenAdmin'));
+            console.log('checkAdmin 88', openDoorName.indexOf('tokenAdmin'));
             return res.redirect('/router/admin-login');
         }
         if (openDoorName.indexOf('tokenAdmin') !== -1 && claims) {
@@ -167,33 +165,29 @@ module.exports.verifyLoginAdmin = (req, res, next) => {
                     let [verifyLast] = response;
                     if (verifyLast) {
                         next();
-                    };
+                    }
                 })
                 .catch(err => {
                     res.status(404).json({ message: err });
                 });
-        };
+        }
     });
 };
 
-
 // Middleware to check if user has completed previous lesson
 module.exports.checkProgress = (req, res, next) => {
-    console.log(req.user);
-
     if (!req.user) {
         res.send('Please log in to access the lesson.');
     } else {
         const currentLesson = req.params.id;
         console.log(currentLesson);
-        db.execute(`SELECT completed_docs FROM users WHERE username = ?`, [req.user.name])
+        db.execute('SELECT completed_docs FROM users WHERE username = ?', [req.user.name])
             .then(response => {
                 let [user] = response;
                 let userChunkIncludes = user[0].completed_docs.split(',');
                 console.log(userChunkIncludes.includes(currentLesson));
             })
             .catch(err => res.status(200).json({ message: err }));
-
 
 
         // , (err, user) => {
@@ -205,4 +199,18 @@ module.exports.checkProgress = (req, res, next) => {
         //     }
         // });
     }
+};
+
+
+module.exports.scanStudentInvateLearn = (req, res, next) => {
+    let { id } = req.params;
+    db.execute(`select id, username, full_name, id_route, id_course, id_class as class from users, classes, route_study, course
+    where classIdClass = id_class and id_route = route_study_id and course.route_id = route_study.id_route and id_course =  ?`, [id])
+        .then(response => {
+            let [data] = response;
+            console.log(data);
+            let dataFind = data.find(element => element.id === req.user.id);
+            dataFind ? next() : res.redirect(`/router/course-detail/${req.params.id}`);
+        })
+        .catch(err => res.status(500).json({ message: err }));
 };

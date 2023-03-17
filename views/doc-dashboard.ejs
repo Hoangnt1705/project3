@@ -110,7 +110,7 @@
             </a>
           </li>
           <li>
-            <a class="nav-link" href="./icons.html">
+            <a class="nav-link" href="http://localhost:3000/router/admin-dashboard/course-detail/update">
               <i class="nc-icon nc-atom"></i>
               <p>Course Detail</p>
             </a>
@@ -125,6 +125,12 @@
             <a class="nav-link active" href="http://localhost:3000/router/admin-dashboard/doc">
               <i class="nc-icon nc-bell-55"></i>
               <p>Doc</p>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link active" href="http://localhost:3000/router/admin-dashboard/class">
+              <i class="nc-icon nc-puzzle-10 active"></i>
+              <p>Class</p>
             </a>
           </li>
           <li class="nav-item active active-pro">
@@ -209,7 +215,7 @@
         <header class="header">
           <div>
             <ul class="menuRouteStudy">
-              <li class="liMenuRouteStudy "><a href="http://localhost:3000/router/admin-dashboard/learn/update">Update Doc</a> </li>
+              <li class="liMenuRouteStudy "><a href="http://localhost:3000/router/admin-dashboard/doc/update">Update Doc</a> </li>
               <li id="update" class="liMenuRouteStudy"> <a href="http://localhost:3000/router/admin-dashboard/doc">Up Doc</a> </li>
             </ul>
           </div>
@@ -218,7 +224,7 @@
         <main class="main" id="mainFormText">
           <form action="" id="formSubmit">
             <div>
-              <label for="docName">Route name:</label>
+              <label for="docName">Doc name:</label>
             </div>
             <div>
               <input type="text" id="docName" name="docName">
@@ -232,6 +238,18 @@
               </select>
             </div>
             <div>
+              <label for="course">Add In Course: </label>
+              <select name="course" id="course">
+                <optgroup label="Select">
+                  <% for(let i = 0; i < dataCourse.length ; i++) { %>
+                  <option>
+                    <%= `${dataCourse[i].course_name} !$ ${[i + 1]}` %>
+                  </option>
+                  <% } %>
+                </optgroup>
+              </select>
+            </div>
+            <div>
               <label for="detail">Add In Learn: </label>
               <select name="detail" id="detail">
                 <optgroup label="Select">
@@ -240,6 +258,15 @@
                     <%= `${dataLearn[i].title} !$ ${[i + 1]}` %>
                   </option>
                   <% } %>
+                </optgroup>
+              </select>
+            </div>
+            <div>
+              <label for="locking">Lock Doc:</label>
+              <select name="locking" id="locking">
+                <optgroup label="Select">
+                  <option>lock</option>
+                  <option>unlock</option>
                 </optgroup>
               </select>
             </div>

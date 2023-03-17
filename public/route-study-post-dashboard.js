@@ -15,7 +15,7 @@ let nextFormText = document.getElementById('formSubmit').nextFormText;
 let reader = new FileReader();
 const formData = new FormData();
 const formImage = new FormData();
-mainImage.style.display = "none";
+mainImage.style.display = 'none';
 // let getBase64 = (file) => {
 //     reader.readAsDataURL(file);
 //     reader.onload = () => {
@@ -33,20 +33,20 @@ let nextBtnText = () => {
     });
 };
 let validateEmptys = () => {
-    if (_.isEmpty(nameRouteStudy.value)) return showError("Không được để trống tên lộ trình");
-    else if (_.isEmpty(descriptionRouteStudy.value)) return showError("Không được để trống phần mô tả");
-    else if (_.isEmpty(totalLearnTimeRouteStudy.value)) return showError("Không được để trống tổng thời gian học");
+    if (_.isEmpty(nameRouteStudy.value)) return showError('Không được để trống tên lộ trình');
+    else if (_.isEmpty(descriptionRouteStudy.value)) return showError('Không được để trống phần mô tả');
+    else if (_.isEmpty(totalLearnTimeRouteStudy.value)) return showError('Không được để trống tổng thời gian học');
     if (nameRouteStudy.value && descriptionRouteStudy.value && totalLearnTimeRouteStudy.value) {
-        formData.append("nameRouteStudy", nameRouteStudy.value);
-        formData.append("descriptionRouteStudy", descriptionRouteStudy.value);
-        formData.append("totalLearnTimeRouteStudy", totalLearnTimeRouteStudy.value);
+        formData.append('nameRouteStudy', nameRouteStudy.value);
+        formData.append('descriptionRouteStudy', descriptionRouteStudy.value);
+        formData.append('totalLearnTimeRouteStudy', totalLearnTimeRouteStudy.value);
         setTimeout(() => {
-            mainFormText.style.display = "none";
-            mainImage.style.display = "block";
+            mainFormText.style.display = 'none';
+            mainImage.style.display = 'block';
             dataAfterUploadText();
         }, 2000);
-        return showSuccess("Nhập thông tin Lộ trình học thành công");
-    };
+        return showSuccess('Nhập thông tin Lộ trình học thành công');
+    }
 };
 let dataAfterUploadText = () => {
     let createTableReturnFormText = document.createElement('table');
@@ -70,7 +70,7 @@ let dataAfterUploadText = () => {
 let nextBtnImage = () => {
     nextFormImage.addEventListener('click', e => {
         e.preventDefault();
-        if (_.isEmpty(imageRouteStudy.value)) return showError("Không được để trống Image");
+        if (_.isEmpty(imageRouteStudy.value)) return showError('Không được để trống Image');
         else {
             PostRouteImageFunc(APIImage);
         }
@@ -81,26 +81,26 @@ let validateImage = () => {
         e.preventDefault();
         let file = e.target.files[0];
         // let id = document.getElementById('idRoute').innerText;
-        if (file.size > 20000000) return showError("Limit 20mb")
-        else if (!file) return showError("Not a valid file")
+        if (file.size > 20000000) return showError('Limit 20mb');
+        else if (!file) return showError('Not a valid file');
         else if (file.type === 'image/jpg' || file.type === 'image/jpeg' || file.type === 'image/png') {
-            formImage.append("imageRouteStudy", file);
-            console.log(formImage.get("imageRouteStudy"));
-            return showSuccess("Chọn ảnh thành công")
+            formImage.append('imageRouteStudy', file);
+            console.log(formImage.get('imageRouteStudy'));
+            return showSuccess('Chọn ảnh thành công');
         }
-        else return showError("Valid format Image");
+        else return showError('Valid format Image');
     });
 };
 let PostRouteImageFunc = (file) => {
     fetch(file, {
-        method: "POST",
+        method: 'POST',
         body: formImage
     })
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            let createTableReturnImage = document.createElement("table");
-            mainImage.style.display = "none";
+            let createTableReturnImage = document.createElement('table');
+            mainImage.style.display = 'none';
             createTableReturnImage.innerHTML =
                 `<thead>
           <tr>
@@ -113,7 +113,7 @@ let PostRouteImageFunc = (file) => {
             <td>Đường link của ảnh <a href="${data.url.trim()}">Click!</a></td>
           </tr>
         </tbody>
-        <button id="btnUp">Finish</button>`
+        <button id="btnUp">Finish</button>`;
             artImage.append(createTableReturnImage);
             let btnUp = document.getElementById('btnUp');
             let imagePost = document.getElementById('imagePost');
@@ -128,7 +128,7 @@ let PostRouteImageFunc = (file) => {
 };
 let PostRouteFunc = (file) => {
     fetch(file, {
-        method: "POST",
+        method: 'POST',
         body: formData
     })
         .then(response => response.json())
@@ -142,9 +142,9 @@ let btnUpRoute = (btnUp) => {
     btnUp.addEventListener('click', e => {
         e.preventDefault();
         PostRouteFunc(API);
-        showSuccess("Đăng lộ trình thành công");
-    })
-}
+        showSuccess('Đăng lộ trình thành công');
+    });
+};
 nextBtnImage();
 validateImage();
 nextBtnText();

@@ -39,8 +39,8 @@
             <% } else { for(let i = 0; i < dataUser.length; i++){ %>
             <li id="accountTab" class="liTab">
               <div class="ant-space-item" style="">
-                <% if(dataUser[i].avataUrl){ %>
-                <img class="ant-avatar" style="width: 25px; height: 25px; line-height: 25px; font-size: 18px;" src="<%= dataUser[i].avataUrl %> " alt="" style="width: 20px">
+                <% if(dataUser[i].avatarUrl){ %>
+                <img class="ant-avatar" style="width: 25px; height: 25px; line-height: 25px; font-size: 18px;" src="<%= dataUser[i].avatarUrl %> " alt="" style="width: 20px">
                 <% } else{ %>
                 <span class="ant-avatar ant-avatar-circle" style="width: 25px; height: 25px; line-height: 25px; font-size: 18px;">
                   <span class="ant-avatar-string" style="line-height: 25px; transform: scale(1) translateX(-50%);">
@@ -287,6 +287,9 @@
             </div>
           </div>
         </div>
+
+
+
         <div class="dashboardContent" id="dashboardTest" style="display: none">
           <div class="dashboard-head-content">
             <div class="listRouteStudy">

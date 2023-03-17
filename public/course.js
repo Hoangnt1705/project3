@@ -7,10 +7,10 @@ for (let i = 0; i < itemCourse.length; i++) {
     itemCourse[i].addEventListener('click', e => {
         e.preventDefault();
         let id = idCourse[i].innerText;
-        let idAll = API + id
+        let idAll = API + id;
         window.location.href = idAll;
     });
-};
+}
 for (let i = 0; i < level.length; i++) {
     if (level[i].value === 'Normal') {
         color[i].style.width = '30%';
@@ -23,5 +23,5 @@ for (let i = 0; i < level.length; i++) {
     else if (level[i].value === 'Advanced') {
         color[i].style.width = '100%';
         color[i].style.background = '#FF0000';
-    };
-};
+    }
+}

@@ -31,4 +31,4 @@ let fetchPostRegister = (file) => {
             window.location.href = 'http://localhost:3000/router/admin-dashboard/user-management';
         })
         .catch(err => console.log(err));
-} 
+}; 

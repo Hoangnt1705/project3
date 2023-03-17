@@ -41,8 +41,8 @@
             <% } else { for(let i = 0; i < dataUser.length; i++){ %>
             <li id="accountTab" class="liTab">
               <div class="ant-space-item" style="">
-                <% if(dataUser[i].avataUrl){ %>
-                <img class="ant-avatar" style="width: 25px; height: 25px; line-height: 25px; font-size: 18px;" src="<%= dataUser[i].avataUrl %> " alt="" style="width: 20px">
+                <% if(dataUser[i].avatarUrl){ %>
+                <img class="ant-avatar" style="width: 25px; height: 25px; line-height: 25px; font-size: 18px;" src="<%= dataUser[i].avatarUrl %> " alt="" style="width: 20px">
                 <% } else{ %>
                 <span class="ant-avatar ant-avatar-circle" style="width: 25px; height: 25px; line-height: 25px; font-size: 18px;">
                   <span class="ant-avatar-string" style="line-height: 25px; transform: scale(1) translateX(-50%);">
@@ -84,11 +84,14 @@
     </header>
     <% dataCourse.forEach(element => { %>
     <main class="mainHomePage" style="padding-top: 50px;">
+      <div id="toast"></div>
       <div class="banner">
-        <div class="img-container"><img preview="false" alt="detail_image" src="https://techvccloud.mediacdn.vn/2018/11/23/js-15429579443112042672363-crop-1542957949936317424252.png"></div>
+        <div class="img-container"><img preview="false" alt="detail_image" src="<%= element.image_course %>"></div>
         <div style="padding: 10px 20px;">
-          <button type="button" id="inJoinLearn" class="ant-btn ant-btn-primary ant-btn-lg ant-btn-block" style="margin-bottom: 10px;">
+          <button type="button" id="<%= openkeyLearn ? "inJoinLearn" : "" %>" class="ant-btn ant-btn-primary ant-btn-lg ant-btn-block <%= openkeyLearn ? "" : "disabled" %>" style="margin-bottom: 10px;height: 40px">
             <span>Tham gia ngay</span>
+            <% let messageCancel = "Bạn chưa đăng ký khóa học này !" %>
+            <span class="tooltiptext"><%= !openkeyLearn ? messageCancel : "" %></span>
           </button>
           <div id="redirectLearn" style="display:none"><%= element.id_course %> </div>
           <div>
@@ -168,12 +171,12 @@
                 <div class="beginner"><span class="fs-level-mb" style="font-weight: 500"><%= element.level %></span></div>
                 <div class="peopleSubCourse"><span><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="user" width="1em" height="1em" fill="currentColor" aria-hidden="true">
                       <path d="M858.5 763.6a374 374 0 00-80.6-119.5 375.63 375.63 0 00-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 00-80.6 119.5A371.7 371.7 0 00136 901.8a8 8 0 008 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 008-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z"></path>
-                    </svg> 58 người đẫ đăng ký</span></div>
+                    </svg> <%= dataInvateClass.length  %> người đẫ đăng ký</span></div>
               </div>
             </div>
             <div style="margin-top:15px; font-size: 14px">
-              <% if(dataUser[0  ].avataUrl){ %>
-              <img class="ant-avatar ant-avatar-circle ant-avatar-image" style="width: 50px; height: 50px; line-height: 50px; font-size: 18px;" src="<%= dataUser[0].avataUrl %> ">
+              <% if(dataUser[0  ].avatarUrl){ %>
+              <img class="ant-avatar ant-avatar-circle ant-avatar-image" style="width: 50px; height: 50px; line-height: 50px; font-size: 18px;" src="<%= dataUser[0].avatarUrl %> ">
               <% } else{ %>
               <span class="ant-avatar ant-avatar-circle ant-avatar-image" style="width: 50px; height: 50px; line-height: 50px; font-size: 18px;">
                 <img src="#">
@@ -186,17 +189,17 @@
       </div>
       <div class="courseDataInfo">
         <div>
-          <ul class="ulCourseDataInfo">
-            <li class="liCourseDataInfo"><a href="#"> Mô tả</a></li>
-            <li class="liCourseDataInfo"><a href="#">Bạn sẽ học</a> </li>
-            <li class="liCourseDataInfo"><a href="#">Yêu cầu</a> </li>
-            <li class="liCourseDataInfo"><a href="#">Nội dung</a> </li>
-            <li class="liCourseDataInfo"><a href="#">Giảng viên</a> </li>
+          <ul class="ulCourseDataInfo" id="descriptionTitle">
+            <li class="liCourseDataInfo"><a href="#descriptionTitle"> Mô tả</a></li>
+            <li class="liCourseDataInfo"><a href="#iLearn">Bạn sẽ học</a> </li>
+            <li class="liCourseDataInfo"><a href="#require">Yêu cầu</a> </li>
+            <li class="liCourseDataInfo"><a href="#contenet">Nội dung</a> </li>
+            <li class="liCourseDataInfo"><a href="#teacher">Giảng viên</a> </li>
           </ul>
         </div>
         <div class="detailCourseData">
           <div>
-            <span class="titleDetailCourseData">Mô tả</span>
+            <span class="titleDetailCourseData" id="iLearn">Mô tả</span>
           </div>
           <div>
             <p class="textDetailCourseData">
@@ -204,7 +207,7 @@
             </p>
           </div>
           <div class="titleDetailCourseDataMul">
-            <span class="titleDetailCourseData">Bạn sẽ học</span>
+            <span class="titleDetailCourseData" id="require">Bạn sẽ học</span>
             <div class="" style="flex-flow: row wrap; width: 100%; display: flex; padding-top: 25px;">
               <% if(dataCourseDetail[0].we_learn){ %>
               <% let chunkArrWeLearn = dataCourseDetail[0].we_learn.split(';') %>
@@ -231,7 +234,7 @@
 
             </div>
           </div>
-          <div class="titleDetailCourseDataMul">
+          <div class="titleDetailCourseDataMul" id="require">
             <span class="titleDetailCourseData">Yêu cầu</span>
             <br>
             <span>
@@ -240,7 +243,7 @@
               </ul>
             </span>
           </div>
-          <div class="titleDetailCourseDataMul">
+          <div class="titleDetailCourseDataMul" id="contenet">
             <span class="titleDetailCourseData">Nội dung</span>
             <div class="ant-collapse ant-collapse-icon-position-left" style="text-align: left; border: none;">
 
@@ -291,7 +294,7 @@
               <% } %>
 
             </div>
-            <div sx="" class="ant-col ant-col-offset-4 ant-col-md-12 ant-col-lg-12" style="margin-top: 20px;">
+            <div sx="" class="ant-col ant-col-offset-4 ant-col-md-12 ant-col-lg-12" style="margin-top: 20px;" id="teacher">
               <div id="Lecturers">
                 <div class="title-menu mb-4 ">Giảng Viên</div>
                 <div class="ant-row ant-row-middle profile-lecturers" style="border: none"><span class="ant-avatar ant-avatar-circle ant-avatar-image" style="width: 90px; height: 90px; line-height: 90px; font-size: 18px;"><img width="100" src="https://rikkei.vn/common/images/logo_login.png"></span>
@@ -323,6 +326,7 @@
     margin-left: 20px;">Coppy right@2023 MR Hoang</div>
   </section>
 </body>
+<script src="/toast.js"></script>
 <script src="/course-detail.js"></script>
 
 </html>

@@ -18,16 +18,16 @@ function toast({
                 main.removeChild(toast);
                 clearTimeout(autoRemovedId);
             }
-        }
+        };
         const icons = {
             success: 'fa-solid fa-circle-check',
             info: 'fa-solid fa-circle-check',
             warning: 'fa-solid fa-circle-exclamation',
             error: 'fa-solid fa-circle-exclamation',
-        }
+        };
         const icon = icons[type];
         const delay = (duration / 1000).toFixed(2);
-        toast.classList.add('toast', `toast-${type}`)
+        toast.classList.add('toast', `toast-${type}`);
         toast.style.animation = `slineInleft ease 1s, fadeOut linear 1s ${delay}s forwards`;
         toast.innerHTML = ` <div class="toast_icon">
             <i class="${icon}"></i>
@@ -50,7 +50,7 @@ let showSuccess = (text) => {
         type: 'success',
         duration: 3000
     });
-}
+};
 let showError = (text) => {
     toast({
         title: 'Thất bại',
@@ -58,4 +58,4 @@ let showError = (text) => {
         type: 'warning',
         duration: 3000
     });
-}
+};

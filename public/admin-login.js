@@ -19,7 +19,7 @@ let fetchPostLogin = (file) => {
             console.log(data);
             // localStorage.setItem('tokenAdmin', data.token);
             setTimeout(() => {
-                window.location.href = 'http://localhost:3000/router/admin-dashboard/'
+                window.location.href = 'http://localhost:3000/router/admin-dashboard/';
             }, 500);
         })
         .catch(err => alert(err));

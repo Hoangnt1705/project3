@@ -35,7 +35,7 @@ body {
     position: fixed;
     width: 100%;
     background: #fff;
-    z-index: 1;
+    z-index: 2;
 }
 
 .menuTabBar {
@@ -685,6 +685,101 @@ button {
 
 .buttonLogin:hover {
     background: #a70b1be0;
+}
+
+.search {
+    margin-top: -15px;
+    background: #ddd;
+    border-radius: 4px;
+    padding: 4px 4px 4px 5px;
+
+}
+
+.inputSearch {
+    outline: none;
+    width: 700px;
+    height: 38px;
+    background: #ddd;
+    font-size: 16px;
+    /* outline-offset: 10px; */
+}
+
+.inputSearch:focus {
+    outline: 2px solid #333;
+    outline-offset: 10px;
+}
+
+#createSuggestion {
+    width: 100%;
+    height: 150px;
+    background: rgb(242, 241, 241);
+    display: none;
+    position: relative;
+    border: none;
+    margin-top: 7.6px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    margin-left: 0px;
+    border-radius: 50px;
+    box-shadow: 20px 20px 100px #bebebe, -20px -20px 1700px #ffffff;
+    z-index: 1;
+    left: 75%;
+}
+
+.wrapSuggestion {
+    position: relative;
+    width: 40%;
+    text-align: center;
+}
+
+#textFind {
+    font-size: 15px;
+    padding: 20px 5px 5px 0px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.wrapInTitleSuggestion {
+    padding-right: 120px;
+}
+
+.colorWrapInTitleSuggestion {
+    position: absolute;
+    right: 5%;
+    margin-top: -6px;
+}
+
+.itemListSuggest {
+    text-align: start;
+}
+
+.itemWrap {
+    padding: 3px 15px;
+}
+
+.itemWrap:hover {
+    background: rgb(255, 237, 237);
+    ;
+    transition: 0.5 linear !important;
+    color: var(--accent-color);
+}
+
+.imageItemSuggest {
+    position: absolute;
+    right: 0;
+}
+
+.moreSuggest {
+    position: absolute;
+    text-align: center;
+    bottom: 6%;
+    left: 46.5%;
+}
+
+.titleMoreofSuggest {
+    color: rgb(148, 17, 17);
+    font-weight: 600;
+    font-size: 17px;
 }
 
 @media screen and (min-width: 400px) {

@@ -5,8 +5,8 @@ for (let i = 0; i < updateUser.length; i++) {
     updateUser[i].addEventListener('click', e => {
         e.preventDefault();
         let id = idUpdate[i].innerText;
-        let idAll = API + id
+        let idAll = API + id;
         window.location.href = idAll;
     });
-};
+}
 

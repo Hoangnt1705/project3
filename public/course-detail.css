@@ -320,11 +320,45 @@ image {
     width: 100%;
 }
 
-[type=button]:not(:disabled),
-[type=reset]:not(:disabled),
-[type=submit]:not(:disabled),
-button:not(:disabled) {
-    cursor: pointer;
+.disabled {
+    opacity: 0.6;
+    /* pointer-events: none; */
+}
+
+.disabled .tooltiptext {
+    visibility: hidden;
+    width: 100%;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 20%;
+    margin-left: -60px;
+    opacity: 0.8;
+}
+
+.disabled .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+.disabled:hover .tooltiptext {
+    visibility: visible;
+}
+
+.disabled:hover {
+    cursor: not-allowed;
+
 }
 
 .ant-btn>span {
@@ -665,5 +699,7 @@ element.style {}
     font-size: 17px;
 }
 
-
-
+#inJoinLearn:hover {
+    background: #94151d;
+    border-color: #94151d;
+}
