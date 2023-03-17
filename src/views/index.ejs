@@ -15,7 +15,7 @@
 
 <body>
   <div>
-    <section class="container">
+    <section class="container" id="container">
       <header class="header" id="header">
         <section class="wrapHeader">
           <div class="entity">
@@ -83,7 +83,7 @@
           </div>
         </section>
       </header>
-      <main class="mainHomePage" style="padding-top: 50px;">
+      <main class="mainHomePage" id="mainHomePage" style="padding-top: 50px; display: none">
         <div class="headerHomePage">
           <div class="titleSearchHome">Tìm khóa học yêu thích và <span class="advancedTextHome">nâng cao trình độ</span> của bạn</div>
           <form action="#" id="submitSuggest">
@@ -110,9 +110,9 @@
               <h3 class="titleRouteFist">Lộ trình phổ biến</h3>
               <div class="subTitleTextMuted"> Hơn 10.000 khóa học trực tuyến</div>
               <div class="listRoutes" style="margin-left: -23px;">
-                <div class="nestedLoading">
-                  <div class="spinHomeFirst">
-                    <div class="antRow">
+                <div class="nestedLoading" id="nestedLoading">
+                  <div class="spinHomeFirst" id="spinHomeFirst" style="display: none">
+                    <div class="antRow" id="antRow">
                       <% for(let i = 0; i < dataRouteStudyHome.length; i++){ %>
                       <div class="idRoute" style="display:none"><%= dataRouteStudyHome[i].id_route %> </div>
                       <div class="itemRoute" style="width: 50%; max-width: 50%; padding-bottom: 20px">
@@ -185,8 +185,8 @@
               <h3 class="titleRouteFist">Những khoá học mới nhất</h3>
               <div class="subTitleTextMuted"> Hơn 10.000 khóa học trực tuyến</div>
               <div class="listRoutes" style="margin-bottom: 10px; ">
-                <div class="nestedLoading">
-                  <div class="spinHomeFirst">
+                <div class="nestedLoading" id="nestedLoadingCourse">
+                  <div class="spinHomeFirst" id="spinHomeFirstCourse" style="display:none">
                     <div class="antRow" style="margin-left: -15px; margin-right: -15px;">
                       <% dataCourseHome.forEach(element => { %>
                       <div class="itemCourse" style="width: 25%; max-width: 25%;">

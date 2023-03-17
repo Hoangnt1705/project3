@@ -57,6 +57,7 @@ const initRoutesSequelize = (app) => {
         dataUser.push(userAttendanceParse);
         console.log(path.join(__dirname, '../public/weights'));
         let courseBelong = await Course.findAll({ where: { route_id: id } });
+        console.log(courseBelong);
         let courseBelongConvert = courseBelong.map(courseOf => courseOf.dataValues);
         console.log(courseBelongConvert);
         res.render('course-belong.ejs', { courseBelongConvert: courseBelongConvert, dataUser, putInfoAccount: putInfoAccount });

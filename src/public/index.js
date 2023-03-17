@@ -7,6 +7,8 @@ let itemRoute = document.querySelectorAll('.itemRoute');
 let itemCourse = document.querySelectorAll('.itemCourse');
 let idCourse = document.querySelectorAll('.idCourse');
 let idRoute = document.querySelectorAll('.idRoute');
+let mainHomePage = document.getElementById('mainHomePage');
+let container = document.getElementById('container');
 let btnSearchSuggestion = document.getElementById('submitSuggest').btnSearchSuggestion;
 let title = '<div class="wrapInTitleSuggestion">Tham gia buổi show talk online <i class="fa-solid fa-fire" style="color: #FF5F1F"></i> cầm về notebook RA !! <img src="https://cdn.iconscout.com/icon/free/png-256/codepen-3771364-3149472.png" alt="5318477.png" width="28px" class="colorWrapInTitleSuggestion"></div> ';
 for (let i = 0; i < itemCourse.length; i++) {
@@ -123,3 +125,39 @@ btnSearchSuggestion.addEventListener('click', e => {
     e.preventDefault();
     window.location.href = 'http://localhost:3000/router/course/';
 });
+
+setTimeout(() => {
+    let spinner = document.createElement('div');
+    spinner.setAttribute('id', 'spinner');
+    spinner.innerHTML = '<div class="lds-dual-ring"></div>';
+    console.log(spinner);
+    container.append(spinner);
+    return setTimeout(() => {
+        mainHomePage.style.display = 'block';
+        spinner.remove();
+        return setTimeout(() => {
+            let nestedLoading = document.getElementById('nestedLoading');
+            let spinHomeFirst = document.getElementById('spinHomeFirst');
+            let spinnerRoute = document.createElement('div');
+            spinnerRoute.setAttribute('id', 'spinnerRoute');
+            spinnerRoute.innerHTML = '<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>';
+            nestedLoading.append(spinnerRoute);
+            return setTimeout(() => {
+                spinHomeFirst.style.display = 'block';
+                spinnerRoute.remove();
+                return setTimeout(() => {
+                    let nestedLoadingCourse = document.getElementById('nestedLoadingCourse');
+                    let spinHomeFirstCourse = document.getElementById('spinHomeFirstCourse');
+                    let spinnerCourse = document.createElement('div');
+                    spinnerCourse.setAttribute('id', 'spinnerCourse');
+                    spinnerCourse.innerHTML = '<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>';
+                    nestedLoadingCourse.append(spinnerCourse);
+                    return setTimeout(() => {
+                        spinHomeFirstCourse.style.display = 'block';
+                        spinnerCourse.remove();
+                    }, 600);
+                }, 1);
+            }, 600);
+        }, 1);
+    }, 2000);
+}, 1);

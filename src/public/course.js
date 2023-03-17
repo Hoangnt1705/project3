@@ -25,3 +25,16 @@ for (let i = 0; i < level.length; i++) {
         color[i].style.background = '#FF0000';
     }
 }
+
+setTimeout(() => {
+    let nestedLoading = document.getElementById('nestedLoading');
+    let spinHomeFirst = document.getElementById('spinHomeFirst');
+    let spinnerCourse = document.createElement('div');
+    spinnerCourse.setAttribute('id', 'spinnerCourse');
+    spinnerCourse.innerHTML = '<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>';
+    nestedLoading.append(spinnerCourse);
+    return setTimeout(() => {
+        spinHomeFirst.style.display = 'block';
+        spinnerCourse.remove();
+    }, 1000);
+}, 1);

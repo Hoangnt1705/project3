@@ -10,7 +10,7 @@ for (let i = 0; i < itemCourse.length; i++) {
         let idAll = API + id;
         window.location.href = idAll;
     });
-}
+};
 for (let i = 0; i < level.length; i++) {
     if (level[i].value === 'Normal') {
         color[i].style.width = '30%';
@@ -23,5 +23,19 @@ for (let i = 0; i < level.length; i++) {
     else if (level[i].value === 'Advanced') {
         color[i].style.width = '100%';
         color[i].style.background = '#FF0000';
-    }
-}
+    };
+};
+
+
+setTimeout(() => {
+    let nestedLoading = document.getElementById('nestedLoading');
+    let spinHomeFirst = document.getElementById('spinHomeFirst');
+    let spinnerCourse = document.createElement('div');
+    spinnerCourse.setAttribute('id', 'spinnerCourse');
+    spinnerCourse.innerHTML = '<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>';
+    nestedLoading.append(spinnerCourse);
+    return setTimeout(() => {
+        spinHomeFirst.style.display = 'block';
+        spinnerCourse.remove();
+    }, 1000);
+}, 1);

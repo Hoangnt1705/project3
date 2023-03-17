@@ -100,9 +100,12 @@
           </div>
         </div>
         <div class="listRoutes" style="margin-bottom: 10px; ">
-          <div class="nestedLoading">
-            <div class="spinHomeFirst">
+          <div class="nestedLoading" id="nestedLoading">
+            <div class="spinHomeFirst" id="spinHomeFirst" style="display:none">
               <div class="antRow">
+                <% if(courseBelongConvert.length === 0 ){ %>
+                <img style="width: 50%" src="https://firebasestorage.googleapis.com/v0/b/projectmodule3-c6f1d.appspot.com/o/no-data-concept-illustration-folder%2Fno-data-concept-illustration.jpg?alt=media&token=7d2cc4a3-547d-4ea1-91fa-12bca931371d" alt="">
+                <% }else{ %>
                 <% courseBelongConvert.forEach(element=> { %>
                 <div class="idCourse" style="display:none"><%= element.id_course %> </div>
                 <div class="itemCourse" style="width: 30%; 
@@ -147,6 +150,7 @@
                   </a>
                 </div>
                 <% }) %>
+                <% } %>
               </div>
             </div>
           </div>

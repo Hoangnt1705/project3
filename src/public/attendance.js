@@ -37,8 +37,6 @@ async function recognizeFaces() {
         const displaySize = { width: video.width, height: video.height };
         faceapi.matchDimensions(canvas, displaySize);
 
-
-
         setInterval(async () => {
             const detections = await faceapi.detectAllFaces(video).withFaceLandmarks().withFaceDescriptors();
             const resizedDetections = faceapi.resizeResults(detections, displaySize);
@@ -53,7 +51,7 @@ async function recognizeFaces() {
             });
         }, 100);
     });
-}
+};
 // thằng này để lấy ảnh ra sau đó gán các điểm nhận diện vào khuân mặt trong các ảnh
 function loadLabeledImages() {
     const labels = ['Prashant_Kumar'];
@@ -74,4 +72,4 @@ function loadLabeledImages() {
             return new faceapi.LabeledFaceDescriptors(label, descriptions);
         })
     );
-}
+};
