@@ -1,6 +1,6 @@
 let updateRoute = document.querySelectorAll('.updateCourse');
 let idUpdate = document.querySelectorAll('.idUpdate');
-const API = 'http://localhost:3000/routera/dmin-dashboard/class/update/';
+const API = 'http://localhost:3000/router/admin-dashboard/class/update/form/';
 for (let i = 0; i < updateRoute.length; i++) {
     updateRoute[i].addEventListener('click', e => {
         e.preventDefault();
@@ -8,5 +8,5 @@ for (let i = 0; i < updateRoute.length; i++) {
         let idAll = API + id;
         window.location.href = idAll;
     });
-}
+};
 

@@ -6,6 +6,7 @@ const Class = sequelize.define('class', {
         primaryKey: true,
         autoIncrement: true,
     },
+    date_up: DataTypes.STRING,
     class_name: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -13,11 +14,12 @@ const Class = sequelize.define('class', {
     type_class: {
         type: DataTypes.STRING,
     },
-    route_study_id: {
+    routeStudyIdRoute: {
         type: DataTypes.INTEGER,
+        field: 'route_study_id',
         allowNull: false,
     },
-    user_id: {
+    user_admin_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
@@ -65,7 +67,10 @@ const Course = sequelize.define('course', {
     description_course: DataTypes.TEXT('long'),
     level: DataTypes.STRING,
     time_learn_course: DataTypes.STRING,
-    route_id: DataTypes.INTEGER,
+    routeStudyIdRoute: {
+        type: DataTypes.INTEGER,
+        field: 'route_id',
+    },
     user_id: DataTypes.INTEGER,
     createdAt: {
         type: DataTypes.DATE,
@@ -129,21 +134,36 @@ const Learn = sequelize.define('learn', {
 }, {
     tableName: 'learn',
 });
-const PoolDocCompleted = sequelize.define('pool_doc_completed', {
-    id_pool: {
+const PoolCourseCompleted = sequelize.define('pool_course_completed', {
+    id_pool_course: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
     },
     date_up: DataTypes.STRING,
-    class_id: DataTypes.INTEGER,
+    class_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: Class,
+            key: 'id_class',
+            // Specify the foreign key name
+        }
+    },
     userId: {
         type: DataTypes.INTEGER,
         field: 'user_id',
         references: {
             model: Users,
             key: 'id',
+            // Specify the foreign key name
+        }
+    },
+    route_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: RouteStudy,
+            key: 'id_route',
             // Specify the foreign key name
         }
     },
@@ -154,6 +174,53 @@ const PoolDocCompleted = sequelize.define('pool_doc_completed', {
             key: 'id_course',
             // Specify the foreign key name
         }
+    },
+    createdAt: {
+        allowNull: false,
+        type: DataTypes.DATE
+    },
+    updatedAt: {
+        allowNull: false,
+        type: DataTypes.DATE
+    }
+}, {
+    tableName: 'pool_course_completed',
+});
+
+const PoolDocCompleted = sequelize.define('pool_doc_completed', {
+    id_pool: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true,
+    },
+    date_up: DataTypes.STRING,
+    class_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: Class,
+            key: 'id_class',
+            // Specify the foreign key name
+        }
+    },
+
+    userId: {
+        type: DataTypes.INTEGER,
+        field: 'user_id',
+        references: {
+            model: Users,
+            key: 'id',
+            // Specify the foreign key name
+        }
+    },
+    courseIdCourse: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: Course,
+            key: 'id_course',
+            // Specify the foreign key name
+        },
+        field: 'course_id',
     },
     learn_id: {
         type: DataTypes.INTEGER,
@@ -186,7 +253,10 @@ const Doc = sequelize.define('doc', {
     active: DataTypes.STRING,
     lock: DataTypes.INTEGER,
     id_arrange: DataTypes.INTEGER,
-    course_id: DataTypes.INTEGER,
+    courseIdCourse: {
+        type: DataTypes.INTEGER,
+        field: 'course_id',
+    },
     learnIdLearn: { type: DataTypes.INTEGER, field: 'learn_id' },
     user_id: DataTypes.INTEGER,
 }, {
@@ -200,5 +270,6 @@ module.exports = {
     Course,
     Learn,
     Doc,
+    PoolCourseCompleted,
     PoolDocCompleted
 };

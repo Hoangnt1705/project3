@@ -33,7 +33,6 @@
                   <path d="M888 680h-54V540H546v-92h238c8.8 0 16-7.2 16-16V168c0-8.8-7.2-16-16-16H240c-8.8 0-16 7.2-16 16v264c0 8.8 7.2 16 16 16h238v92H190v140h-54c-4.4 0-8 3.6-8 8v176c0 4.4 3.6 8 8 8h176c4.4 0 8-3.6 8-8V688c0-4.4-3.6-8-8-8h-54v-72h220v72h-54c-4.4 0-8 3.6-8 8v176c0 4.4 3.6 8 8 8h176c4.4 0 8-3.6 8-8V688c0-4.4-3.6-8-8-8h-54v-72h220v72h-54c-4.4 0-8 3.6-8 8v176c0 4.4 3.6 8 8 8h176c4.4 0 8-3.6 8-8V688c0-4.4-3.6-8-8-8zM256 805.3c0 1.5-1.2 2.7-2.7 2.7h-58.7c-1.5 0-2.7-1.2-2.7-2.7v-58.7c0-1.5 1.2-2.7 2.7-2.7h58.7c1.5 0 2.7 1.2 2.7 2.7v58.7zm288 0c0 1.5-1.2 2.7-2.7 2.7h-58.7c-1.5 0-2.7-1.2-2.7-2.7v-58.7c0-1.5 1.2-2.7 2.7-2.7h58.7c1.5 0 2.7 1.2 2.7 2.7v58.7zM288 384V216h448v168H288zm544 421.3c0 1.5-1.2 2.7-2.7 2.7h-58.7c-1.5 0-2.7-1.2-2.7-2.7v-58.7c0-1.5 1.2-2.7 2.7-2.7h58.7c1.5 0 2.7 1.2 2.7 2.7v58.7zM360 300a40 40 0 1080 0 40 40 0 10-80 0z"></path>
                 </svg>Bảng điều khiển</a></li>
             <% } %>
-            <%= console.log(putInfoAccount) %>
             <% if(putInfoAccount === 'Đăng nhập'){ %>
             <li class="liTab"><button id="buttonLogin" class="buttonLogin"><%= putInfoAccount  %></button></li>
             <% } else { for(let i = 0; i < dataUser.length; i++){ %>
@@ -85,24 +84,26 @@
         <div class="dashboard">
           <section class="ant-layout ant-layout-has-sider dashboard-layout">
             <aside class="ant-layout-sider ant-layout-sider-dark dashboard-sider" style="flex: 0 0 200px; max-width: 200px; min-width: 200px; width: 200px;">
-              <div class="ant-layout-sider-children"><a href="#">
-                  <div class="dashBoardSiderItem" id="node1"><span role="img" aria-label="read" class="anticon anticon-read"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="read" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+              <div class="ant-layout-sider-children">
+                <a href="http://localhost:3000/router/my-router">
+                  <div class="dashBoardSiderItem" id="node1" style="background: rgb(255, 237, 237); border-radius: 10px;"><span role="img" aria-label="read" class="anticon anticon-read"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="read" width="1em" height="1em" fill="currentColor" aria-hidden="true">
                         <path d="M928 161H699.2c-49.1 0-97.1 14.1-138.4 40.7L512 233l-48.8-31.3A255.2 255.2 0 00324.8 161H96c-17.7 0-32 14.3-32 32v568c0 17.7 14.3 32 32 32h228.8c49.1 0 97.1 14.1 138.4 40.7l44.4 28.6c1.3.8 2.8 1.3 4.3 1.3s3-.4 4.3-1.3l44.4-28.6C602 807.1 650.1 793 699.2 793H928c17.7 0 32-14.3 32-32V193c0-17.7-14.3-32-32-32zM324.8 721H136V233h188.8c35.4 0 69.8 10.1 99.5 29.2l48.8 31.3 6.9 4.5v462c-47.6-25.6-100.8-39-155.2-39zm563.2 0H699.2c-54.4 0-107.6 13.4-155.2 39V298l6.9-4.5 48.8-31.3c29.7-19.1 64.1-29.2 99.5-29.2H888v488zM396.9 361H211.1c-3.9 0-7.1 3.4-7.1 7.5v45c0 4.1 3.2 7.5 7.1 7.5h185.7c3.9 0 7.1-3.4 7.1-7.5v-45c.1-4.1-3.1-7.5-7-7.5zm223.1 7.5v45c0 4.1 3.2 7.5 7.1 7.5h185.7c3.9 0 7.1-3.4 7.1-7.5v-45c0-4.1-3.2-7.5-7.1-7.5H627.1c-3.9 0-7.1 3.4-7.1 7.5zM396.9 501H211.1c-3.9 0-7.1 3.4-7.1 7.5v45c0 4.1 3.2 7.5 7.1 7.5h185.7c3.9 0 7.1-3.4 7.1-7.5v-45c.1-4.1-3.1-7.5-7-7.5zm416 0H627.1c-3.9 0-7.1 3.4-7.1 7.5v45c0 4.1 3.2 7.5 7.1 7.5h185.7c3.9 0 7.1-3.4 7.1-7.5v-45c.1-4.1-3.1-7.5-7-7.5z"></path>
                       </svg></span>Lộ trình của tôi</div>
-                </a><a href="#">
+                </a>
+                <a href="http://localhost:3000/router/recently-course">
                   <div class="dashBoardSiderItem" id="node2"><span role="img" aria-label="read" class="anticon anticon-read"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="read" width="1em" height="1em" fill="currentColor" aria-hidden="true">
                         <path d="M928 161H699.2c-49.1 0-97.1 14.1-138.4 40.7L512 233l-48.8-31.3A255.2 255.2 0 00324.8 161H96c-17.7 0-32 14.3-32 32v568c0 17.7 14.3 32 32 32h228.8c49.1 0 97.1 14.1 138.4 40.7l44.4 28.6c1.3.8 2.8 1.3 4.3 1.3s3-.4 4.3-1.3l44.4-28.6C602 807.1 650.1 793 699.2 793H928c17.7 0 32-14.3 32-32V193c0-17.7-14.3-32-32-32zM324.8 721H136V233h188.8c35.4 0 69.8 10.1 99.5 29.2l48.8 31.3 6.9 4.5v462c-47.6-25.6-100.8-39-155.2-39zm563.2 0H699.2c-54.4 0-107.6 13.4-155.2 39V298l6.9-4.5 48.8-31.3c29.7-19.1 64.1-29.2 99.5-29.2H888v488zM396.9 361H211.1c-3.9 0-7.1 3.4-7.1 7.5v45c0 4.1 3.2 7.5 7.1 7.5h185.7c3.9 0 7.1-3.4 7.1-7.5v-45c.1-4.1-3.1-7.5-7-7.5zm223.1 7.5v45c0 4.1 3.2 7.5 7.1 7.5h185.7c3.9 0 7.1-3.4 7.1-7.5v-45c0-4.1-3.2-7.5-7.1-7.5H627.1c-3.9 0-7.1 3.4-7.1 7.5zM396.9 501H211.1c-3.9 0-7.1 3.4-7.1 7.5v45c0 4.1 3.2 7.5 7.1 7.5h185.7c3.9 0 7.1-3.4 7.1-7.5v-45c.1-4.1-3.1-7.5-7-7.5zm416 0H627.1c-3.9 0-7.1 3.4-7.1 7.5v45c0 4.1 3.2 7.5 7.1 7.5h185.7c3.9 0 7.1-3.4 7.1-7.5v-45c.1-4.1-3.1-7.5-7-7.5z"></path>
                       </svg></span> Khóa học gần đây</div>
-                </a><a href="#">
+                </a><a href="http://localhost:3000/router/exam-history">
                   <div class="dashBoardSiderItem" id="node3"><span role="img" aria-label="his" class="anticon anticon-his"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="history" width="1em" height="1em" fill="currentColor" aria-hidden="true">
                         <path d="M536.1 273H488c-4.4 0-8 3.6-8 8v275.3c0 2.6 1.2 5 3.3 6.5l165.3 120.7c3.6 2.6 8.6 1.9 11.2-1.7l28.6-39c2.7-3.7 1.9-8.7-1.7-11.2L544.1 528.5V281c0-4.4-3.6-8-8-8zm219.8 75.2l156.8 38.3c5 1.2 9.9-2.6 9.9-7.7l.8-161.5c0-6.7-7.7-10.5-12.9-6.3L752.9 334.1a8 8 0 003 14.1zm167.7 301.1l-56.7-19.5a8 8 0 00-10.1 4.8c-1.9 5.1-3.9 10.1-6 15.1-17.8 42.1-43.3 80-75.9 112.5a353 353 0 01-112.5 75.9 352.18 352.18 0 01-137.7 27.8c-47.8 0-94.1-9.3-137.7-27.8a353 353 0 01-112.5-75.9c-32.5-32.5-58-70.4-75.9-112.5A353.44 353.44 0 01171 512c0-47.8 9.3-94.2 27.8-137.8 17.8-42.1 43.3-80 75.9-112.5a353 353 0 01112.5-75.9C430.6 167.3 477 158 524.8 158s94.1 9.3 137.7 27.8A353 353 0 01775 261.7c10.2 10.3 19.8 21 28.6 32.3l59.8-46.8C784.7 146.6 662.2 81.9 524.6 82 285 82.1 92.6 276.7 95 516.4 97.4 751.9 288.9 942 524.8 942c185.5 0 343.5-117.6 403.7-282.3 1.5-4.2-.7-8.9-4.9-10.4z"></path>
                       </svg></span> Lịch Sử Bài Thi</div>
-                </a><a href="#">
+                </a><a href="http://localhost:3000/router/point-history">
                   <div class="dashBoardSiderItem" id="node4"><span role="img" aria-label="clock-circle" class="anticon anticon-clock-circle"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="clock-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true">
                         <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path>
                         <path d="M686.7 638.6L544.1 535.5V288c0-4.4-3.6-8-8-8H488c-4.4 0-8 3.6-8 8v275.4c0 2.6 1.2 5 3.3 6.5l165.4 120.6c3.6 2.6 8.6 1.8 11.2-1.7l28.6-39c2.6-3.7 1.8-8.7-1.8-11.2z"></path>
                       </svg></span> Lịch sử điểm</div>
-                </a><a href="#">
+                </a><a href="http://localhost:3000/router/my-class">
                   <div class="dashBoardSiderItem" id="node5"><span role="img" aria-label="unordered-list" class="anticon anticon-unordered-list"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="unordered-list" width="1em" height="1em" fill="currentColor" aria-hidden="true">
                         <path d="M912 192H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM104 228a56 56 0 10112 0 56 56 0 10-112 0zm0 284a56 56 0 10112 0 56 56 0 10-112 0zm0 284a56 56 0 10112 0 56 56 0 10-112 0z"></path>
                       </svg></span> Lớp học của tôi</div>
@@ -122,10 +123,11 @@
                   <div class="dashBoardSiderItem" id="node9"><span role="img" aria-label="schedule" class="anticon anticon-schedule"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="schedule" width="1em" height="1em" fill="currentColor" aria-hidden="true">
                         <path d="M928 224H768v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56H548v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56H328v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56H96c-17.7 0-32 14.3-32 32v576c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V256c0-17.7-14.3-32-32-32zm-40 568H136V296h120v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56h148v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56h148v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56h120v496zM416 496H232c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zm0 136H232c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zm308.2-177.4L620.6 598.3l-52.8-73.1c-3-4.2-7.8-6.6-12.9-6.6H500c-6.5 0-10.3 7.4-6.5 12.7l114.1 158.2a15.9 15.9 0 0025.8 0l165-228.7c3.8-5.3 0-12.7-6.5-12.7H737c-5-.1-9.8 2.4-12.8 6.5z"></path>
                       </svg></span>Thời khóa biểu</div>
-                </a></div>
+                </a>
+              </div>
             </aside>
             <main class="ant-layout-content dashboard-container-content" style="min-height: 80vh;width: 100%;border: 50px solid #98a8b81a;border-radius: 20px;"">
-              <div class=" dashboardContent" id="dashboardRouteStudy" style="display: none">
+              <div class=" dashboardContent" id="dashboardRouteStudy">
               <div class="dashboard-head-content">
                 <div class="listRouteStudy">
                   <strong class="textRouteStudy">Lộ trình của tôi</strong>
@@ -144,6 +146,7 @@
                       <div class="nestedLoading">
                         <div class="spinHomeFirst">
                           <div class="antRow">
+                            <% if(routeStudyData && dataPoolCourseCompleted){%>
                             <div style="width: 50%; max-width: 50%; padding-bottom: 20px">
                               <div class="ant-col" style="padding-left: 8px;
                                 padding-right: 8px;
@@ -153,22 +156,22 @@
                                     <div class="itemMeta">
                                       <div class="itemMetaAvatar">
                                         <span class="avataSquare">
-                                          <img src="https://images.pexels.com/photos/11035547/pexels-photo-11035547.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+                                          <img src="<%= routeStudyData.image_route %>" alt="">
                                         </span>
                                       </div>
                                       <div class="itemMetaContent">
                                         <h4 class="itemMetaTitle">
                                           <div class="titleCustom">
                                             <span class="typography">
-                                              <strong>Web Fullstack Java 2.0</strong>
+                                              <strong><%= routeStudyData.route_name.substring(0, 43) %></strong>
                                             </span>
                                           </div>
                                         </h4>
                                         <div style="gap: 8px; padding-bottom: 15px; display: flex">
                                           <div class="progress">
-                                            <div class="color"></div>
+                                            <div id="colorEnergyCourse" class="color"></div>
                                           </div>
-                                          <div class="beginner"><span class="fs-level-mb subtextHomepage" style="font-size: 12px; padding-left: 5px">Số bài học còn lại: 4 / 29</span></div>
+                                          <div class="beginner"><span class="fs-level-mb subtextHomepage" style="font-size: 12px; padding-left: 5px">Số khóa học còn lại: <span id="completedCourseNumbers"><%= dataPoolCourseCompleted.length %> </span> / <span id="totalCourseNumbers"> <%= routeStudyData.courses.length %> </span></span></div>
                                         </div>
                                         <div class="itemMetaDescription">
                                           <div class="totalTimeStudy">
@@ -177,7 +180,7 @@
                                                 <span role="img" aria-label="read" class="textCourseRead" style="margin-right: 5px">
                                                   <i class="fa-brands fa-readme"></i>
                                                 </span>
-                                                5
+                                                <%= routeStudyData.courses.length %>
                                                 Course
                                               </span>
                                             </div>
@@ -185,7 +188,7 @@
                                               <span class="subtextHomepage">
                                                 <span role="img" aria-label="clock-cricle" class="clockCricle" style="margin-right: 5px">
                                                   <i class="fa-regular fa-clock"></i>
-                                                  192 giờ
+                                                  <%= routeStudyData.total_time_route %>
                                                 </span>
                                               </span>
                                             </div>
@@ -197,86 +200,11 @@
                                 </div>
                               </div>
                             </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-        </div>
-
-        <div class="dashboardContent" id="dashboardCourse" style="display: none">
-          <div class="dashboard-head-content">
-            <div class="listRouteStudy">
-              <strong class="textRouteStudy">Khóa học gần đây</strong>
-              <div style="margin-left: 300px;">
-                <input type="text" class="search-txt-input" name="q" maxlength="100" placeholder="Tìm kiếm">
-                <button type="submit" form="form1" class="search-button">
-                  <i class="fa fa-search"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="dashboard-list-roadmap" style="padding-top: 30px;">
-            <div class="ant-row" style="margin-left: -15px; margin-right: -15px; height: 100%;">
-              <div class="ant-col ant-col-xs-24 ant-col-xl-12" style="padding-left: 15px; padding-right: 15px;">
-                <div class="listRoutes" style="margin-left: -23px;">
-                  <div class="nestedLoading">
-                    <div class="spinHomeFirst">
-                      <div class="antRow">
-                        <div style="width: 50%; max-width: 50%; padding-bottom: 20px">
-                          <div class="ant-col" style="padding-left: 8px;
-                            padding-right: 8px;
-                            flex: 1 1 auto; margin-left: 15px; margin-right: 15px;">
-                            <div class="ant-list-item" style="background-color: rgb(237, 237, 237); padding: 10px;">
-                              <a href="/course-list">
-                                <div class="itemMeta">
-                                  <div class="itemMetaAvatar">
-                                    <span class="avataSquare">
-                                      <img src="https://images.pexels.com/photos/11035547/pexels-photo-11035547.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
-                                    </span>
-                                  </div>
-                                  <div class="itemMetaContent">
-                                    <h4 class="itemMetaTitle">
-                                      <div class="titleCustom">
-                                        <span class="typography">
-                                          <strong>Training Program Preparation (JS)</strong>
-                                        </span>
-                                      </div>
-                                    </h4>
-                                    <div style="gap: 8px; padding-bottom: 15px; display: flex">
-                                      <div class="progress">
-                                        <div class="color"></div>
-                                      </div>
-                                      <div class="beginner"><span class="fs-level-mb subtextHomepage" style="font-size: 12px; padding-left: 5px">Số bài học còn lại: 4 / 29</span></div>
-                                    </div>
-                                    <div class="itemMetaDescription">
-
-                                      <div class="totalTimeStudy">
-                                        <div class="spaceItem">
-                                          <span class="subtextHomepage">
-                                            <span role="img" aria-label="read" class="textCourseRead" style="margin-right: 5px">
-                                              <i class="fa-brands fa-readme"></i>
-                                            </span>
-                                            5
-                                            Course
-                                          </span>
-                                        </div>
-                                        <div class="spaceItem">
-                                          <span class="subtextHomepage">
-                                            <span role="img" aria-label="clock-cricle" class="clockCricle" style="margin-right: 5px">
-                                              <i class="fa-regular fa-clock"></i>
-                                              192 giờ
-                                            </span>
-                                          </span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </a>
+                            <% }else{ %>
+                            <div style="width: 50%; max-width: 50%; padding-bottom: 20px;">
+                              <img width="100%" src="https://firebasestorage.googleapis.com/v0/b/projectmodule3-c6f1d.appspot.com/o/no-data-concept-illustration-folder%2Fno-data-my-route-study.jpg?alt=media&token=c5f89801-2998-4a32-a7c8-094ba3f1825d" alt="">
                             </div>
+                            <% } %>
                           </div>
                         </div>
                       </div>
@@ -284,221 +212,8 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
         </div>
 
-
-
-        <div class="dashboardContent" id="dashboardTest" style="display: none">
-          <div class="dashboard-head-content">
-            <div class="listRouteStudy">
-              <strong class="textRouteStudy">Lịch sử bài thi</strong>
-              <div>
-                <input type="text" class="search-txt-input" name="q" maxlength="100" placeholder="Tìm kiếm">
-                <button type="submit" form="form1" class="search-button">
-                  <i class="fa fa-search"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="dashboard-list-roadmap" style="padding-top: 30px;">
-            <table style="width: 100%; color: #fff; border-radius: 3px; font-size: 14px">
-              <thead>
-                <tr>
-                  <th>Tên bài thi</th>
-                  <th>Số câu trả lời đúng</th>
-                  <th>Thời gian thi</th>
-                  <th>Kết quả</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td colspan="4">
-                    <div class="ant-empty ant-empty-normal">
-                      <div class="ant-empty-image"><svg class="ant-empty-img-simple" width="64" height="41" viewBox="0 0 64 41" xmlns="http://www.w3.org/2000/svg">
-                          <g transform="translate(0 1)" fill="none" fill-rule="evenodd">
-                            <ellipse class="ant-empty-img-simple-ellipse" cx="32" cy="33" rx="32" ry="7"></ellipse>
-                            <g class="ant-empty-img-simple-g" fill-rule="nonzero">
-                              <path d="M55 12.76L44.854 1.258C44.367.474 43.656 0 42.907 0H21.093c-.749 0-1.46.474-1.947 1.257L9 12.761V22h46v-9.24z"></path>
-                              <path d="M41.613 15.931c0-1.605.994-2.93 2.227-2.931H55v18.137C55 33.26 53.68 35 52.05 35h-40.1C10.32 35 9 33.259 9 31.137V13h11.16c1.233 0 2.227 1.323 2.227 2.928v.022c0 1.605 1.005 2.901 2.237 2.901h14.752c1.232 0 2.237-1.308 2.237-2.913v-.007z" class="ant-empty-img-simple-path"></path>
-                            </g>
-                          </g>
-                        </svg>
-                        <div class="ant-empty-description">Trống</div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div class="dashboardContent" id="dashboardPoint" style="display: none">
-          <div class="dashboard-head-content">
-            <div class="listRouteStudy">
-              <strong class="textRouteStudy">Lịch sử Điểm</strong>
-              <div>
-                <input type="text" class="search-txt-input" name="q" maxlength="100" placeholder="Tìm kiếm">
-                <button type="submit" form="form1" class="search-button">
-                  <i class="fa fa-search"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="dashboard-list-roadmap" style="padding-top: 30px;">
-            <table style="width: 100%; color: #fff; border-radius: 3px; font-size: 14px">
-              <thead>
-                <tr>
-                  <th>STT</th>
-                  <th>Điểm mới</th>
-                  <th>Điểm cũ</th>
-                  <th>Nguyên nhân</th>
-                  <th>Mô tả</th>
-                  <th>Loại</th>
-                  <th>Thời gian</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td colspan="7">
-                    <div class="ant-empty ant-empty-normal">
-                      <div class="ant-empty-image"><svg class="ant-empty-img-simple" width="64" height="41" viewBox="0 0 64 41" xmlns="http://www.w3.org/2000/svg">
-                          <g transform="translate(0 1)" fill="none" fill-rule="evenodd">
-                            <ellipse class="ant-empty-img-simple-ellipse" cx="32" cy="33" rx="32" ry="7"></ellipse>
-                            <g class="ant-empty-img-simple-g" fill-rule="nonzero">
-                              <path d="M55 12.76L44.854 1.258C44.367.474 43.656 0 42.907 0H21.093c-.749 0-1.46.474-1.947 1.257L9 12.761V22h46v-9.24z"></path>
-                              <path d="M41.613 15.931c0-1.605.994-2.93 2.227-2.931H55v18.137C55 33.26 53.68 35 52.05 35h-40.1C10.32 35 9 33.259 9 31.137V13h11.16c1.233 0 2.227 1.323 2.227 2.928v.022c0 1.605 1.005 2.901 2.237 2.901h14.752c1.232 0 2.237-1.308 2.237-2.913v-.007z" class="ant-empty-img-simple-path"></path>
-                            </g>
-                          </g>
-                        </svg>
-                        <div class="ant-empty-description">Trống</div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-
-
-        <div class="dashboardContent" id="listExercise" style="display: none">
-          <div class="dashboard-head-content">
-            <div class="listRouteStudy">
-              <strong class="textRouteStudy">Lớp học của tôi</strong>
-              <div>
-                <input type="text" class="search-txt-input" name="q" maxlength="100" placeholder="Tìm kiếm">
-                <button type="submit" form="form1" class="search-button">
-                  <i class="fa fa-search"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="dashboard-list-roadmap" style="padding-top: 30px;">
-            <table style="width: 100%; color: #fff; border-radius: 3px; font-size: 14px">
-              <thead>
-                <tr>
-                  <th>Tên bài tập</th>
-                  <th>Mô tả</th>
-                  <th>Khóa học</th>
-                  <th>Hạn nộp</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td colspan="4">
-                    <div class="ant-empty ant-empty-normal">
-                      <div class="ant-empty-image"><svg class="ant-empty-img-simple" width="64" height="41" viewBox="0 0 64 41" xmlns="http://www.w3.org/2000/svg">
-                          <g transform="translate(0 1)" fill="none" fill-rule="evenodd">
-                            <ellipse class="ant-empty-img-simple-ellipse" cx="32" cy="33" rx="32" ry="7"></ellipse>
-                            <g class="ant-empty-img-simple-g" fill-rule="nonzero">
-                              <path d="M55 12.76L44.854 1.258C44.367.474 43.656 0 42.907 0H21.093c-.749 0-1.46.474-1.947 1.257L9 12.761V22h46v-9.24z"></path>
-                              <path d="M41.613 15.931c0-1.605.994-2.93 2.227-2.931H55v18.137C55 33.26 53.68 35 52.05 35h-40.1C10.32 35 9 33.259 9 31.137V13h11.16c1.233 0 2.227 1.323 2.227 2.928v.022c0 1.605 1.005 2.901 2.237 2.901h14.752c1.232 0 2.237-1.308 2.237-2.913v-.007z" class="ant-empty-img-simple-path"></path>
-                            </g>
-                          </g>
-                        </svg>
-                        <div class="ant-empty-description">Trống</div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div class="dashboardContent" id="dashboardSetting" style="display:none">
-          <div class="dashboard-head-content">
-            <div class="listRouteStudy">
-              <strong class="textRouteStudy">Cài đặt</strong>
-              <div>
-                <input type="text" class="search-txt-input" name="q" maxlength="100" placeholder="Tìm kiếm">
-                <button type="submit" form="form1" class="search-button">
-                  <i class="fa fa-search"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="dashboard-list-roadmap settingForm" style="padding-top: 30px;">
-            <div style="padding-left: 50px;">
-              <div style="margin-bottom: 30px">
-                <p class="tileSettingAccount">Ảnh đại diện</p>
-              </div>
-              <span class="ant-avatar ant-avatar-circle img-user" style="width: 150px; height: 150px; line-height: 150px; font-size: 18px;">
-                <span class="ant-avatar-string" style="line-height: 150px; transform: scale(1) translateX(-50%);">
-                </span>
-              </span>
-              <button type="button" class="ant-btn ant-btn-default"><span role="img" aria-label="cloud-upload" class="anticon anticon-cloud-upload btn-upload"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="cloud-upload" width="1em" height="1em" fill="currentColor" aria-hidden="true">
-                    <path d="M518.3 459a8 8 0 00-12.6 0l-112 141.7a7.98 7.98 0 006.3 12.9h73.9V856c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V613.7H624c6.7 0 10.4-7.7 6.3-12.9L518.3 459z"></path>
-                    <path d="M811.4 366.7C765.6 245.9 648.9 160 512.2 160S258.8 245.8 213 366.6C127.3 389.1 64 467.2 64 560c0 110.5 89.5 200 199.9 200H304c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8h-40.1c-33.7 0-65.4-13.4-89-37.7-23.5-24.2-36-56.8-34.9-90.6.9-26.4 9.9-51.2 26.2-72.1 16.7-21.3 40.1-36.8 66.1-43.7l37.9-9.9 13.9-36.6c8.6-22.8 20.6-44.1 35.7-63.4a245.6 245.6 0 0152.4-49.9c41.1-28.9 89.5-44.2 140-44.2s98.9 15.3 140 44.2c19.9 14 37.5 30.8 52.4 49.9 15.1 19.3 27.1 40.7 35.7 63.4l13.8 36.5 37.8 10C846.1 454.5 884 503.8 884 560c0 33.1-12.9 64.3-36.3 87.7a123.07 123.07 0 01-87.6 36.3H720c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h40.1C870.5 760 960 670.5 960 560c0-92.7-63.1-170.7-148.6-193.3z"></path>
-                  </svg></span><span>Đổi ảnh</span></button>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="dashboardContent" id="dashboardSetting" style="display:none">
-
-
-        </div>
-
-        <div class="dashboardContent" id="dashboardSetting" style="">
-          <div class="dashboard-head-content">
-            <div class="listRouteStudy">
-              <strong class="textRouteStudy">Điểm danh</strong>
-              <div>
-                <input type="text" class="search-txt-input" name="q" maxlength="100" placeholder="Tìm kiếm">
-                <button type="submit" form="form1" class="search-button">
-                  <i class="fa fa-search"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="dashboard-list-roadmap settingForm time" style="padding-top: 30px;">
-            <div id="time">Loading…</div>
-          </div>
-
-          <div id="customclickChangeImage">
-            <button type="button" id="clickCameraAndAttachedWithChange" class="clickCameraAndAttachedWithChange"><i class="fa-solid fa-camera"></i></button>
-            <button type="file" id="clickAttachedWithChange" class="clickAttachedWithChange"><i class="fa-solid fa-image"></i></button>
-          </div>
-          <div id="imageUploadWrap" class="image-upload-wrap">
-            <input id="imageUploadInput" class="file-upload-input" type='file' accept="image/*" />
-            <div class="drag-text">
-              <h3 class="h3ChangeImage">Kéo và thả tệp hoặc chọn thêm hình ảnh</h3>
-            </div>
-          </div>
-          <div class="file-upload-content">
-            <img class="file-upload-image" width="200" height="200" src="#" alt="your image" />
-            <div class="image-title-wrap">
-              <button type="button" id="removeChangeImage" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
-              <button type="button" id="saveChangeImage" class="saveImage">Save <span class="image-title">Uploaded Image</span></button>
-            </div>
-          </div>
-        </div>
 
 
     </main>
@@ -511,6 +226,6 @@
     margin-left: 20px;">Coppy right@2023 MR Hoang</div>
   </section>
 </body>
-<script src="/control-panel.js"></script>
+<script src="/my-router.js"></script>
 
 </html>

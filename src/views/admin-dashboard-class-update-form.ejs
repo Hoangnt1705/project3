@@ -9,7 +9,7 @@
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no" name="viewport">
   <!-- Canonical SEO  -->
   <link rel="canonical" href="https://www.creative-tim.com/product/light-bootstrap-dashboard">
-  <link rel="stylesheet" href="/user-management-form-update.css">
+  <link rel="stylesheet" href="/admin-dashboard-class-update-form.css">
   <!--  Social tags      -->
   <meta name="keywords" content="creative tim, html dashboard, html css dashboard, web dashboard, freebie, free bootstrap dashboard, bootstrap, css3 dashboard, bootstrap admin, light bootstrap dashboard, frontend, responsive bootstrap dashboard, bootstrap 4 admin, bootstrap 4 template, bootstrap 4 dashboard, bootstrap 4, free bootstrap 4">
   <meta name="description" content="A bootstrap 4 admin dashboard template designed to be simple and beautiful.">
@@ -91,7 +91,7 @@
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="http://localhost:3000/router/admin-dashboard/user-management">
               <i class="nc-icon nc-circle-09"></i>
               <p>User management</p>
@@ -128,7 +128,7 @@
             </a>
           </li>
           <li>
-            <a class="nav-link" href="http://localhost:3000/router/admin-dashboard/class/">
+            <a class="nav-link active" href="http://localhost:3000/router/admin-dashboard/class/">
               <i class="nc-icon nc-puzzle-10 active"></i>
               <p>Class</p>
             </a>
@@ -215,81 +215,60 @@
         <header class="header">
           <div>
             <ul class="menuRouteStudy">
-              <li id="update" class="liMenuRouteStudy "><a href="http://localhost:3000/router/admin-dashboard/user-management">Update class</a> </li>
-              <li class="liMenuRouteStudy"> <a href="http://localhost:3000/router/dashboard-register">Create class</a> </li>
+              <li id="update" class="liMenuRouteStudy "> <a href="http://localhost:3000/router/admin-dashboard/class/update">Update Class</a> </li>
+              <li class="liMenuRouteStudy"> <a href="http://localhost:3000/router/admin-dashboard/class">Create Class</a> </li>
           </div>
         </header>
         <main class="main">
-          <% data.forEach(element => {console.log(data) %>
           <form action="" id="formUpdate">
-            <div id="container" class="container">
-              <div class="formUpdate">
-                <div id="id" style="display:none"><%= element.id%></div>
-                <div>
-                  <label for="username">Username:</label>
-                  <input type="text" id="username" name="username" value="<%= element.username%>">
-                </div>
-                <div>
-                  <label for="fullName">Full Name:</label>
-                  <input type="text" id="fullName" name="fullName" value="<%= element.full_name%>">
-                </div>
-                <div>
-                  <label for="email">Email:</label>
-                  <input type="text" id="email" name="email" value="<%= element.email%>">
-                </div>
-                <div>
-                  <label for="dob">DOB:</label>
-                  <input type="date" id="dob" name="dob">
-                </div>
-                <div>
-                  <label for="phoneNumber">Phone Number:</label>
-                  <input type="number" id="phoneNumber" name="phoneNumber" value="<%= element.phone_number%>">
-                </div>
-                <div>
-                  <input type="radio" id="gender" name="gender" value="1" checked>
-                    <label for="gender">Male</label>
-                    <input type="radio" id="gender" name="gender" value="0">
-                    <label for="css">Female</label>
-                </div>
-                <div>
-                  <label for="role">Role: </label>
-                  <select name="role" id="role">
-                    <optgroup label="Select">
-                      <option>
-                        admin
-                      </option>
-                      <option>
-                        user
-                      </option>
-                    </optgroup>
-                  </select>
-                </div>
-                <div>
-                  <label for="setRoute">Route User: </label>
-                  <select name="setRoute" id="setRoute">
-                    <optgroup label="Select">
-                      <% for(let i = 0; i < dataAddInRoute.length ; i++) { %>
-                      <option>
-                        <%= `${dataAddInRoute[i].route_name}: ${[i + 1]}` %>
-                      </option>
-                      <% } %>
-                    </optgroup>
-                  </select>
-                </div>
-                <div>
-                  <button id="stepImage">Next</button>
-                </div>
-              </div>
+            <div id="idClass" name="idClass" style="display:none"><%= dataClassParams.id_class %></div>
+            <div id="idCheckUpdateRouterStudy" name="idClass" style="display:none"><%= dataClassParams.route_study_id %></div>
+            <div>
+              <label for="className">Class Name:</label>
+              <input type="text" id="className" name="className" value=<%= dataClassParams.class_name %>>
             </div>
-          </form>
-          <% }) %>
-        </main>
-      </section>
+            <div>
+              <label for="typeClass">Type Class:</label>
+              <select name="typeClass" id="typeClass">
+                <optgroup label="Type Class">
+                  <option> <%= dataClassParams.type_class %></option>
+
+                </optgroup>
+              </select>
+            </div>
+            <div>
+              <label for="startCeremony">Start Ceremony Date :</label>
+              <input type="date" id="startCeremony" name="startCeremony" value=<%= dataClassParams.start_date %>>
+            </div>
+            <div>
+              <label for="endDate">End Date :</label>
+              <input type="date" id="endDate" name="endDate" value=<%= dataClassParams.end_date ? dataClassParams.end_date : '' %>>
+            </div>
+            <div>
+              <label for="setRoute">Route User: </label>
+              <select name="setRoute" id="setRoute">
+                <optgroup label="Select">
+                  <% for(let i = 0; i < dataRouteStudyConvert.length ; i++) { %>
+                  <option value=<%= dataRouteStudyConvert[i].id_route %>>
+                    <%= dataRouteStudyConvert[i].route_name %> : <%= dataRouteStudyConvert[i].id_route %>
+                  </option>
+                  <% } %>
+                </optgroup>
+              </select>
+            </div>
+            <div>
+              <button id="save">Save</button>
+            </div>
     </div>
+  </div>
+  </form>
+  </main>
+  </section>
+  </div>
 </body>
 
 <!--   Core JS Files   -->
-<script src="/user-management-form-update.js"></script>
+<script src="/admin-dashboard-class-update-form.js"></script>
 <script src="/toast.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
 <script src="" type="text/javascript"></script>

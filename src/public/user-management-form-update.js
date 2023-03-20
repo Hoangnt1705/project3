@@ -8,6 +8,7 @@ let dob = document.getElementById('formUpdate').dob;
 let phoneNumber = document.getElementById('formUpdate').phoneNumber;
 let gender = document.getElementById('formUpdate').gender;
 let role = document.getElementById('formUpdate').role;
+let classBelongs = document.getElementById('formUpdate').classBelongs;
 let setRoute = document.getElementById('formUpdate').setRoute;
 let stepImage = document.getElementById('formUpdate').stepImage;
 let container = document.getElementById('container');
@@ -70,6 +71,7 @@ let updateNotImageFunc = (buttonUpdate) => {
         else if (_.isEmpty(phoneNumber.value)) return showError('Không được để trống số điện thoại');
         else if (_.isEmpty(gender.value)) return showError('Không được để trống giới tính');
         else if (_.isEmpty(role.value)) return showError('Không được để trống phân quyền');
+        else if (_.isEmpty(classBelongs.value)) return showError('Không được để trống lớp của học sinh');
         else if (_.isEmpty(setRoute.value)) return showError('Không được để trống lộ trình học của học viên');
         // else if (_.isEmpty(imageUpdate.value)) return showError("Không được để trống Image");
         if (username.value && fullName.value && email.value && dob.value
@@ -82,6 +84,7 @@ let updateNotImageFunc = (buttonUpdate) => {
             formDataUpdate.append('phoneNumber', phoneNumber.value);
             formDataUpdate.append('gender', gender.value);
             formDataUpdate.append('role', role.value);
+            formDataUpdate.append('classBelongs', classBelongs.value);
             formDataUpdate.append('setRoute', setRouteChunkArray[1]);
             console.log(formDataUpdate.get('username'));
             updateUserFunc(API);
@@ -115,6 +118,7 @@ let updateHasImageFunc = (container, stepUpdateImage, imageUpdate) => {
         else if (_.isEmpty(phoneNumber.value)) return showError('Không được để trống số điện thoại');
         else if (_.isEmpty(gender.value)) return showError('Không được để trống giới tính');
         else if (_.isEmpty(role.value)) return showError('Không được để trống phân quyền');
+        else if (_.isEmpty(classBelongs.value)) return showError('Không được để trống lớp của học sinh');
         else if (_.isEmpty(setRoute.value)) return showError('Không được để trống lộ trình học của học viên');
         // else if (_.isEmpty(imageUpdate.value)) return showError("Không được để trống Image");
         if (username.value && fullName.value && email.value && dob.value
@@ -127,6 +131,7 @@ let updateHasImageFunc = (container, stepUpdateImage, imageUpdate) => {
             formDataUpdate.append('phoneNumber', phoneNumber.value);
             formDataUpdate.append('gender', gender.value);
             formDataUpdate.append('role', role.value);
+            formDataUpdate.append('classBelongs', classBelongs.value);
             formDataUpdate.append('setRoute', setRouteChunkArray[1]);
             console.log(formDataUpdate.get('username'));
             PostAvataUserChangeFunc(APIImageChange);
@@ -201,3 +206,4 @@ let updateHasImageFunc = (container, stepUpdateImage, imageUpdate) => {
     nextBtnUpdateImage();
     validateImage();
 };
+

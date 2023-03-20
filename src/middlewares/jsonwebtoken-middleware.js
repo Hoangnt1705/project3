@@ -205,7 +205,7 @@ module.exports.checkProgress = (req, res, next) => {
 module.exports.scanStudentInvateLearn = (req, res, next) => {
     let { id } = req.params;
     db.execute(`select id, username, full_name, id_route, id_course, id_class as class from users, classes, route_study, course
-    where classIdClass = id_class and id_route = route_study_id and course.route_id = route_study.id_route and id_course =  ?`, [id])
+    where users.classIdClass = id_class and id_route = route_study_id and course.route_id = route_study.id_route and id_course =  ?`, [id])
         .then(response => {
             let [data] = response;
             console.log(data);

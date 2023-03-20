@@ -187,7 +187,6 @@
             <ul class="menuRouteStudy">
               <li id="update" class="liMenuRouteStudy "> <a href="http://localhost:3000/router/admin-dashboard/class/update">Update Class</a> </li>
               <li class="liMenuRouteStudy"> <a href="http://localhost:3000/router/admin-dashboard/class">Create Class</a> </li>
-              <li class="liMenuRouteStudy"> <a href="http://localhost:3000/router/admin-dashboard/course/post">Create Class</a> </li>
             </ul>
           </div>
         </header>
@@ -196,33 +195,31 @@
             <% data.map(element => { %>
             <table>
               <h1><%= element.class_name %></h1>
+              <p>ID_CLASS:<%= element.id_class %></p><button class="updateCourse">Update</button> <button class="deleteCourse">Delete</button>
+              <td class="idUpdate" style="display:none"><%= element.id_class %></td>
               <thead>
                 <tr>
                   <th>Id</th>
                   <th>username</th>
+                  <th>Id route study of class</th>
                   <th>full_name</th>
                   <th>email</th>
                   <th>dob</th>
                   <th>phone number</th>
                   <th>gender</th>
-                  <th>completed docs</th>
-                  <th>id route study</th>
-                  <th>update</th>
                 </tr>
               </thead>
               <tbody>
                 <% element.dataValues.users.forEach(elementUsers => {console.log(elementUsers.dataValues) %>
                 <tr>
-                  <td class="idUpdate"><%= elementUsers.dataValues.id %></td>
+                  <td><%= elementUsers.dataValues.id %></td>
                   <td><%= elementUsers.dataValues.username %></td>
+                  <td><%= element.routeStudyIdRoute %></td>
                   <td><%= elementUsers.dataValues.full_name %></td>
                   <td><%= elementUsers.dataValues.email %></td>
                   <td><%= elementUsers.dataValues.dob %></td>
                   <td><%= elementUsers.dataValues.phone_number %></td>
                   <td><%= elementUsers.dataValues.gender === 1 ? "Nam" : elementUsers.dataValues.gender === 0 ? "Nữ" : "NaN" %></td>
-                  <td><%= elementUsers.dataValues.completed_docs %></td>
-                  <td></td>
-                  <td><button class="updateCourse">Update</button> <button class="deleteCourse">Delete</button></td>
                 </tr>
                 <% }) %>
               </tbody>

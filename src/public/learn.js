@@ -13,14 +13,17 @@ let arrangeIdPool;
 let courseIdPool;
 let checkButtonCompleted;
 let lockedPool;
+let classIdPool;
 for (let i = 0; i < listExerciseRun.length; i++) {
     listExerciseRun[i].addEventListener('click', e => {
+        console.log(listExerciseRun[i].childNodes);
         idDocPool = listExerciseRun[i].childNodes[1].innerText;
         learnIdPool = listExerciseRun[i].childNodes[3].innerText;
         arrangeIdPool = listExerciseRun[i].childNodes[5].innerText;
         courseIdPool = listExerciseRun[i].childNodes[7].innerText;
         checkButtonCompleted = listExerciseRun[i].childNodes[9].innerHTML;
         lockedPool = listExerciseRun[i].childNodes[11].innerHTML;
+        classIdPool = listExerciseRun[i].childNodes[17].innerHTML;
         console.log(idDocPool);
         console.log(learnIdPool);
         console.log(checkButtonCompleted);
@@ -56,6 +59,12 @@ for (let i = 0; i < listExerciseRun.length; i++) {
             backDoc.style.pointerEvents = 'none';
             backDoc.disabled = true;
         }
+        // if (listExerciseRun[i] === listExerciseRun[listExerciseRun.length - 1]) {
+        //     completedDoc.disabled = true;
+        //     console.log(listExerciseRun[i] === listExerciseRun[listExerciseRun.length - 1]);
+        // }
+        checkButtonCompleted.trim() === 'true' ? completedDoc.disabled = true : listExerciseRun[i] === listExerciseRun[listExerciseRun.length - 1] ? completedDoc.disabled = true : completedDoc.disabled = false;
+        checkButtonCompleted.trim() === 'true' ? completedDoc.style.pointerEvents = 'none' : completedDoc.style.pointerEvents = 'all';
         backDoc.addEventListener('click', () => {
             // nếu đã dự định khi click thì sẽ lấy i - 1 để lùi lại rồi thì khi so sánh cũng phải đặt điều kiện trừ y hệt như thế
             if (listExerciseRun[i] !== listExerciseRun[0]) {
@@ -73,16 +82,13 @@ for (let i = 0; i < listExerciseRun.length; i++) {
     });
 }
 let handleLearnsFunc = (completedDoc, backDoc, nextDoc, listExerciseRun) => {
-
-    checkButtonCompleted.trim() === 'true' ? completedDoc.disabled = true : completedDoc.disabled = false;
-    checkButtonCompleted.trim() === 'true' ? completedDoc.style.pointerEvents = 'none' : completedDoc.style.pointerEvents = 'all';
     checkButtonCompleted.trim() === 'true' ? nextDoc.disabled = false : nextDoc.disabled = true;
     checkButtonCompleted.trim() === 'true' ? nextDoc.style.pointerEvents = 'all' : nextDoc.style.pointerEvents = 'none';
 };
 let handleDocsFunc = (completedDoc) => {
     completedDoc.addEventListener('click', (e) => {
         e.preventDefault();
-        axios.post('http://localhost:3000/router/api/v1/pool-doc-completed/post', { idDocPool: idDocPool, learnIdPool: learnIdPool, arrangeIdPool: arrangeIdPool, courseIdPool: courseIdPool })
+        axios.post('http://localhost:3000/router/api/v1/pool-doc-completed/post', { idDocPool: idDocPool, learnIdPool: learnIdPool, arrangeIdPool: arrangeIdPool, courseIdPool: courseIdPool, classIdPool: classIdPool })
             .then(response => {
                 console.log(response);
                 showSuccess('Thành công');
@@ -127,4 +133,41 @@ for (let i = 0; i < clickviewExerciseParrent.length; i++) {
         }
     });
 }
+document.getElementById('successCourse').classList.add('animate');
+document.getElementById('successCourse').classList.remove('animate');
 
+document.getElementById('successCourse').addEventListener('click', function () {
+    document.getElementById('popup').classList.add('show');
+});
+
+document.getElementById('close_popup').addEventListener('click', function () {
+    document.getElementById('popup').classList.remove('show');
+    setTimeout(() => {
+        window.location.reload();
+    }, 50);
+});
+
+const successCourseForm = document.getElementById('successCourseForm');
+const idClassPoolCourse = document.getElementById('idClassPoolCourse').innerText;
+const idRoutePoolCourse = document.getElementById('idRoutePoolCourse').innerText;
+const idCoursePoolCourse = document.getElementById('idCoursePoolCourse').innerText;
+successCourseForm.addEventListener('submit', e => {
+    e.preventDefault();
+    axios.post('http://localhost:3000/router/api/v1/pool-course-completed/post', {
+        idClassPoolCourse: idClassPoolCourse, idRoutePoolCourse: idRoutePoolCourse, idCoursePoolCourse: idCoursePoolCourse
+    })
+        .then(response => {
+            console.log(response);
+        })
+        .catch(err => console.log(err));
+});
+const animationContainer = document.getElementById('lottie-animation');
+const animationURL = 'https://assets2.lottiefiles.com/temp/lf20_5tgmik.json';
+
+lottie.loadAnimation({
+    container: animationContainer,
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: animationURL,
+});

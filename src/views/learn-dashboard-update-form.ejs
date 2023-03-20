@@ -250,7 +250,7 @@
                     <optgroup label="Select">
                       <% for(let i = 0; i < dataAddInCourse.length ; i++) { %>
                       <option>
-                        <%= `${dataAddInCourse[i].course_name}: ${[i + 1]}` %>
+                        <%= `${dataAddInCourse[i].course_name}: ${[dataAddInCourse[i].id_course]}` %>
                       </option>
                       <% } %>
                     </optgroup>

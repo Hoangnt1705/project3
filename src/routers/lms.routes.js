@@ -24,7 +24,7 @@ const upload = multer({ storage: multer.memoryStorage() });
 const { middlewareTokenUser, verifyLoginHome, middlewareTokenAdmin, verifyLoginAdmin, verifyLogin, scanStudentInvateLearn, checkProgress } = require('../middlewares/jsonwebtoken-middleware.js');
 // controller import
 const { userRegister, userLogin, routeStudyGet, courseGet, controlPanelGet, home, adminLogin, homeAdmin } = require('../controllers/lms.user.controller.js');
-const { Class, Users, Learn, Doc, PoolDocCompleted } = require('../service/tableSequelize');
+const { Class, Users, RouteStudy, Learn, Doc, PoolCourseCompleted, PoolDocCompleted } = require('../service/tableSequelize');
 
 /**
  * 
@@ -80,13 +80,12 @@ const initRoutes = (app) => {
                                             .then(response5 => {
                                                 let [dataDoc] = response5;
                                                 return db.execute(`select id, username, full_name, id_route, id_course, id_class as class from users, classes, route_study, course
-                                                where classIdClass = id_class and id_route = route_study_id and course.route_id = route_study.id_route and id_course =  ?`, [id])
+                                                where users.classIdClass = id_class and id_route = route_study_id and course.route_id = route_study.id_route and id_course =  ?`, [id])
                                                     .then(response6 => {
                                                         let [dataInvateClass] = response6;
                                                         let openkeyLearn;
                                                         let dataScanStudentInvate = dataInvateClass.find(element => element.id === req.user.id);
                                                         dataScanStudentInvate ? openkeyLearn = true : openkeyLearn = false;
-                                                        console.log(openkeyLearn);
                                                         return res.render('course-detail.ejs', { putInfoAccount: putInfoAccount, dataUser, dataLearn, dataDoc, dataCourse, dataCourseDetail, dataInvateClass, openkeyLearn });
                                                     })
                                                     .catch(err => res.status(404).json({ error: err, message: err.message }));
@@ -123,7 +122,7 @@ const initRoutes = (app) => {
                                         where: { course_id: id, learn_id: learnData.map((learn) => learn.id_learn) }
                                     });
                                     const completedDocs = await PoolDocCompleted.findAll({
-                                        where: { learn_id: learnData.map((learn) => learn.id_learn), course_id: id, user_id: userId }, // Có thể
+                                        where: { learn_id: learnData.map((learn) => learn.id_learn), courseIdCourse: id, user_id: userId }, // Có thể
                                         // dùng array để xử lý điều kiện where để truy xuất dữ liệu với sequelize
                                         attributes: ['arrangeId'],
                                     });
@@ -154,10 +153,21 @@ const initRoutes = (app) => {
                                         userId: userId,
                                         resultLessonReadings: resultLessonReadings,
                                     };
-                                    console.log('dataLearn', dataLearn);
+                                    let dataRouteStudy = await RouteStudy.findAll();
+                                    let dataPoolCourseCompleted = await PoolCourseCompleted.findOne({
+                                        where: { class_id: dataUser[0].classIdClass, user_id: userId, route_id: dataRouteStudy.map(route => route.id_route), course_id: id }
+                                    });
+                                    let dataPoolCourseCompletedPlain;
+                                    if (dataPoolCourseCompleted) {
+                                        dataPoolCourseCompletedPlain = dataPoolCourseCompleted.get({ plain: true });
+                                    } else {
+                                        dataPoolCourseCompletedPlain = undefined;
+                                    }
+
+                                    console.log(dataRouteStudy);
                                     return res.render('learn.ejs', {
                                         putInfoAccount: putInfoAccount, dataUser, dataLearn, dataCourse, dataDoc: userData.resultLessonReadings,
-                                        resultCombineCheckButtonCompleted: resultCombineCheckButtonCompleted
+                                        resultCombineCheckButtonCompleted: resultCombineCheckButtonCompleted, dataPoolCourseCompletedPlain: dataPoolCourseCompletedPlain,
                                     });
                                 } catch (error) {
                                     console.log(error);
@@ -335,7 +345,7 @@ const initRoutes = (app) => {
             .then(response => {
                 let [data] = response;
                 console.log(data);
-                db.execute('select course.course_name from course, course_detail where course.id_course = course_detail.id_detail')
+                db.execute('select course.course_name, course.id_course from course, course_detail where course.id_course = course_detail.id_detail')
                     .then(response => {
                         let [dataAddInCourse] = response;
                         res.render('learn-dashboard-update-form.ejs', { data: data, dataAddInCourse });
@@ -346,7 +356,7 @@ const initRoutes = (app) => {
             .catch(err => res.status(404).json({ err: err, message: 'Not found Users' }));
     });
     router.get('/admin-dashboard/learn/post', verifyLoginAdmin, (req, res) => {
-        db.execute('select course.course_name from course, course_detail where course.id_course = course_detail.id_detail')
+        db.execute('select course.course_name, course.id_course from course, course_detail where course.id_course = course_detail.id_detail')
             .then(response => {
                 let [dataAddInCourse] = response;
                 res.render('learn-dashboard-post.ejs', { dataAddInCourse });
@@ -795,9 +805,12 @@ const initRoutes = (app) => {
 
     router.put('/api/admin-dashboard/course-detail/update/:id', middlewareTokenAdmin, upload.array(), (req, res) => {
         let { addInCourseChange, courseNameUpdate, weLearn, teacher, ta } = req.body;
-        let formPut = [dateUp, courseNameUpdate, weLearn, teacher, ta, addInCourseChange];
-
-        return db.execute('UPDATE `lms_schema`.`course_detail` SET `date_up` = ?, `description_detail` = ?, `we_learn` = ?, `teacher` = ?, `ta` = ? WHERE (`id_detail` = ?)', formPut)
+        let userId = req.user.id;
+        const currentDate = new Date();
+        const dateUp = currentDate.getHours() + 'h:' + currentDate.getMinutes() + 'm-'
+            + currentDate.getDate() + '/' + (currentDate.getMonth() + 1) + '/' + currentDate.getFullYear();
+        let formPut = [dateUp, courseNameUpdate, weLearn, teacher, ta, userId, addInCourseChange];
+        return db.execute('UPDATE `lms_schema`.`course_detail` SET `date_up` = ?, `description_detail` = ?, `we_learn` = ?, `teacher` = ?, `ta` = ?, `user_id` = ? WHERE (`id_detail` = ?)', formPut)
             .then(response => {
                 let [data] = response;
                 console.log('updateIfIsContainImage', data);
@@ -822,28 +835,25 @@ const initRoutes = (app) => {
     });
     router.put('/api/admin-dashboard/user-management/:id', middlewareTokenAdmin, upload.array(), (req, res) => {
         let { id } = req.params;
-        let { username, fullName, email, dob, phoneNumber, gender, role, setRoute, imageUpdate } = req.body;
+        let { username, fullName, email, dob, phoneNumber, gender, role, classBelongs, setRoute, imageUpdate } = req.body;
+        console.log(classBelongs);
         console.log(req.body);
         db.execute('select * from route_study where id_route = ?', [id])
             .then(response => {
                 let [data] = response;
-                console.log(data);
                 if (imageUpdate) {
-                    console.log('aaa');
-                    let formhasImage = [username, fullName, email, imageUpdate, dob, phoneNumber, gender, role, setRoute, id];
-                    return db.execute('UPDATE `lms_schema`.`users` SET `username` = ?, `full_name` = ?, `email` = ?, `avatarUrl` = ?, `dob` = ?, `phone_number` = ?, `gender` = ?, `role` = ?, `set_route` = ? WHERE (`id` = ?)', formhasImage)
+                    let formhasImage = [username, fullName, email, imageUpdate, dob, phoneNumber, gender, Number(classBelongs), role, setRoute, id];
+                    return db.execute('UPDATE `lms_schema`.`users` SET `username` = ?, `full_name` = ?, `email` = ?, `avatarUrl` = ?, `dob` = ?, `phone_number` = ?, `gender` = ?, `classIdClass` = ?, `role` = ?, `set_route` = ? WHERE (`id` = ?)', formhasImage)
                         .then(response => {
                             let [data] = response;
-                            console.log('updateIfIsNotContainImage', data);
                             return res.status(200).json({ message: 'Update Successfully', status: data });
                         })
                         .catch(err => res.status(500).json({ message: err.message, status: err.status }));
                 }
-                let formNotHasImage = [username, fullName, email, dob, phoneNumber, gender, role, setRoute, id];
-                return db.execute('UPDATE `lms_schema`.`users` SET `username` = ?, `full_name` = ?, `email` = ?, `dob` = ?, `phone_number` = ?, `gender` = ?, `role` = ?, `set_route` = ? WHERE (`id` = ?)', formNotHasImage)
+                let formNotHasImage = [username, fullName, email, dob, phoneNumber, gender, Number(classBelongs), role, setRoute, id];
+                return db.execute('UPDATE `lms_schema`.`users` SET `username` = ?, `full_name` = ?, `email` = ?, `dob` = ?, `phone_number` = ?, `gender` = ?, `classIdClass` = ?, `role` = ?, `set_route` = ? WHERE (`id` = ?)', formNotHasImage)
                     .then(response => {
                         let [data] = response;
-                        console.log('updateIfIsContainImage', data);
                         return res.status(200).json({ message: 'Update Successfully', status: data });
                     })
                     .catch(err => res.status(500).json({ message: err.message, status: err.status }));
