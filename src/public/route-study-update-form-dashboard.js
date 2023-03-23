@@ -1,5 +1,5 @@
-const API = 'http://localhost:3000/router/api/admin-dashboard/route-study/update/';
-const APIImageChange = 'http://localhost:3000/router/api/admin-dashboard/route-study/post/image-change';
+const API = 'http://localhost/router/api/admin-dashboard/route-study/update/';
+const APIImageChange = 'http://localhost/router/api/admin-dashboard/route-study/post/image-change';
 let formUpdate = document.getElementById('formUpdate');
 let routeNameUpdate = document.getElementById('formUpdate').routeNameUpdate;
 let descriptionUpdate = document.getElementById('formUpdate').descriptionUpdate;

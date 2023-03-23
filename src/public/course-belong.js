@@ -1,4 +1,4 @@
-const API = 'http://localhost:3000/router/course-detail/';
+const API = 'http://localhost/router/course-detail/';
 let level = document.querySelectorAll('.level');
 let color = document.querySelectorAll('.color');
 let itemCourse = document.querySelectorAll('.itemCourse');

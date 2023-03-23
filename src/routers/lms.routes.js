@@ -2,7 +2,6 @@
 const fs = require('fs');
 const cookieParser = require('cookie-parser');
 const path = require('path');
-const canvas = require('canvas');
 const uuid = require('uuid-v4');
 const { db } = require('../utils/database.js');
 const express = require('express');

@@ -1,5 +1,5 @@
 require('dotenv').config();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
@@ -11,15 +11,13 @@ const initRoutesSequelize = require('./routers/lms.sequelize.routes');
 const session = require('express-session');
 const MYSQLStore = require('express-mysql-session')(session);
 const connection = require('./service/statusConnect');
-require('@tensorflow/tfjs-node');
 const options = {
-    host: 'localhost',
-    port: 3306,
-    user: 'root',
-    password: 'Baitulong1@',
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    user: process.env.DB_USER,
     database: 'lms_schema',
+    password: 'Baitulong1@',
 };
-
 //...............middlewareApplication..................
 const sessionStore = new MYSQLStore(options);
 app.use(bodyParser.json());

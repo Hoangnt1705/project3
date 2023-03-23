@@ -1,0 +1,705 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --ant-primary-color: rgb(187, 35, 39);
+    --ant-primary-color-disabled: #edc9c5;
+    --ant-primary-color-hover: #c74646;
+    --ant-primary-color-active: #6e0a14;
+    --ant-primary-color-outline: rgba(187, 35, 39, 0.2);
+    --ant-primary-color-deprecated-bg: #edc9c5;
+    --ant-primary-color-deprecated-border: #d46f6c;
+    --ant-primary-1: #faedeb;
+    --ant-primary-2: #edc9c5;
+    --ant-primary-3: #e09b96;
+    --ant-primary-4: #d46f6c;
+    --ant-primary-5: #c74646;
+    --ant-primary-6: #bb2327;
+    --ant-primary-7: #94151d;
+    --ant-primary-8: #6e0a14;
+    --ant-primary-9: #47030c;
+    --ant-primary-10: #210106;
+    --ant-primary-color-deprecated-l-35: rgb(238, 163, 165);
+    --ant-primary-color-deprecated-l-20: rgb(226, 98, 102);
+    --ant-primary-color-deprecated-t-20: rgb(201, 79, 82);
+    --ant-primary-color-deprecated-t-50: rgb(221, 145, 147);
+    --ant-primary-color-deprecated-f-12: rgba(187, 35, 39, 0.12);
+    --ant-primary-color-active-deprecated-f-30: rgba(250, 237, 235, 0.3);
+    --ant-primary-color-active-deprecated-d-02: rgb(248, 230, 227);
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Mulish', sans-serif;
+    scroll-behavior: smooth;
+}
+
+
+
+.wrapHeader,
+.header,
+.entity,
+.container {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapHeader {
+    /* margin-top: -50px; */
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    z-index: 3;
+}
+
+.menuTabBar {
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+    padding: 0 40px;
+    padding-top: 15px;
+    margin-top: 0px;
+    height: 30px;
+
+}
+
+.liTab {
+    padding-left: 40px;
+    font-size: 17.5px;
+
+}
+
+.dashboard-container-content {
+    padding-top: 20px
+}
+
+#menuTabBar ul.sub-menu-login {
+    visibility: hidden;
+    width: 200px;
+    height: 220px;
+    background-color: rgb(239, 239, 239);
+    text-align: left;
+    border-radius: 6px;
+    padding: 5px 15px 5px 15px;
+    position: absolute;
+    z-index: 1;
+    top: 95%;
+    margin-left: -5px;
+    margin-top: -5px;
+    font-size: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    transition: 0.5s linear;
+
+}
+
+#menuTabBar ul.sub-menu-login::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 88%;
+    margin-left: -31px;
+    border-width: 6.5px;
+    border-style: solid;
+    border-color: transparent transparent rgb(221, 221, 221) transparent;
+
+}
+
+#menuTabBar li:hover>ul.sub-menu-login {
+    visibility: visible;
+    background: rgb(255, 255, 255);
+    color: black;
+    transition: 0.2s linear;
+
+}
+
+.ant-avatar {
+
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    font-feature-settings: "tnum";
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    color: #fff;
+    white-space: nowrap;
+    text-align: center;
+    vertical-align: middle;
+    background: #ccc;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 50%;
+    margin-top: -3px;
+}
+
+.ant-dropdown-menu-item-icon {
+    min-width: 12px;
+    margin-right: 8px;
+    font-size: 12px;
+}
+
+.anticon svg {
+    display: inline-block;
+}
+
+.liMenuLogin {
+    outline: none;
+    list-style: none;
+    cursor: pointer;
+    padding: 7px 0px;
+    border-bottom: 1pt solid rgb(207, 207, 207);
+}
+
+.liMenuLogin:hover {
+    background-color: rgb(244, 244, 244);
+    transition: 0.3s linear;
+    border-radius: 30px;
+    border: 1pt solid rgb(207, 207, 207);
+
+}
+
+#imageTab {
+    width: 11%;
+}
+
+#accountTab {
+    margin-left: 200px;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 400;
+
+}
+
+.clickLiTab:hover {
+    color: rgb(148, 17, 17);
+    padding: 10px;
+    border-bottom: 2px solid rgb(148, 17, 17);
+    transition: 0.2s linear;
+}
+
+.active {
+    color: rgb(148, 17, 17);
+    padding: 10px;
+    border-bottom: 2px solid rgb(148, 17, 17);
+    transition: 0.2s linear;
+}
+
+
+.headerHomePage {
+    background-image: url('https://learn.rikkeiacademy.com/static/media/bg-course.6e67f286.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 385px;
+    margin-top: 0px;
+}
+
+.titleSearchHome {
+    width: 30%;
+    font-size: 45px;
+    line-height: 50px;
+    padding-top: 120px;
+    font-weight: 900;
+    text-align: center;
+    margin: auto;
+}
+
+.advancedTextHome {
+    color: rgb(170, 26, 26);
+
+}
+
+.subtextHomepage {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #6a7a99;
+}
+
+svg {
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.titleHeaderHome {
+    padding: 10px 185px;
+    color: #fff;
+}
+
+.ulHeaderDetailCourse {
+    display: flex;
+
+}
+
+.liHeaderDetailCourse {
+    font-size: 14px;
+    padding-right: 20px;
+}
+
+.titleNameCourse {
+    font-size: 38.5px;
+    font-weight: 900;
+    width: 80%;
+}
+
+.titleSmallCourse {
+    margin-top: -15px;
+}
+
+.progress {
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 10%), 0 6px 20px 0 rgb(0 0 0 / 10%);
+    position: relative;
+    height: 5px;
+    width: 60px;
+    border: 3px solid #f4a261;
+    border-radius: 15px;
+}
+
+.progress .color {
+    position: absolute;
+    background-color: #ffffff;
+    width: 0px;
+    height: 5px;
+    border-radius: 15px;
+    width: 30%;
+    background: #ff0;
+
+}
+
+.beginner {
+    margin-top: -5px;
+    margin-left: 10px
+}
+
+.peopleSubCourse {
+    margin-top: -5px;
+    margin-left: 30px
+}
+
+.banner {
+    min-height: 600px;
+    width: 340px;
+    position: fixed;
+    top: 10vh;
+    right: 2vw;
+    background-color: #fff;
+    z-index: 2;
+    box-shadow: 0 0 15px #cbcbcb;
+    border-radius: 8px;
+}
+
+.banner .img-container {
+    cursor: pointer;
+    overflow: hidden;
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+
+}
+
+image {
+    width: 100%;
+}
+
+.banner .img-container img {
+    width: 94%;
+    border-radius: 8px;
+    background-repeat: none;
+    background-size: cover;
+    object-fit: cover;
+
+}
+
+.ant-btn.ant-btn-block {
+    width: 100%;
+}
+
+.disabled {
+    opacity: 0.6;
+    /* pointer-events: none; */
+}
+
+.disabled .tooltiptext {
+    visibility: hidden;
+    width: 100%;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 20%;
+    margin-left: -60px;
+    opacity: 0.8;
+}
+
+.disabled .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+.disabled:hover .tooltiptext {
+    visibility: visible;
+}
+
+.disabled:hover {
+    cursor: not-allowed;
+
+}
+
+.ant-btn>span {
+    display: inline-block;
+}
+
+#courseDetail .border-banner {
+    border-bottom: 1px solid #ededed;
+}
+
+.ant-col-12 {
+    display: block;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.banner .pt-10 {
+    padding-top: 10px;
+}
+
+element.style {}
+
+.ant-layout,
+.ant-layout * {
+    box-sizing: border-box;
+}
+
+.anticon {
+    display: inline-block;
+    color: inherit;
+    font-style: normal;
+    line-height: 0;
+    text-align: center;
+    text-transform: none;
+    vertical-align: -0.125em;
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.banner .text-right {
+    text-align: end;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+
+#courseDetail .border-banner {
+    border-bottom: 1px solid #ededed;
+}
+
+.ant-btn {
+    line-height: 1.5715;
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+    white-space: nowrap;
+    text-align: center;
+    background-image: none;
+    box-shadow: 0 2px 0 rgb(0 0 0 / 2%);
+    cursor: pointer;
+    transition: all .3s cubic-bezier(.645, .045, .355, 1);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+    height: 32px;
+    padding: 4px 15px;
+    font-size: 14px;
+    border-radius: 2px;
+    color: rgba(0, 0, 0, .85);
+    border: 1px solid #d9d9d9;
+    background: #fff;
+}
+
+.courseDataInfo {
+    padding: 10px 185px;
+    color: #333;
+}
+
+.ant-btn-primary {
+    color: #fff;
+    border-color: #1890ff;
+    border-color: var(--ant-primary-color);
+    background: #1890ff;
+    background: var(--ant-primary-color);
+    text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
+    box-shadow: 0 2px 0 rgb(0 0 0 / 5%);
+}
+
+.ant-row {
+    display: flex;
+    border-bottom: 1px solid #ededed;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333
+}
+
+.ulCourseDataInfo {
+    list-style: none;
+    display: flex;
+    font-size: 14px;
+}
+
+.liCourseDataInfo {
+    margin-right: 30px;
+}
+
+.liCourseDataInfo>a {
+    font-weight: 500;
+
+}
+
+.liCourseDataInfo:hover>a {
+    color: rgb(148, 17, 17);
+}
+
+.detailCourseData {
+    padding: 0px 40px;
+    color: #333;
+    width: 65%;
+}
+
+
+.titleDetailCourseData {
+    font-weight: 800;
+    font-size: 19px;
+}
+
+.titleDetailCourseDataMul {
+    padding-top: 20px
+}
+
+.ant-collapse {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, .85);
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    font-feature-settings: "tnum";
+    background-color: #fafafa;
+    border: 1px solid #d9d9d9;
+    border-bottom: 0;
+    border-radius: 2px;
+}
+
+.ant-collapse-item>.ant-collapse-header {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    padding: 12px 16px;
+    color: rgba(0, 0, 0, .85);
+    line-height: 1.5715;
+    cursor: pointer;
+    transition: all .3s, visibility 0s;
+}
+
+.ant-collapse-item>.ant-collapse-header .ant-collapse-arrow {
+    display: inline-block;
+    margin-right: 12px;
+    font-size: 12px;
+    vertical-align: -1px;
+}
+
+.ant-collapse-item-custom {
+    background-color: #f7f8fb;
+    border-radius: 10px;
+    border: 1px solid #ededed;
+    margin-bottom: 15px;
+
+}
+
+.textSessionLearn {
+    font-weight: 800;
+    color: #333;
+    margin-top: 5px;
+
+}
+
+.ant-collapse-header {
+    display: flex;
+    justify-content: flex-end;
+    color: #333;
+
+}
+
+.ant-row-end {
+    display: flex;
+    border-bottom: 1px solid #ededed;
+    font-size: 14px;
+    color: #333;
+    padding: 12px 7px;
+}
+
+
+.ant-divider-inner-text {
+    display: inline-block;
+    padding: 0 1em;
+    color: #333;
+    font-weight: 800;
+
+}
+
+.ant-collapse-icon-position-left {
+    margin-top: 20px;
+}
+
+.clickviewExercise {}
+
+.textDetailCourseData {
+    font-size: 14px;
+}
+
+.clickviewExercise {
+    cursor: pointer;
+}
+
+
+.ant-collapse-content>.ant-collapse-content-box {
+    padding: 16px;
+}
+
+.material-item {
+    cursor: pointer;
+    color: #bb2327;
+    padding: 17px 34px;
+    margin: -17px;
+    border: none;
+}
+
+
+.anticon {
+    display: inline-block;
+    color: inherit;
+    font-style: normal;
+    line-height: 0;
+    text-align: center;
+    text-transform: none;
+    vertical-align: -0.125em;
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.ant-collapse-content {
+    color: rgba(0, 0, 0, .85);
+    background-color: #fff;
+    border-top: 1px solid #d9d9d9;
+}
+
+#Lecturers {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+#courseDetail .title-menu {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#courseDetail .profile-lecturers {
+    margin-bottom: 30px;
+    grid-gap: 15px;
+    gap: 15px;
+}
+
+.ant-row-middle {
+    align-items: center;
+}
+
+.ant-row,
+.ant-row:after,
+.ant-row:before {
+    display: flex;
+}
+
+.ant-row {
+    flex-flow: row wrap;
+}
+
+.ant-avatar {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, .85);
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    font-feature-settings: "tnum";
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    color: #fff;
+    white-space: nowrap;
+    text-align: center;
+    vertical-align: middle;
+    background: #ccc;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 50%;
+}
+
+.text-muted {
+    color: #6c757d !important;
+}
+
+.mb-1,
+.my-1,
+.mb-2,
+.d-flex {
+    margin-top: 0.55rem !important;
+    font-size: 15px;
+
+}
+
+.m-0 {
+    margin: 0 !important;
+}
+
+.mb-4 {
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.mb-1 {
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.mb-2 {
+    font-size: 17px;
+}
+
+#inJoinLearn:hover {
+    background: #94151d;
+    border-color: #94151d;
+}

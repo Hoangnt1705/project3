@@ -1,5 +1,5 @@
-const API = 'http://localhost:3000/router/api/admin-dashboard/doc/post';
-const APIImage = 'http://localhost:3000/router/api/admin-dashboard/doc/post/pdf';
+const API = 'http://localhost/router/api/admin-dashboard/doc/post';
+const APIImage = 'http://localhost/router/api/admin-dashboard/doc/post/pdf';
 let formSubmit = document.getElementById('formSubmit');
 let artReturnText = document.getElementById('artReturnText');
 let mainImage = document.getElementById('mainImage');

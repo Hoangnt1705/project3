@@ -1,4 +1,4 @@
-const API = 'http://localhost:3000/router/api/admin-dashboard/course-detail/update/';
+const API = 'http://localhost/router/api/admin-dashboard/course-detail/update/';
 let formUpdate = document.getElementById('formUpdate');
 let id = document.getElementById('id');
 let formDataUpdate = new FormData();

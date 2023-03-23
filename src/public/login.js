@@ -1,7 +1,7 @@
 const formPostLogin = document.getElementById('formPostLogin');
 const username = document.getElementById('formPostLogin').username;
 const password = document.getElementById('formPostLogin').password;
-const API = 'http://localhost:3000/router/api/v1/users-login/';
+const API = 'http://localhost/router/api/v1/users-login/';
 formPostLogin.addEventListener('submit', e => {
     e.preventDefault();
     fetchPostLogin(API);
@@ -15,9 +15,9 @@ let fetchPostLogin = (file) => {
         .then(response => response.json())
         .then(data => {
             alert(data);
-            
+
             setTimeout(() => {
-                window.location.href = 'http://localhost:3000/router/';
+                window.location.href = 'http://localhost/router/';
             }, 500);
         })
         .catch(err => alert(err));

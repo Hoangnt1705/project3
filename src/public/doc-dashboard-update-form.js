@@ -1,5 +1,5 @@
-const API = 'http://localhost:3000/router/api/admin-dashboard/doc/update/';
-const APIImageChange = 'http://localhost:3000/router/api/admin-dashboard/doc/post/image-change';
+const API = 'http://localhost/router/api/admin-dashboard/doc/update/';
+const APIImageChange = 'http://localhost/router/api/admin-dashboard/doc/post/image-change';
 let formUpdate = document.getElementById('formUpdate');
 let addInLearnChange = document.getElementById('formUpdate').addInLearnChange;
 let addInCourseChange = document.getElementById('formUpdate').addInCourseChange;

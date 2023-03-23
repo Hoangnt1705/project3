@@ -1,5 +1,5 @@
-const API = 'http://localhost:3000/router/api/admin-dashboard/course/post/';
-const APIImage = 'http://localhost:3000/router/api/admin-dashboard/course/post/image';
+const API = 'http://localhost/router/api/admin-dashboard/course/post/';
+const APIImage = 'http://localhost/router/api/admin-dashboard/course/post/image';
 const formPostCourse = document.getElementById('formPostCourse');
 const formSubmitImage = document.getElementById('formSubmitImage');
 let courseName = document.getElementById('formPostCourse').courseName;

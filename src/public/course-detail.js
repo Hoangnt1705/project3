@@ -1,4 +1,4 @@
-const API = 'http://localhost:3000/router/learn/';
+const API = 'http://localhost/router/learn/';
 let clickviewExercise = document.querySelectorAll('.clickviewExercise');
 let displayListDoc = document.querySelectorAll('.displayListDoc');
 let level = document.querySelectorAll('.level');

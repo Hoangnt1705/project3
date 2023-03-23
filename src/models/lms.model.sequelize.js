@@ -15,17 +15,3 @@ Doc.hasMany(PoolDocCompleted, {
 Doc.hasMany(PoolDocCompleted, {
     foreignKey: 'user_id'
 });
-module.exports.attendanceModel = async (req, res, idUserMatchAccount, putInfoAccount) => {
-    try {
-        const userAttendance = await Users.findByPk(idUserMatchAccount);
-        const userAttendanceParse = userAttendance.dataValues;
-        // const currentMyRoute = await Class.findAll({ where: { user_id: idUserMatchAccount, route_study } });
-        let dataUser = [];
-        dataUser.push(userAttendanceParse);
-        // console.log(currentMyRoute);
-        return res.render('attendance.ejs', { putInfoAccount: putInfoAccount, dataUser });
-
-    } catch (error) {
-        res.status(500).json({ message: error });
-    }
-};

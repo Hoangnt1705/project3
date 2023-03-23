@@ -1,4 +1,4 @@
-const APICourse = 'http://localhost:3000/router/course/';
+const APICourse = 'http://localhost/router/course/';
 let itemRoute = document.querySelectorAll('.itemRoute');
 let idRoute = document.querySelectorAll('.idRoute');
 

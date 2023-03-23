@@ -1,4 +1,4 @@
-const API = 'http://localhost:3000/router/api/admin-dashboard/class/create';
+const API = 'http://localhost/router/api/admin-dashboard/class/create';
 let formCreateClass = document.getElementById('formCreateClass');
 let className = document.getElementById('formCreateClass').className;
 let typeClass = document.getElementById('formCreateClass').typeClass;

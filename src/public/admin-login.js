@@ -1,7 +1,7 @@
 const formPostLogin = document.getElementById('formPostLogin');
 const username = document.getElementById('formPostLogin').username;
 const password = document.getElementById('formPostLogin').password;
-const API = 'http://localhost:3000/router/api/v1/admin-login/';
+const API = 'http://localhost/router/api/v1/admin-login/';
 formPostLogin.addEventListener('submit', e => {
     e.preventDefault();
     fetchPostLogin(API);
@@ -19,12 +19,12 @@ let fetchPostLogin = (file) => {
             console.log(data);
             // localStorage.setItem('tokenAdmin', data.token);
             setTimeout(() => {
-                window.location.href = 'http://localhost:3000/router/admin-dashboard/';
+                window.location.href = 'http://localhost/router/admin-dashboard/';
             }, 500);
         })
         .catch(err => alert(err));
 };
-// const APITokenAdmin = 'http://localhost:3000/router/admin-dashboard/'
+// const APITokenAdmin = 'http://localhost/router/admin-dashboard/'
 // let getTokenAdmin = (file) => {
 //     fetch(file, {
 //         headers: {

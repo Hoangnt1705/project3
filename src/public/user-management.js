@@ -1,6 +1,6 @@
 let updateUser = document.querySelectorAll('.updateUser');
 let idUpdate = document.querySelectorAll('.idUpdate');
-const API = 'http://localhost:3000/router/admin-dashboard/user-management/';
+const API = 'http://localhost/router/admin-dashboard/user-management/';
 for (let i = 0; i < updateUser.length; i++) {
     updateUser[i].addEventListener('click', e => {
         e.preventDefault();

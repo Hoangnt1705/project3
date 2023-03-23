@@ -1,6 +1,6 @@
 let updateRoute = document.querySelectorAll('.updateCourse');
 let idUpdate = document.querySelectorAll('.idUpdate');
-const API = 'http://localhost:3000/router/admin-dashboard/learn/update/';
+const API = 'http://localhost/router/admin-dashboard/learn/update/';
 for (let i = 0; i < updateRoute.length; i++) {
     updateRoute[i].addEventListener('click', e => {
         e.preventDefault();

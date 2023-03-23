@@ -88,7 +88,7 @@ let handleLearnsFunc = (completedDoc, backDoc, nextDoc, listExerciseRun) => {
 let handleDocsFunc = (completedDoc) => {
     completedDoc.addEventListener('click', (e) => {
         e.preventDefault();
-        axios.post('http://localhost:3000/router/api/v1/pool-doc-completed/post', { idDocPool: idDocPool, learnIdPool: learnIdPool, arrangeIdPool: arrangeIdPool, courseIdPool: courseIdPool, classIdPool: classIdPool })
+        axios.post('http://localhost/router/api/v1/pool-doc-completed/post', { idDocPool: idDocPool, learnIdPool: learnIdPool, arrangeIdPool: arrangeIdPool, courseIdPool: courseIdPool, classIdPool: classIdPool })
             .then(response => {
                 console.log(response);
                 showSuccess('Thành công');
@@ -153,7 +153,7 @@ const idRoutePoolCourse = document.getElementById('idRoutePoolCourse').innerText
 const idCoursePoolCourse = document.getElementById('idCoursePoolCourse').innerText;
 successCourseForm.addEventListener('submit', e => {
     e.preventDefault();
-    axios.post('http://localhost:3000/router/api/v1/pool-course-completed/post', {
+    axios.post('http://localhost/router/api/v1/pool-course-completed/post', {
         idClassPoolCourse: idClassPoolCourse, idRoutePoolCourse: idRoutePoolCourse, idCoursePoolCourse: idCoursePoolCourse
     })
         .then(response => {

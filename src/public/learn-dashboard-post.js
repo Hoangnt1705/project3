@@ -1,4 +1,4 @@
-const API = 'http://localhost:3000/router/api/admin-dashboard/learn/post/';
+const API = 'http://localhost/router/api/admin-dashboard/learn/post/';
 let formUpdate = document.getElementById('formUpdate');
 let titleLearn = document.getElementById('formUpdate').titleLearn;
 let ratingContent = document.getElementById('formUpdate').ratingContent;

@@ -19,7 +19,6 @@ const { middlewareTokenUser, middlewareTokenAdmin, verifyLoginAdmin, verifyLogin
 const { test } = require('../middlewares/middleware.sequelize');
 //middleware import 
 const { Class, Users, RouteStudy, Learn, Doc, PoolDocCompleted, Course, PoolCourseCompleted } = require('../service/tableSequelize');
-const { attendanceController } = require('../controllers/lms.sequelize.controller');
 const { resolveShowConfigPath } = require('@babel/core/lib/config/files/index.js');
 // const { sequelize } = require('../service/connectSequelize');
 // const classa = await Class.findByPk(7); đây là find theo primary key 
@@ -208,7 +207,6 @@ const initRoutesSequelize = (app) => {
             });
         }
     });
-    routerSequelize.get('/attendance', verifyLogin, middlewareTokenUser, upload.none(), attendanceController);
     routerSequelize.get('/admin-dashboard/class', verifyLoginAdmin, (req, res) => {
         res.render('admin-dashboard-class.ejs');
     });

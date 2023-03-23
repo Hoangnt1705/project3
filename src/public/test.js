@@ -7,7 +7,7 @@
 //     const formData = new FormData();
 //     formData.append('pdfFile', pdfFileInput.files[0]);
 
-//     fetch('http://localhost:3000/router/test1', {
+//     fetch('http://localhost/router/test1', {
 //         method: 'POST',
 //         body: { 'Content-Type': 'multipart/form-data'},
 //         body: formData
@@ -40,9 +40,9 @@ form.addEventListener('submit', (event) => {
     const formData = new FormData();
     formData.append('pdfFile', pdfFile);
     console.log(formData);
-   
+
     // send formData to the server
-    fetch('http://localhost:3000/router/test1', {
+    fetch('http://localhost/router/test1', {
         method: 'POST',
         body: formData
     })

@@ -1,4 +1,4 @@
-const API = 'http://localhost:3000/router/api/admin-dashboard/course-detail/post';
+const API = 'http://localhost/router/api/admin-dashboard/course-detail/post';
 let formPostCourse = document.getElementById('formPostCourse');
 let id = document.getElementById('id');
 let formDataUpdate = new FormData();
@@ -34,7 +34,7 @@ let postNotImageFunc = (buttonUpdate) => {
         }
     };
     let postCourseDetailFunc = (file) => {
-        let APIPut = file ;
+        let APIPut = file;
         fetch(APIPut, {
             method: 'POST',
             body: formDataUpdate

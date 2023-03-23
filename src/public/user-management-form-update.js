@@ -1,5 +1,5 @@
-const API = 'http://localhost:3000/router/api/admin-dashboard/user-management/';
-const APIImageChange = 'http://localhost:3000/router/api/admin-dashboard/user-management/post/image-change';
+const API = 'http://localhost/router/api/admin-dashboard/user-management/';
+const APIImageChange = 'http://localhost/router/api/admin-dashboard/user-management/post/image-change';
 let formUpdate = document.getElementById('formUpdate');
 let username = document.getElementById('formUpdate').username;
 let fullName = document.getElementById('formUpdate').fullName;

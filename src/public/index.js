@@ -1,5 +1,5 @@
-const API = 'http://localhost:3000/router/course-detail/';
-const APICourse = 'http://localhost:3000/router/course/';
+const API = 'http://localhost/router/course-detail/';
+const APICourse = 'http://localhost/router/course/';
 let buttonLogin = document.getElementById('buttonLogin');
 let level = document.querySelectorAll('.level');
 let color = document.querySelectorAll('.color');
@@ -45,7 +45,7 @@ for (let i = 0; i < level.length; i++) {
 
 if (buttonLogin) {
     buttonLogin.addEventListener('click', () => {
-        window.location.href = 'http://localhost:3000/router/login/';
+        window.location.href = 'http://localhost/router/login/';
     });
 }
 let parentTagA = document.createElement('div');
@@ -82,7 +82,7 @@ document.addEventListener('click', (evt) => {
 
 let viewSuggestion = () => {
     let inputSearch = document.getElementById('inputSearch').value;
-    var APISearch = `http://localhost:3000/router/api/course/query?nameCourse=${inputSearch}`;
+    var APISearch = `http://localhost/router/api/course/query?nameCourse=${inputSearch}`;
     var pageimage = [];
     if (inputSearch == '') {
         textFind.innerHTML = title;
@@ -104,7 +104,7 @@ let viewSuggestion = () => {
                 renderSearch = '';
                 console.log(data);
                 for (let i = 0; i < 6; i++) {
-                    renderSearch += await `<a class="itemListSuggest" style="color:black;text-decoration: none;" href="http://localhost:3000/router/course-detail/${data[i].id_course}" style="display: flex;">
+                    renderSearch += await `<a class="itemListSuggest" style="color:black;text-decoration: none;" href="http://localhost/router/course-detail/${data[i].id_course}" style="display: flex;">
                 <div class="itemWrap">
                   <p>${data[i].course_name.substring(0, 55)} <img class="imageItemSuggest" style="width:30px;margin-right:30px;background-size:cover;" src="${data[i].image_course}" alt=""></p>
               </div>
@@ -123,7 +123,7 @@ let viewSuggestion = () => {
 
 btnSearchSuggestion.addEventListener('click', e => {
     e.preventDefault();
-    window.location.href = 'http://localhost:3000/router/course/';
+    window.location.href = 'http://localhost/router/course/';
 });
 
 setTimeout(() => {
